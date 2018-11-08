@@ -14,6 +14,12 @@ astor_bin=$astor_base/target/astor-0.0.2-SNAPSHOT-jar-with-dependencies.jar
 
 out_dir=$wd/out
 
+
+# mac patch
+if [ -n "$(uname -a | grep Darwin)" ]; then
+   alias sed=gsed
+fi;
+
 ################################################################################
 build_kgp() {
     if [ ! -d $kgp_base ]; then
