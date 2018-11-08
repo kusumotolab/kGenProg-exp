@@ -2,7 +2,7 @@
 wd="$(cd "$(dirname $BASH_SOURCE)"; pwd -P)"
 
 # user defined fields
-kgp_ver=cc31d43f3870fbfaf713bbfc96ca902dc92d6e97 # 2018/11/7
+kgp_ver=exp-for-journal # 2018/11/7
 astor_ver=61e33ecf2be00a5f03d06e49659ddfde7bcc1431  # 2018/11
 
 # miscs
@@ -22,6 +22,7 @@ build_kgp() {
 	git -C $kgp_base fetch
     fi
     git -C $kgp_base checkout -f $kgp_ver
+    
     git -C $kgp_base submodule init
     git -C $kgp_base submodule update
     
