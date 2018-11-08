@@ -85,7 +85,7 @@ run_astor() {
     mvn -f $target_dir/pom.xml clean compile test
     java -jar $astor_bin \
 	 -mode jgenprog \
-	 -location $target \
+	 -location $target_dir \
 	 -scope package \
 	 -failing org.apache.commons.math.analysis.solvers.BisectionSolverTest \
 	 -srcjavafolder /src/main/java/ \
