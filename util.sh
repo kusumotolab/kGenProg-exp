@@ -71,7 +71,7 @@ run() {
     fi
     
     echo $target | tee $out
-    (time $exec $target_dir $out) 2>&1 | tee -a $out
+    time $exec $target_dir $out 2>&1 | tee -a $out
 }
 
 ################################################################################
