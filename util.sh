@@ -2,14 +2,13 @@
 wd="$(cd "$(dirname $BASH_SOURCE)"; pwd -P)"
 
 # user defined fields
-kgp_base=~/apr-exp/kgp
 kgp_ver=cc31d43f3870fbfaf713bbfc96ca902dc92d6e97 # 2018/11/7
-
-astor_base=~/apr-exp/astor
 astor_ver=61e33ecf2be00a5f03d06e49659ddfde7bcc1431  # 2018/11
 
-
 # miscs
+kgp_base=$wd/kgp
+astor_base=$wd/astor
+
 kgp_bin=$kgp_base/build/libs/kGenProg.jar
 astor_bin=$astor_base/target/astor-0.0.2-SNAPSHOT-jar-with-dependencies.jar
 
