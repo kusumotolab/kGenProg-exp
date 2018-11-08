@@ -17,7 +17,8 @@ out_dir=$wd/out
 
 # mac patch
 if [ -n "$(uname -a | grep Darwin)" ]; then
-   alias sed=gsed
+    alias sed=gsed
+    alias time=/usr/bin/time
 fi;
 
 ################################################################################
