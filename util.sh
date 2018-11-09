@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 wd="$(cd "$(dirname $BASH_SOURCE)"; pwd -P)"
 
 # user defined fields
@@ -7,19 +7,12 @@ astor_ver=61e33ecf2be00a5f03d06e49659ddfde7bcc1431  # 2018/11
 
 # miscs
 kgp_base=$wd/kgp
-astor_base=$wd/astor
-
 kgp_bin=$kgp_base/build/libs/kGenProg.jar
+
+astor_base=$wd/astor
 astor_bin=$astor_base/target/astor-0.0.2-SNAPSHOT-jar-with-dependencies.jar
 
 out_dir=$wd/out
-
-
-# mac patch
-if [ -n "$(uname -a | grep Darwin)" ]; then
-    alias sed=gsed
-    alias time=/usr/bin/time
-fi;
 
 ################################################################################
 build_kgp() {
@@ -107,4 +100,26 @@ run_astor() {
 	 -stopfirst true \
 
 #	 -autocompile 1 \
+}
+
+################################################################################
+d4j_base=$wd/defects4j
+d4j_ver=8a2bb51a58dc805496c3ba6b9f1240ac61e37f76
+example=$wd/example
+
+build_d4j() {
+    if [ ! -d $d4j_base ]; then
+	git clone 'git@github.com:rjust/defects4j.git' $d4j_base
+    else
+	git -C $d4j_base fetch
+    fi
+    git -C $d4j_base checkout -f $d4j_ver
+
+    export PATH=$PATH:$d4j_base/framework/bin
+    mkdir -p $example
+}
+
+get() {
+    id=$1
+    defects4j checkout -p Math -v "$id"b -w $example/math$id
 }

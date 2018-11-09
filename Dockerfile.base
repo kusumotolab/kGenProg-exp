@@ -1,0 +1,9 @@
+FROM ubuntu:18.04
+
+RUN set -ex \
+        && apt-get update \
+        && apt-get install -y \
+        openjdk-8-jdk \
+        git \
+        gradle \
+        maven

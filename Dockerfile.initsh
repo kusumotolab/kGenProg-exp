@@ -1,0 +1,11 @@
+FROM apr-exp-base
+
+WORKDIR /tmp/
+
+COPY init.sh ./
+
+RUN set -ex \
+        && bash init.sh
+
+CMD ["find", "/tmp/"]
+#CMD ["cat", "/tmp/test.sh"]
