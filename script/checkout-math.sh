@@ -12,7 +12,9 @@ to=106
 get() {
     target=$1
     id=$2
-    out=$example/$(echo $target | tr '[:upper:]' '[:lower:]')$id
+    target_l=$(echo $target | tr '[:upper:]' '[:lower:]')
+    id_z=$(printf %03d $id)
+    out=$example/$target_l$id_z
 
     mkdir -p $example
     $d4j checkout -p $target -v "$id"b -w $out

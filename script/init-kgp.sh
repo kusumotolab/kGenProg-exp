@@ -6,6 +6,7 @@ bin_from=$base/build/libs/kGenProg.jar
 bin_to=bin/kgp.jar
 ver=exp-for-journal # 2018/11
 
+
 ################################################################################
 git clone 'https://github.com/kusumotolab/kGenProg.git' $base
 git -C $base checkout -f $ver

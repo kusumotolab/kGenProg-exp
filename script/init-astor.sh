@@ -11,9 +11,14 @@ git clone 'https://github.com/SpoonLabs/astor.git' $base
 git -C $base checkout -f $ver
 
 # patch for generating jar
+
+# specify main class
 sed -i 's|<mainClass>fully.qualified.MainClass</mainClass>|<mainClass>fr.inria.main.evolution.AstorMain</mainClass>|' $base/pom.xml
 
-mvn -f $base/pom.xml compile install -DskipTests=true;
+# patch for bug in surefire classloader
+sed -i 's|</reuseForks>|</reuseForks><useSystemClassLoader>false</useSystemClassLoader>|' $base/pom.xml
+
+mvn -f $base/pom.xml install -DskipTests
 
 mkdir -p $(dirname $bin_to)
 cp $bin_from $bin_to
