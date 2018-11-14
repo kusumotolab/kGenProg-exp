@@ -9,7 +9,7 @@ m2_repo=$base/.m2
 kgp_base=$base/kgp
 kgp_bin_from=$kgp_base/build/libs/kGenProg.jar
 kgp_bin=$base/bin/kgp.jar
-kgp_ver=master #exp-for-journal # 2018/11
+kgp_ver=exp-for-journal # 2018/11
 
 # astor
 astor_base=$base/astor
@@ -36,8 +36,15 @@ export MAVEN_OPTS="-Dmaven.repo.local=$m2_repo"
 export GRADLE_USER_HOME="$gradle_repo"
 alias cp='cp -f'
 
+
+
 ################################################################################
-build_kgp() {
+build() {
+    mode=$1
+    _build_$mode
+}
+
+_build_kgp() {
     if [ ! -d $kgp_base ]; then
 	git clone 'https://github.com/kusumotolab/kGenProg.git' $kgp_base
     else
@@ -53,8 +60,7 @@ build_kgp() {
 }
 
 
-################################################################################
-build_astor() {
+_build_astor() {
     if [ ! -d $astor_base ]; then
 	git clone 'https://github.com/SpoonLabs/astor.git' $astor_base
     else
@@ -77,8 +83,7 @@ build_astor() {
 }
 
 
-################################################################################
-build_d4j() {
+_build_d4j() {
     if [ ! -d $d4j_base ]; then
 	git clone 'https://github.com/rjust/defects4j.git' $d4j_base
     else
@@ -90,19 +95,18 @@ build_d4j() {
     $d4j_base/init.sh
 }
 
-################################################################################
-build_all() {
-    build_kgp
-    build_astor
-    build_d4j
-}
 
 ################################################################################
-checkout_math() {
-    for i in $(seq $math_id_from $math_id_to); do
-	_checkout Math $i
-	_patch_surefire Math $i
-	_build_math Math $i
+checkout() {
+    _target=$1
+    _id=$2
+    _from=$3
+    _to=$4
+
+    for i in $(seq $_from $_to); do
+	_checkout $_target $i
+	_patch_surefire $_target $i
+	# _build_math Math $i
     done
 }
 
@@ -110,12 +114,13 @@ _checkout() {
     _target=$1
     _id=$2
     
-    _target_l=$(echo $_target | tr '[:upper:]' '[:lower:]')
-    _id_z=$(printf %03d $_id)
-    _out=$example/$_target_l$_id_z
+    _targetu=$(tr '[:lower:]' '[:upper:]' <<< ${_target:0:1})${_target:1}
+
+    _idz=$(printf %03d $_id)
+    _out=$example/$_target$_idz
 
     mkdir -p $example
-    $d4j_bin checkout -p $_target -v $_id"b" -w $_out
+    $d4j_bin checkout -p $_targetu -v $_id"b" -w $_out
 }
 
 # https://issues.apache.org/jira/browse/SUREFIRE-1588
@@ -124,38 +129,47 @@ _patch_surefire() {
     _target=$1
     _id=$2
 
-    _target_l=$(echo $_target | tr '[:upper:]' '[:lower:]')
-    _id_z=$(printf %03d $_id)
-    _out=$example/$_target_l$_id_z
+    _targetu=$(tr '[:lower:]' '[:upper:]' <<< ${_target:0:1})${_target:1}
+
+    _idz=$(printf %03d $_id)
+    _out=$example/$_target$_idz
     
     cat $_out/pom.xml \
 	| tr '\n' '\f' \
 	| sed -e 's|\(<artifactId>maven-surefire-plugin</artifactId>\f \+<configuration>\)\(\f \+<includes>\)|\1\f<useSystemClassLoader>false</useSystemClassLoader> <!-- inserted for apr -->\2|' \
 	| tr '\f' '\n' \
-	| tee $pom 1>/dev/null
+	| tee $_out/pom.xml 1>/dev/null
 }
 
 _build_math() {
     _target=$1
     _id=$2
 
-    _target_l=$(echo $_target | tr '[:upper:]' '[:lower:]')
-    _id_z=$(printf %03d $_id)
-    _out=$example/$_target_l$_id_z
+    _targetu=$(tr '[:lower:]' '[:upper:]' <<< ${_target:0:1})${_target:1}
+    
+    _idz=$(printf %03d $_id)
+    _out=$example/$_target$_idz
     
     mvn -f $_out/pom.xml compile test-compile -DskipTests
 }
 
 ################################################################################
+run() {
+    mode=$1
+    
+    mkdir -p $out
+    
+    _run_$mode $2 $3
+}
+
 _run_kgp() {
     _target=$1
     _id=$2
-    _id_z=$(printf %03d $_id)
+    _idz=$(printf %03d $_id)
     
-    mkdir -p $out
-    (
-	cd $example/$_target$_id_z
-	time java -jar $kgp_bin \
+    time (
+	cd $example/$_target$_idz
+	java -jar $kgp_bin \
 	     -r ./ \
 	     -s $(_get_d4j_param d4j.dir.src.classes) \
 	     -t $(_get_d4j_param d4j.dir.src.tests) \
@@ -169,9 +183,37 @@ _run_kgp() {
 	     -v \
 	     -o $tmp
 	
-    ) 2>&1 | tee $out/kgp-$_target$_id_z.result
+    ) 2>&1 | tee $out/kgp-$_target$_idz.result
 }
 
+_run_astor() {
+    _target=$1
+    _id=$2
+    _idz=$(printf %03d $_id)
+    _t=$example/$_target$_idz
+    
+    time (
+	mvn -f $_t/pom.xml clean compile test
+	java -jar $astor_bin \
+	     -mode jgenprog \
+	     -location $_t \
+	     -scope package \
+	     -failing org.apache.commons.math.analysis.solvers.BisectionSolverTest \
+	     -srcjavafolder /src/main/java/ \
+	     -srctestfolder /src/test/java/ \
+	     -binjavafolder /target/classes \
+	     -bintestfolder /target/test-classes \
+	     -dependencies $astor_base/examples/libs/junit-4.4.jar \
+	     -flthreshold 0.5 \
+	     -maxtime 100 \
+	     -maxgen 500 \
+	     -stopfirst true
+	
+    ) 2>&1 | tee $out/astor-$_target$_idz.result
+
+#	 -seed 10 \
+#	 -autocompile 1 \
+}
 
 _get_d4j_param() {
     _key=$1
@@ -181,3 +223,4 @@ _get_d4j_param() {
 	| sed "s/::.\+//"
 	)
 }
+
