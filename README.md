@@ -1,8 +1,7 @@
 ### 使い方
-作業ディレクトリ作成（10Gくらい使うので注意）
+永続データ用のディレクトリ作成（10Gくらい使うので注意）
 ```shell
 $ sudo mkdir -p /opt/apr-data
-$ sudo chmod <you>:<you> /opt/apr-data
 ```
 
 クローン
