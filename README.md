@@ -7,8 +7,8 @@ $ sudo chmod <you>:<you> /opt/apr-data
 
 クローン
 ```shell
-$ git clone git@github.com:kusumotolab/kGenProg-exp.git
-$ cd kGenProg-exp
+$ git clone git@github.com:kusumotolab/kGenProg-exp.git kgp-exp
+$ cd kgp-exp
 ```
 
 docker起動
