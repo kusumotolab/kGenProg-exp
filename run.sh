@@ -5,7 +5,7 @@ mkdir -p /opt/apr-data
 docker build \
        -t apr-exp \
        -f Dockerfile \
-       script/
+       .
 
 docker run \
        --rm \

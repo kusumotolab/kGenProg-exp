@@ -31,11 +31,12 @@ example=$base/example
 out=$base/out
 tmp=$base/tmp
 
-# to share m2 repository
+# to share repository caches
 export MAVEN_OPTS="-Dmaven.repo.local=$m2_repo"
 export GRADLE_USER_HOME="$gradle_repo"
-alias cp='cp -f'
 
+# avoid confirmation
+alias cp='cp -f'
 
 
 ################################################################################
@@ -99,11 +100,9 @@ _build_d4j() {
 ################################################################################
 checkout() {
     _target=$1
-    _id=$2
-    _from=$3
-    _to=$4
+    shift
 
-    for i in $(seq $_from $_to); do
+    for i in ${@}; do
 	_checkout $_target $i
 	_patch_surefire $_target $i
 	# _build_math Math $i
@@ -129,11 +128,12 @@ _patch_surefire() {
     _target=$1
     _id=$2
 
-    _targetu=$(tr '[:lower:]' '[:upper:]' <<< ${_target:0:1})${_target:1}
-
     _idz=$(printf %03d $_id)
     _out=$example/$_target$_idz
-    
+
+
+    echo $_out/pom.xml
+
     cat $_out/pom.xml \
 	| tr '\n' '\f' \
 	| sed -e 's|\(<artifactId>maven-surefire-plugin</artifactId>\f \+<configuration>\)\(\f \+<includes>\)|\1\f<useSystemClassLoader>false</useSystemClassLoader> <!-- inserted for apr -->\2|' \
@@ -166,9 +166,10 @@ _run_kgp() {
     _target=$1
     _id=$2
     _idz=$(printf %03d $_id)
+    _t=$example/$_target$_idz
     
     time (
-	cd $example/$_target$_idz
+	cd $_t
 	java -jar $kgp_bin \
 	     -r ./ \
 	     -s $(_get_d4j_param d4j.dir.src.classes) \
@@ -193,14 +194,15 @@ _run_astor() {
     _t=$example/$_target$_idz
     
     time (
-	mvn -f $_t/pom.xml clean compile test
+	cd $_t
+	mvn clean compile test
 	java -jar $astor_bin \
 	     -mode jgenprog \
 	     -location $_t \
 	     -scope package \
-	     -failing org.apache.commons.math.analysis.solvers.BisectionSolverTest \
-	     -srcjavafolder /src/main/java/ \
-	     -srctestfolder /src/test/java/ \
+	     -failing       $(_get_d4j_param d4j.tests.trigger) \
+	     -srcjavafolder $(_get_d4j_param d4j.dir.src.classes) \
+	     -srctestfolder $(_get_d4j_param d4j.dir.src.tests) \
 	     -binjavafolder /target/classes \
 	     -bintestfolder /target/test-classes \
 	     -dependencies $astor_base/examples/libs/junit-4.4.jar \
