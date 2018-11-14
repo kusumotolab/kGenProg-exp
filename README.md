@@ -20,7 +20,7 @@ docker上でビルド
 root@360a1f066293:~# build kgp
 root@360a1f066293:~# build astor
 root@360a1f066293:~# build d4j
-root@360a1f066293:~# checkout math 1 106
+root@360a1f066293:~# checkout math $(seq 1 106)
 ```
 
 各種APR実行
