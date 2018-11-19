@@ -171,7 +171,7 @@ _run_kgp() {
                     -r ./ \
                     -s $(_get_d4j_param d4j.dir.src.classes) \
                     -t $(_get_d4j_param d4j.dir.src.tests) \
-                    -x $(_get_d4j_param d4j.tests.trigger) \
+                    $(printf -- '-x %s ' $(_get_d4j_param d4j.tests.trigger)) \
                     --time-limit 600 \
                     --test-time-limit 3 \
                     --max-generation 1000 \
@@ -202,12 +202,11 @@ _run_astor() {
          echo $_t
 
          cd $_t
-         mvn clean compile test
          cmd=$(echo java -jar $astor_bin \
                     -mode jgenprog \
                     -location $_t \
                     -scope package \
-                    -failing       $(_get_d4j_param d4j.tests.trigger) \
+                    -failing       $(_get_d4j_param d4j.tests.trigger | paste -sd ':' -) \
                     -srcjavafolder $(_get_d4j_param d4j.dir.src.classes) \
                     -srctestfolder $(_get_d4j_param d4j.dir.src.tests) \
                     -binjavafolder /target/classes \
@@ -218,25 +217,28 @@ _run_astor() {
                     -maxgen 100 \
                     -seed $seed
             )
+         echo $cmd
+
+         mvn clean compile test
+         timeout 800 $cmd
 
      )) 2>&1 | tee $out/astor-$_target$_idz-$seed.result
 
-    #    -seed 10 \
-        #    -autocompile 1 \
-        #    -stopfirst true
+    #    -seed 10
+    #    -autocompile 1
+    #    -stopfirst true
 }
 
 _get_d4j_param() {
     _key=$1
-    echo $(cat defects4j.build.properties \
-               | grep $_key \
-               | sed "s/$_key=\(.\+\)/\1/" \
-               | sed 's/,/\n/g' \
-               | sed "s/::.\+//" \
-               | uniq \
-               | paste -s -d ':' -
-        )
+    cat defects4j.build.properties \
+        | grep $_key \
+        | sed "s/$_key=\(.\+\)/\1/" \
+        | sed 's/,/\n/g' \
+        | sed "s/::.\+//" \
+        | sort \
+        | uniq
 
-    #     -i echo '"{}"' \
+    #     -i echo '"{}"'
 
 }
