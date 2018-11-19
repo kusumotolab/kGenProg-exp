@@ -44,10 +44,10 @@ build() {
 
 _build_kgp() {
     if [ ! -d $kgp_base ]; then
-	git clone 'https://github.com/kusumotolab/kGenProg.git' $kgp_base
+        git clone 'https://github.com/kusumotolab/kGenProg.git' $kgp_base
     else
-	:
-	git -C $kgp_base pull
+        :
+        git -C $kgp_base pull
     fi
     git -C $kgp_base checkout -f $kgp_ver
 
@@ -60,10 +60,10 @@ _build_kgp() {
 
 _build_astor() {
     if [ ! -d $astor_base ]; then
-	git clone 'https://github.com/SpoonLabs/astor.git' $astor_base
+        git clone 'https://github.com/SpoonLabs/astor.git' $astor_base
     else
-	:
-	# git -C $astor_base pull
+        :
+        # git -C $astor_base pull
     fi
     git -C $astor_base checkout -f $astor_ver
 
@@ -83,10 +83,10 @@ _build_astor() {
 
 _build_d4j() {
     if [ ! -d $d4j_base ]; then
-	git clone 'https://github.com/rjust/defects4j.git' $d4j_base
+        git clone 'https://github.com/rjust/defects4j.git' $d4j_base
     else
-	:
-	# git -C $d4j_base pull
+        :
+        # git -C $d4j_base pull
     fi
     git -C $d4j_base checkout -f $d4j_ver
 
@@ -100,9 +100,9 @@ checkout() {
     shift
 
     for i in ${@}; do
-	_checkout $_target $i
-	_patch_surefire $_target $i
-	# _build Math $i
+        _checkout $_target $i
+        _patch_surefire $_target $i
+        _build $_target $i
     done
 }
 
@@ -131,10 +131,10 @@ _patch_surefire() {
     cp $_out/pom.xml $_out/pom.xml.orig
 
     cat $_out/pom.xml.orig \
- 	| tr '\n' '\f' \
- 	| sed -e 's|\(<artifactId>maven-surefire-plugin</artifactId>\f \+<configuration>\)\(\f \+<includes>\)|\1\f<useSystemClassLoader>false</useSystemClassLoader> <!-- inserted for apr -->\2|' \
- 	| tr '\f' '\n' \
- 	| tee $_out/pom.xml 1>/dev/null
+        | tr '\n' '\f' \
+        | sed -e 's|\(<artifactId>maven-surefire-plugin</artifactId>\f \+<configuration>\)\(\f \+<includes>\)|\1\f<useSystemClassLoader>false</useSystemClassLoader> <!-- inserted for apr -->\2|' \
+        | tr '\f' '\n' \
+        | tee $_out/pom.xml 1>/dev/null
 }
 
 _build() {
@@ -161,27 +161,33 @@ _run_kgp() {
     _id=$2
     _idz=$(printf %03d $_id)
     _t=$example/$_target$_idz
-    
+
     (time (
-	 cd $_t
-	 java -jar $kgp_bin \
-	      -r ./ \
-	      -s $(_get_d4j_param d4j.dir.src.classes) \
-	      -t $(_get_d4j_param d4j.dir.src.tests) \
-	      -x $(_get_d4j_param d4j.tests.trigger) \
-	      --time-limit 600 \
-	      --test-time-limit 3 \
-	      --max-generation 1000 \
-	      --headcount 10 \
-	      --mutation-generating-count 90 \
-	      --crossover-generating-count 10 \
-	      -o $tmp
-	 
+         date
+         echo $_t
+
+         cd $_t
+         cmd=$(echo java -jar $kgp_bin \
+                    -r ./ \
+                    -s $(_get_d4j_param d4j.dir.src.classes) \
+                    -t $(_get_d4j_param d4j.dir.src.tests) \
+                    -x $(_get_d4j_param d4j.tests.trigger) \
+                    --time-limit 600 \
+                    --test-time-limit 3 \
+                    --max-generation 1000 \
+                    --headcount 10 \
+                    --mutation-generating-count 90 \
+                    --crossover-generating-count 10 \
+                    -o $tmp
+            )
+         echo $cmd
+         timeout 800 $cmd
+
      )) 2>&1 | tee $out/kgp-$_target$_idz.result
-    
-    #	     -v \
-	#	--random-seed 123 \
-}
+
+    #        -v \
+        #       --random-seed 123 \
+        }
 
 _run_astor() {
     _target=$1
@@ -189,35 +195,48 @@ _run_astor() {
     _idz=$(printf %03d $_id)
     _t=$example/$_target$_idz
 
-    (time (
-	 cd $_t
-	 mvn clean compile test
-	 java -jar $astor_bin \
-	      -mode jgenprog \
-	      -location $_t \
-	      -scope package \
-	      -failing       $(_get_d4j_param d4j.tests.trigger) \
-	      -srcjavafolder $(_get_d4j_param d4j.dir.src.classes) \
-	      -srctestfolder $(_get_d4j_param d4j.dir.src.tests) \
-	      -binjavafolder /target/classes \
-	      -bintestfolder /target/test-classes \
-	      -dependencies $astor_base/examples/libs/junit-4.4.jar \
-	      -flthreshold 0.5 \
-	      -maxtime 100 \
-	      -maxgen 500 \
-	      -stopfirst true
-	 
-     )) 2>&1 | tee $out/astor-$_target$_idz.result
+    seed=1
 
-#	 -seed 10 \
-#	 -autocompile 1 \
+    (time (
+         date
+         echo $_t
+
+         cd $_t
+         mvn clean compile test
+         cmd=$(echo java -jar $astor_bin \
+                    -mode jgenprog \
+                    -location $_t \
+                    -scope package \
+                    -failing       $(_get_d4j_param d4j.tests.trigger) \
+                    -srcjavafolder $(_get_d4j_param d4j.dir.src.classes) \
+                    -srctestfolder $(_get_d4j_param d4j.dir.src.tests) \
+                    -binjavafolder /target/classes \
+                    -bintestfolder /target/test-classes \
+                    -dependencies $astor_base/examples/libs/junit-4.4.jar \
+                    -flthreshold 0.1 \
+                    -maxtime 600 \
+                    -maxgen 100 \
+                    -seed $seed
+            )
+
+     )) 2>&1 | tee $out/astor-$_target$_idz-$seed.result
+
+    #    -seed 10 \
+        #    -autocompile 1 \
+        #    -stopfirst true
 }
 
 _get_d4j_param() {
     _key=$1
     echo $(cat defects4j.build.properties \
-	| grep $_key \
-	| sed "s/$_key=\(.\+\)/\1/" \
-	| sed "s/::.\+//"
-	)
+               | grep $_key \
+               | sed "s/$_key=\(.\+\)/\1/" \
+               | sed 's/,/\n/g' \
+               | sed "s/::.\+//" \
+               | uniq \
+               | paste -s -d ':' -
+        )
+
+    #     -i echo '"{}"' \
+
 }
