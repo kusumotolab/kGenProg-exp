@@ -212,10 +212,12 @@ _run_astor() {
                     -binjavafolder /target/classes \
                     -bintestfolder /target/test-classes \
                     -dependencies $astor_base/examples/libs/junit-4.4.jar \
-                    -flthreshold 0.1 \
+                    -flthreshold 0.0 \
                     -maxtime 600 \
-                    -maxgen 100 \
-                    -seed $seed
+                    -maxgen 1000 \
+                    -seed $seed \
+                    -stopfirst true
+
             )
          echo $cmd
 
