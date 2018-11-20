@@ -153,12 +153,13 @@ run() {
 
     mkdir -p $out
 
-    _run_$mode $2 $3
+    _run_$mode $2 $3 $4
 }
 
 _run_kgp() {
-    _target=$1
-    _id=$2
+    _seed=$1
+    _target=$2
+    _id=$3
     _idz=$(printf %03d $_id)
     _t=$example/$_target$_idz
 
@@ -172,30 +173,31 @@ _run_kgp() {
                     -s $(_get_d4j_param d4j.dir.src.classes) \
                     -t $(_get_d4j_param d4j.dir.src.tests) \
                     $(printf -- '-x %s ' $(_get_d4j_param d4j.tests.trigger)) \
-                    --time-limit 6000 \
+                    --time-limit 600 \
                     --test-time-limit 3 \
                     --max-generation 1000 \
                     --headcount 10 \
                     --mutation-generating-count 90 \
                     --crossover-generating-count 10 \
+                    --random-seed $_seed \
                     -o $tmp
             )
          echo $cmd
-         timeout 6600 $cmd
+         timeout 720 $cmd
 
-     )) 2>&1 | tee $out/kgp-$_target$_idz.result
+     )) 2>&1 | tee $out/kgp-$_target$_idz-$_seed.result
 
-    #        -v \
-        #       --random-seed 123 \
-        }
+    #        -v
+    #       --random-seed 123
+
+}
 
 _run_astor() {
-    _target=$1
-    _id=$2
+    _seed=$1
+    _target=$2
+    _id=$3
     _idz=$(printf %03d $_id)
     _t=$example/$_target$_idz
-
-    seed=1
 
     (time (
          date
@@ -213,19 +215,19 @@ _run_astor() {
                     -bintestfolder /target/test-classes \
                     -dependencies $astor_base/examples/libs/junit-4.4.jar \
                     -flthreshold 0.0 \
-                    -maxtime 6000 \
+                    -maxtime 600 \
                     -population 100 \
                     -maxgen 1000 \
-                    -seed $seed \
+                    -seed $_seed \
                     -stopfirst true
 
             )
          echo $cmd
 
          mvn clean compile test
-         timeout 6600 $cmd
+         timeout 720 $cmd
 
-     )) 2>&1 | tee $out/astor-$_target$_idz-$seed.result
+     )) 2>&1 | tee $out/astor-$_target$_idz-$_seed.result
 
     #    -seed 10
     #    -autocompile 1

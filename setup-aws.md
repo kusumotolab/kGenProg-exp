@@ -18,6 +18,11 @@ exit
 ssh ec2-user@...
 ```
 
+dockerの設定
+```shell
+mkdir -p ~/.docker
+echo '{"detachKeys": "ctrl-q"}' > ~/.docker/config.json
+```
 
 aprの実験準備
 ```shell
@@ -37,3 +42,6 @@ root@98d6c76f51a5:~# source util.sh ; build kgp; build astor; build d4j; checkou
 root@98d6c76f51a5:~# source util.sh ; for i in {1..104}; do run astor math $i; done
 
 ```
+
+ssh ec2-user@54.250.186.120 -i apr.pem
+ssh ec2-user@13.230.253.238 -i apr.pem
