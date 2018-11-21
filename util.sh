@@ -216,6 +216,7 @@ _run_astor() {
                     -maxtime 600 \
                     -maxgen 10000000 \
                     -seed $_seed \
+                    -flthreshold 0.1 \
                     -stopfirst true
 
             )

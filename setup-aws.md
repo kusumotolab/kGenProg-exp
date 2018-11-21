@@ -41,14 +41,16 @@ cd apr-exp
 
 docker上で準備
 ```shell
-root@98d6c76f51a5:~# source util.sh ; build kgp; build astor; build d4j; checkout math $(seq 1 104);
+# source util.sh ; build kgp; build astor; build d4j; checkout math $(seq 1 104);
 ```
 
 実験実行
 ```shell
-root@98d6c76f51a5:~# source util.sh ; for i in {1..104}; do run astor math $i; done
+# source util.sh ; for i in {1..104}; do run astor 1 math $i; done
 
 ```
 
 ssh ec2-user@54.250.186.120 -i apr.pem
 ssh ec2-user@13.230.253.238 -i apr.pem
+
+ps -aux | grep java | grep apr-data | awk '{print $2}' | xargs sudo kill
