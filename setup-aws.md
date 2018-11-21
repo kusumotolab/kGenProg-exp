@@ -9,9 +9,9 @@ sudo service docker start
 
 NVMeストレージのマウント
 ```shell
-sudo mkfs -t ext4 /dev/nvme0n1
+sudo mkfs -t ext4 /dev/nvme1n1
 sudo mkdir /opt/apr-data
-
+sudo mount /dev/nvme1n1 /opt/apr-data
 
 ```
 dockerのパーミッション

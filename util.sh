@@ -213,7 +213,6 @@ _run_astor() {
                     -binjavafolder /target/classes \
                     -bintestfolder /target/test-classes \
                     -dependencies $astor_base/examples/libs/junit-4.4.jar \
-                    -flthreshold 0.0 \
                     -maxtime 600 \
                     -maxgen 10000000 \
                     -seed $_seed \
@@ -231,6 +230,7 @@ _run_astor() {
     # -autocompile 1
     # -stopfirst true
     # -population 100
+    # -flthreshold 0.0
 }
 
 _get_d4j_param() {
