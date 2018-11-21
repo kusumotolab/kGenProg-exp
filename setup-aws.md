@@ -7,7 +7,14 @@ sudo amazon-linux-extras install docker -y
 sudo service docker start
 ```
 
-パーミッション
+NVMeストレージのマウント
+```shell
+sudo mkfs -t ext4 /dev/nvme0n1
+sudo mkdir /opt/apr-data
+
+
+```
+dockerのパーミッション
 ```shell
 sudo usermod -a -G docker ec2-user
 exit
@@ -24,11 +31,11 @@ mkdir -p ~/.docker
 echo '{"detachKeys": "ctrl-q"}' > ~/.docker/config.json
 ```
 
+
 aprの実験準備
 ```shell
 git clone https://github.com/kusumotolab/kGenProg-exp apr-exp
 cd apr-exp
-sudo mkdir /opt/apr-data
 ./run.sh
 ```
 

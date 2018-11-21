@@ -175,10 +175,9 @@ _run_kgp() {
                     $(printf -- '-x %s ' $(_get_d4j_param d4j.tests.trigger)) \
                     --time-limit 600 \
                     --test-time-limit 3 \
-                    --max-generation 1000 \
-                    --headcount 10 \
-                    --mutation-generating-count 90 \
-                    --crossover-generating-count 10 \
+                    --max-generation 10000000 \
+                    --headcount 5 \
+                    --mutation-generating-count 10 \
                     --random-seed $_seed \
                     -o $tmp
             )
@@ -187,9 +186,9 @@ _run_kgp() {
 
      )) 2>&1 | tee $out/kgp-$_target$_idz-$_seed.result
 
-    #        -v
-    #       --random-seed 123
-
+    # -v
+    # --random-seed 123
+    # --crossover-generating-count 10
 }
 
 _run_astor() {
@@ -216,8 +215,7 @@ _run_astor() {
                     -dependencies $astor_base/examples/libs/junit-4.4.jar \
                     -flthreshold 0.0 \
                     -maxtime 600 \
-                    -population 100 \
-                    -maxgen 1000 \
+                    -maxgen 10000000 \
                     -seed $_seed \
                     -stopfirst true
 
@@ -229,9 +227,10 @@ _run_astor() {
 
      )) 2>&1 | tee $out/astor-$_target$_idz-$_seed.result
 
-    #    -seed 10
-    #    -autocompile 1
-    #    -stopfirst true
+    # -seed 10
+    # -autocompile 1
+    # -stopfirst true
+    # -population 100
 }
 
 _get_d4j_param() {
