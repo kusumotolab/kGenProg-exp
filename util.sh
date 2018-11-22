@@ -153,7 +153,7 @@ run() {
     _id=$2
 
     if [[ -z $3 ]]; then
-        _mode=$KGP
+        _mode=$APR
     else
         _mode=$3
     fi
@@ -165,7 +165,7 @@ run() {
 
     mkdir -p $out
 
-    _run_$mode $_target $_id $_seed
+    _run_$_mode $_target $_id $_seed
 }
 
 _run_kgp() {
