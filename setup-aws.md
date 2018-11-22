@@ -12,8 +12,9 @@ NVMeストレージのマウント
 sudo mkfs -t ext4 /dev/nvme1n1
 sudo mkdir /opt/apr-data
 sudo mount /dev/nvme1n1 /opt/apr-data
-
 ```
+
+
 dockerのパーミッション
 ```shell
 sudo usermod -a -G docker ec2-user
@@ -25,17 +26,34 @@ exit
 ssh ec2-user@...
 ```
 
+astorのためのタイムゾーン設定
+```shell
+sudo timedatectl set-timezone Asia/Tokyo
+```
+
 dockerの設定
 ```shell
 mkdir -p ~/.docker
 echo '{"detachKeys": "ctrl-q"}' > ~/.docker/config.json
 ```
 
+マシン固有の実験設定
+```shell
+echo 'export APR=kgp'  >> ~/.bashrc
+echo 'export SEED=1' >> ~/.bashrc
+echo 'PS1="\e[37m\e[41m[aws $APR-$SEED]\e[0m\]$ "' >> ~/.bashrc
+```
+
+tmuxの設定
+```shell
+echo 'set -g prefix C-j' > ~/.tmux.conf
+```
 
 aprの実験準備
 ```shell
 git clone https://github.com/kusumotolab/kGenProg-exp apr-exp
 cd apr-exp
+tmux
 ./run.sh
 ```
 
@@ -46,11 +64,26 @@ docker上で準備
 
 実験実行
 ```shell
-# source util.sh ; for i in {1..104}; do run astor 1 math $i; done
+# source util.sh ; for i in {1..104}; do run math $1 astor 1; done
 
 ```
 
+
+### 細かいコマンド
+astor
 ssh ec2-user@54.250.186.120 -i apr.pem
 ssh ec2-user@13.230.253.238 -i apr.pem
 
+kgp
+ssh ec2-user@52.193.6.47    -i apr.pem
+ssh ec2-user@13.113.253.73  -i apr.pem
+
 ps -aux | grep java | grep apr-data | awk '{print $2}' | xargs sudo kill
+
+
+(find /opt/apr-data/out/ -type f | sort | while read line
+do
+  printf "$(basename $line) "
+  cat $line | grep '^real'
+done
+) | tee /tmp/x

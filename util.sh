@@ -149,17 +149,30 @@ _build() {
 
 ################################################################################
 run() {
-    mode=$1
+    _target=$1
+    _id=$2
+
+    if [[ -z $3 ]]; then
+        _mode=$KGP
+    else
+        _mode=$3
+    fi
+    if [[ -z $4 ]]; then
+        _seed=$SEED
+    else
+        _seed=$4
+    fi
 
     mkdir -p $out
 
-    _run_$mode $2 $3 $4
+    _run_$mode $_target $_id $_seed
 }
 
 _run_kgp() {
-    _seed=$1
-    _target=$2
-    _id=$3
+    _target=$1
+    _id=$2
+    _seed=$3
+
     _idz=$(printf %03d $_id)
     _t=$example/$_target$_idz
 
@@ -175,7 +188,7 @@ _run_kgp() {
                     $(printf -- '-x %s ' $(_get_d4j_param d4j.tests.trigger)) \
                     --time-limit 600 \
                     --test-time-limit 3 \
-                    --max-generation 10000000 \
+                    --max-generation 10000 \
                     --headcount 5 \
                     --mutation-generating-count 10 \
                     --random-seed $_seed \
@@ -192,9 +205,10 @@ _run_kgp() {
 }
 
 _run_astor() {
-    _seed=$1
-    _target=$2
-    _id=$3
+    _target=$1
+    _id=$2
+    _seed=$3
+
     _idz=$(printf %03d $_id)
     _t=$example/$_target$_idz
 
@@ -222,7 +236,7 @@ _run_astor() {
             )
          echo $cmd
 
-         mvn clean compile test
+         mvn clean compile test-compile
          timeout 720 $cmd
 
      )) 2>&1 | tee $out/astor-$_target$_idz-$_seed.result

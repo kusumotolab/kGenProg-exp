@@ -16,5 +16,8 @@ docker run \
        --tty \
        -v /opt/apr-data:/opt/apr-data \
        -v ${PWD}/util.sh:/root/util.sh \
+       -e APR=$APR \
+       -e SEED=$SEED \
+       --cpuset-cpus=0 \
        apr-exp \
        /bin/bash
