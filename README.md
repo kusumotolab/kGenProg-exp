@@ -85,7 +85,7 @@ source ~/.bashrc
 
 tmuxの設定
 ```shell
-echo 'set -g prefix C-j' > ~/.tmux.conf
+echo 'set -g prefix C-u' > ~/.tmux.conf
 ```
 
 aprの実験準備
@@ -98,12 +98,14 @@ tmux
 
 docker上で準備
 ```shell
-# source util.sh ; build kgp; build astor; build d4j; checkout math $(seq 1 104);
+# source util.sh ;
+# build kgp; build astor; build d4j; checkout math $(seq 1 104);
 ```
 
 実験実行
 ```shell
-# source util.sh ; for i in {1..104}; do run math $i; done
+# source util.sh ;
+# for i in {1..104}; do run math $i; done
 ```
 
 
@@ -141,14 +143,19 @@ kgp=(
 実験結果の取り出し
 ```shell
 $ /d/apr-exp/out/
-$ for m in ${genp[@]}; do scp -i ~/.ssh/apr.pem ec2-user@$m:/opt/apr-data/out/* ./; done
-$ for m in ${kgp[@]};  do scp -i ~/.ssh/apr.pem ec2-user@$m:/opt/apr-data/out/* ./; done
+$ for m in ${genp[@]}; do scp -i ~/.ssh/apr.pem ec2-user@$m:/opt/apr-data/out/* out; done
+$ for m in ${kgp[@]};  do scp -i ~/.ssh/apr.pem ec2-user@$m:/opt/apr-data/out/* out; done
 ```
 
 
 javaプロセスkill
 ```shell
 ps -aux | grep java | grep apr-data | awk '{print $2}' | xargs sudo kill
+```
+
+全VMのapr実行をkill
+```shell
+for m in ${genp[@]}; do ssh -i ~/.ssh/apr.pem ec2-user@$m 'ps aux | grep java | grep apr-data | awk '\''{print $2}'\'' | xargs sudo kill ' ; done
 ```
 
 docker kill all
