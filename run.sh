@@ -18,6 +18,7 @@ docker run \
        -v ${PWD}/util.sh:/root/util.sh \
        -e APR=$APR \
        -e SEED=$SEED \
-       --cpuset-cpus=0 \
        apr-exp \
        /bin/bash
+
+#       --cpuset-cpus=0

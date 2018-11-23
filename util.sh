@@ -32,6 +32,9 @@ tmp=$base/tmp
 export MAVEN_OPTS="-Dmaven.repo.local=$m2_repo"
 export GRADLE_USER_HOME="$gradle_repo"
 
+# time command
+export TIMEFORMAT=$'\nreal %3R\nuser %3U\nsys  %3S'
+
 # avoid confirmation
 alias cp='cp -f'
 
@@ -152,11 +155,14 @@ run() {
     _target=$1
     _id=$2
 
+    # 引数がなければ環境変数から，あれば引数から
     if [[ -z $3 ]]; then
         _mode=$APR
     else
         _mode=$3
     fi
+
+    # 引数がなければ環境変数から，あれば引数から
     if [[ -z $4 ]]; then
         _seed=$SEED
     else
@@ -165,7 +171,17 @@ run() {
 
     mkdir -p $out
 
-    _run_$_mode $_target $_id $_seed
+    # 実行
+    if [[ $_mode = "kgp" ]]; then
+        _run_kgp $_target $_id $_seed
+
+    elif [[ $_mode = "genp" ]]; then
+        _run_astor $_target $_id $_seed jgenprog
+
+    elif [[ $_mode = "kali" ]]; then
+        _run_astor $_target $_id $_seed jkali
+
+    fi
 }
 
 _run_kgp() {
@@ -191,6 +207,7 @@ _run_kgp() {
                     --max-generation 10000 \
                     --headcount 5 \
                     --mutation-generating-count 10 \
+                    --crossover-generating-count 0 \
                     --random-seed $_seed \
                     -o $tmp
             )
@@ -208,6 +225,7 @@ _run_astor() {
     _target=$1
     _id=$2
     _seed=$3
+    _mode=$4
 
     _idz=$(printf %03d $_id)
     _t=$example/$_target$_idz
@@ -218,7 +236,7 @@ _run_astor() {
 
          cd $_t
          cmd=$(echo java -jar $astor_bin \
-                    -mode jgenprog \
+                    -mode $_mode \
                     -location $_t \
                     -scope package \
                     -failing       $(_get_d4j_param d4j.tests.trigger | paste -sd ':' -) \
