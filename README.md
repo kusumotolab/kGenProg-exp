@@ -143,8 +143,8 @@ kgp=(
 実験結果の取り出し
 ```shell
 $ /d/apr-exp/out/
-$ for m in ${genp[@]}; do scp -i ~/.ssh/apr.pem ec2-user@$m:/opt/apr-data/out/* out; done
-$ for m in ${kgp[@]};  do scp -i ~/.ssh/apr.pem ec2-user@$m:/opt/apr-data/out/* out; done
+$ for m in ${genp[@]}; do scp -C -i ~/.ssh/apr.pem ec2-user@$m:/opt/apr-data/out/* out-genp/; done
+$ for m in ${kgp[@]};  do scp -C -i ~/.ssh/apr.pem ec2-user@$m:/opt/apr-data/out/* out-kgp; done
 ```
 
 
