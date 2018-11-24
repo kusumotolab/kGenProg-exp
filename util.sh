@@ -254,7 +254,7 @@ _run_astor() {
          mvn clean compile test-compile
          timeout 720 $cmd
 
-     )) 2>&1 | tee $out/astor-$_mode$_target$_idz-$_seed.result
+     )) 2>&1 | tee $out/astor-$_mode-$_target$_idz-$_seed.result
 
     # -seed 10
     # -autocompile 1
