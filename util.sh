@@ -247,9 +247,7 @@ _run_astor() {
                     -dependencies $astor_base/examples/libs/junit-4.4.jar \
                     -maxtime 600 \
                     -seed $_seed \
-                    -flthreshold 0.1 \
                     -stopfirst true
-
             )
          echo $cmd
 
@@ -264,6 +262,7 @@ _run_astor() {
     # -population 100
     # -flthreshold 0.0
     # -maxgen 1000
+    # -flthreshold 0.1 \
 }
 
 _get_d4j_param() {
