@@ -202,7 +202,7 @@ _run_kgp() {
                     -s $(_get_d4j_param d4j.dir.src.classes) \
                     -t $(_get_d4j_param d4j.dir.src.tests) \
                     $(printf -- '-x %s ' $(_get_d4j_param d4j.tests.trigger)) \
-                    --time-limit 600 \
+                    --time-limit 1800 \
                     --test-time-limit 3 \
                     --max-generation 10000 \
                     --headcount 5 \
@@ -212,7 +212,7 @@ _run_kgp() {
                     -o $tmp
             )
          echo $cmd
-         timeout 720 $cmd
+         timeout 2100 $cmd
 
      )) 2>&1 | tee $out/kgp-$_target$_idz-$_seed.result
 
@@ -230,6 +230,8 @@ _run_astor() {
     _idz=$(printf %03d $_id)
     _t=$example/$_target$_idz
 
+    mvn -f $_t compile test-compile
+
     (time (
          date
          echo $_t
@@ -245,14 +247,14 @@ _run_astor() {
                     -binjavafolder /target/classes \
                     -bintestfolder /target/test-classes \
                     -dependencies $astor_base/examples/libs/junit-4.4.jar \
-                    -maxtime 600 \
+                    -maxtime 30 \
                     -seed $_seed \
-                    -stopfirst true
+                    -stopfirst true \
+                    -maxgen 100000 \
             )
          echo $cmd
 
-         mvn clean compile test-compile
-         timeout 720 $cmd
+         timeout 2100 $cmd
 
      )) 2>&1 | tee $out/astor-$_mode-$_target$_idz-$_seed.result
 
