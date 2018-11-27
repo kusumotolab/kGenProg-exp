@@ -250,7 +250,6 @@ _run_astor() {
                     -maxtime 30 \
                     -seed $_seed \
                     -stopfirst true \
-                    -loglevel DEBUG \
                     -maxgen 1000000 \
             )
          echo $cmd
@@ -265,7 +264,8 @@ _run_astor() {
     # -population 100
     # -flthreshold 0.0
     # -maxgen 1000
-    # -flthreshold 0.1 \
+    # -flthreshold 0.1
+    # -loglevel DEBUG
 }
 
 _get_d4j_param() {
