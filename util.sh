@@ -250,11 +250,12 @@ _run_astor() {
                     -maxtime 30 \
                     -seed $_seed \
                     -stopfirst true \
-                    -maxgen 100000 \
+                    -loglevel DEBUG \
+                    -maxgen 1000000 \
             )
          echo $cmd
 
-         timeout 2100 $cmd
+         timeout 3600 $cmd
 
      )) 2>&1 | tee $out/astor-$_mode-$_target$_idz-$_seed.result
 
