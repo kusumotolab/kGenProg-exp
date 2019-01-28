@@ -29,8 +29,8 @@ root@360a1f066293:~# checkout math $(seq 1 106)
 
 各種APR実行
 ```shell
-root@360a1f066293:~# run kgp math 85 kgp 1
-root@360a1f066293:~# run kgp math 73 astor 1
+root@360a1f066293:~# run kgp math 85 1
+root@360a1f066293:~# run kgp math 73 1
 ```
 
 
