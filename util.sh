@@ -279,7 +279,8 @@ _run_c_kgp() {
                 random-seed = 0\n\
                 out-dir = \"$tmp\"" > kgenprog.toml
          cmd=$($c_kgp_bin/node/bin/kGenProg-client \
-                    --kgp-args "--config kgenprog.toml"
+                    --host 172.17.100.14 --port 30080 \
+                    --kgp-args "--config kgenprog.toml -cp \"/opt/apr-data/.m2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar\""
             )
          echo $cmd
          timeout 2100 $cmd
