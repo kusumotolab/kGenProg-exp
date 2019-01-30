@@ -16,9 +16,9 @@ docker run \
        --tty \
        -v /opt/apr-data:/opt/apr-data \
        -v ${PWD}/util.sh:/root/util.sh \
+       -v ${HOME}/.ssh/id_rsa:/root/.ssh/id_rsa \
        -e APR=$APR \
        -e SEED=$SEED \
        apr-exp \
        /bin/bash
-
 #       --cpuset-cpus=0

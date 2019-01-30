@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 base=/opt/apr-data
@@ -14,7 +15,7 @@ kgp_ver=8c0c5081b715a832043e10452990f98698ed4546 # 2019/02
 
 #c_kgp
 c_kgp_base=$base/c_kgp
-c_kgp_bin_from=$c_kgp_base/node/build/install/node # TODO
+c_kgp_bin_from=$kgp_base/node/build/install/ # TODO
 c_kgp_bin=$base/bin/ # TODO
 c_kgp_ver=exp-for-fse # 2019/02
 
@@ -75,13 +76,11 @@ _build_c_kgp() {
         git -C $c_kgp_base pull
     fi
     git -C $c_kgp_base checkout -f $c_kgp_ver
-    git -C $c_kgp_base submodule init
-    git -C $c_kgp_base submodule update
 
     gradle -p $c_kgp_base installDist
 
     mkdir -p $(dirname $c_kgp_bin)
-    cp -rp  $c_kgp_bin_from $c_kgp_bin
+    cp $c_kgp_bin_from $c_kgp_bin
 }
 
 
@@ -199,9 +198,6 @@ run() {
     if [[ $_mode = "kgp" ]]; then
         _run_kgp $_target $_id $_seed
 
-    elif [[ $_mode = "c_kgp" ]]; then
-	_run_c_kgp $_target $_id
-	
     elif [[ $_mode = "genp" ]]; then
         _run_astor $_target $_id $_seed jgenprog
 
