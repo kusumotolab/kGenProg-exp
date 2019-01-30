@@ -275,7 +275,7 @@ _run_c_kgp() {
                 max-generation = $max_generation\n\
                 headcount = $headcount\n\
                 mutation-generating-count = $mutation_generating_count\n\
-                crossover-generating-count = $crossover_generationg_count\n\
+                crossover-generating-count = $crossover_generating_count\n\
                 random-seed = 0\n\
                 out-dir = \"$tmp\"" > kgenprog.toml
          cmd=$($c_kgp_bin/node/bin/kGenProg-client \
