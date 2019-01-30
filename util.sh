@@ -10,7 +10,13 @@ m2_repo=$base/.m2
 kgp_base=$base/kgp
 kgp_bin_from=$kgp_base/build/libs/kGenProg.jar
 kgp_bin=$base/bin/kgp.jar
-kgp_ver=exp-for-journal # 2018/11
+kgp_ver=8c0c5081b715a832043e10452990f98698ed4546 # 2019/02
+
+#c_kgp
+c_kgp_base=$base/c_kgp
+c_kgp_bin_from=$kgp_base/node/build/install/ # TODO
+c_kgp_bin=$base/bin/ # TODO
+c_kgp_ver=exp-for-fse # 2019/02
 
 # astor
 astor_base=$base/astor
@@ -58,6 +64,22 @@ _build_kgp() {
 
     mkdir -p $(dirname $kgp_bin)
     cp $kgp_bin_from $kgp_bin
+}
+
+
+_build_c_kgp() {
+    if [ ! -d $c_kgp_base ]; then
+        git clone 'https://github.com/kusumotolab/clustered-kGenProg.git' $c_kgp_base
+    else
+        :
+        git -C $c_kgp_base pull
+    fi
+    git -C $c_kgp_base checkout -f $c_kgp_ver
+
+    gradle -p $c_kgp_base installDist
+
+    mkdir -p $(dirname $c_kgp_bin)
+    cp $c_kgp_bin_from $c_kgp_bin
 }
 
 
@@ -187,7 +209,6 @@ run() {
 _run_kgp() {
     _target=$1
     _id=$2
-    _seed=$3
 
     _idz=$(printf %03d $_id)
     _t=$example/$_target$_idz
@@ -205,16 +226,53 @@ _run_kgp() {
                     --time-limit 1800 \
                     --test-time-limit 3 \
                     --max-generation 10000 \
-                    --headcount 5 \
-                    --mutation-generating-count 10 \
+                    --headcount 10 \
+                    --mutation-generating-count 100 \
                     --crossover-generating-count 0 \
-                    --random-seed $_seed \
+                    --random-seed 0 \
                     -o $tmp
             )
          echo $cmd
          timeout 2100 $cmd
 
-     )) 2>&1 | tee $out/kgp-$_target$_idz-$_seed.result
+     )) 2>&1 | tee $out/kgp-$_target$_idz.result
+
+    # -v
+    # --random-seed 123
+    # --crossover-generating-count 10
+}
+
+_run_c_kgp() {
+    _target=$1
+    _id=$2
+
+    _idz=$(printf %03d $_id)
+    _t=$example/$_target$_idz
+
+    (time (
+         date
+         echo $_t
+
+         cd $_t
+         cmd=$($c_kgp_bin/node/bin/kGenProg-client \
+                    --kgp-args "
+                        -r ./ \
+                        -s $(_get_d4j_param d4j.dir.src.classes) \
+                        -t $(_get_d4j_param d4j.dir.src.tests) \
+                        $(printf -- '-x %s ' $(_get_d4j_param d4j.tests.trigger)) \
+                        --time-limit 1800 \
+                        --test-time-limit 3 \
+                        --max-generation 10000 \
+                        --headcount 10 \
+                        --mutation-generating-count 100 \
+                        --crossover-generating-count 0 \
+                        --random-seed 0 \
+                        -o $tmp"
+            )
+         echo $cmd
+         timeout 2100 $cmd
+
+     )) 2>&1 | tee $out/c_kgp-$_target$_idz.result
 
     # -v
     # --random-seed 123
