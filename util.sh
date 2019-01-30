@@ -34,6 +34,13 @@ example=$base/example
 out=$base/out
 tmp=$base/tmp
 
+# 実験の設定
+timelimit=3600
+mutation_generating_count=120
+crossover_generating_count=0
+headcount=50
+max_generation=1000000000
+
 # to share repository caches
 export MAVEN_OPTS="-Dmaven.repo.local=$m2_repo"
 export GRADLE_USER_HOME="$gradle_repo"
@@ -43,13 +50,6 @@ export TIMEFORMAT=$'\nreal %3R\nuser %3U\nsys  %3S'
 
 # avoid confirmation
 alias cp='cp -f'
-
-
-timelimit = 3600
-mutation_generating_count = 120
-crossover_generating_count = 0
-headcount = 50
-max_generation = 1000000000
 
 
 ################################################################################
