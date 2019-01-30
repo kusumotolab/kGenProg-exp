@@ -262,11 +262,10 @@ _run_c_kgp() {
     _idz=$(printf %03d $_id)
     _t=$example/$_target$_idz
 
-    (time (
-         date
-         echo $_t
-         cd $_t
-         echo -e "root-dir = \".\"\n\
+    date
+    echo $_t
+    cd $_t
+    echo -e "root-dir = \".\"\n\
                 src = [$(_get_d4j_params d4j.dir.src.classes)]\n\
                 test = [$(_get_d4j_params d4j.dir.src.tests)]\n\
                 exec-test = [$(_get_d4j_params d4j.tests.trigger)]\n\
@@ -278,14 +277,36 @@ _run_c_kgp() {
                 crossover-generating-count = $crossover_generating_count\n\
                 random-seed = 0\n\
                 out-dir = \"$tmp\"" > kgenprog.toml
-         cmd=$($c_kgp_bin/node/bin/kGenProg-client \
+    cmd=$($c_kgp_bin/node/bin/kGenProg-client \
                     --host 172.17.100.14 --port 30080 \
                     --kgp-args "--config kgenprog.toml -cp \"/opt/apr-data/.m2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar\""
             )
-         echo $cmd
-         timeout 2100 $cmd
+    echo $cmd
+    $cmd | tee $out/c_kgp-$_target$_idz.result
+    # (time (
+    #      date
+    #      echo $_t
+    #      cd $_t
+    #      echo -e "root-dir = \".\"\n\
+    #             src = [$(_get_d4j_params d4j.dir.src.classes)]\n\
+    #             test = [$(_get_d4j_params d4j.dir.src.tests)]\n\
+    #             exec-test = [$(_get_d4j_params d4j.tests.trigger)]\n\
+    #             time-limit = $timelimit\n\
+    #             test-time-limit = 3\n\
+    #             max-generation = $max_generation\n\
+    #             headcount = $headcount\n\
+    #             mutation-generating-count = $mutation_generating_count\n\
+    #             crossover-generating-count = $crossover_generating_count\n\
+    #             random-seed = 0\n\
+    #             out-dir = \"$tmp\"" > kgenprog.toml
+    #      cmd=$($c_kgp_bin/node/bin/kGenProg-client \
+    #                 --host 172.17.100.14 --port 30080 \
+    #                 --kgp-args "--config kgenprog.toml -cp \"/opt/apr-data/.m2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar\""
+    #         )
+    #      echo $cmd
+    #      timeout 2100 $cmd
 
-     )) 2>&1 | tee $out/c_kgp-$_target$_idz.result
+    #  )) 2>&1 | tee $out/c_kgp-$_target$_idz.result
 
     # -v
     # --random-seed 123
