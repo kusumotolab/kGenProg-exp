@@ -45,6 +45,13 @@ export TIMEFORMAT=$'\nreal %3R\nuser %3U\nsys  %3S'
 alias cp='cp -f'
 
 
+timelimit = 3600
+mutation_generating_count = 120
+crossover_generating_count = 0
+headcount = 50
+max_generation = 1000000000
+
+
 ################################################################################
 build() {
     mode=$1
@@ -228,15 +235,16 @@ _run_kgp() {
                     -s $(_get_d4j_param d4j.dir.src.classes) \
                     -t $(_get_d4j_param d4j.dir.src.tests) \
                     $(printf -- '-x %s ' $(_get_d4j_param d4j.tests.trigger)) \
-                    --time-limit 1800 \
+                    --time-limit $timelimit \
                     --test-time-limit 3 \
-                    --max-generation 10000 \
-                    --headcount 10 \
-                    --mutation-generating-count 100 \
-                    --crossover-generating-count 0 \
+                    --max-generation $max_generation \
+                    --headcount $headcount \
+                    --mutation-generating-count $mutation_generating_count \
+                    --crossover-generating-count $crossover_generating_count \
                     --random-seed 0 \
                     -o $tmp
             )
+            
          echo $cmd
          timeout 2100 $cmd
 
@@ -257,22 +265,21 @@ _run_c_kgp() {
     (time (
          date
          echo $_t
-
          cd $_t
+         echo -e "root-dir = \".\"\n\
+                src = [$(_get_d4j_params d4j.dir.src.classes)]\n\
+                test = [$(_get_d4j_params d4j.dir.src.tests)]\n\
+                exec-test = [$(_get_d4j_params d4j.tests.trigger)]\n\
+                time-limit = $timelimit\n\
+                test-time-limit = 3\n\
+                max-generation = $max_generation\n\
+                headcount = $headcount\n\
+                mutation-generating-count = $mutation_generating_count\n\
+                crossover-generating-count = $crossover_generationg_count\n\
+                random-seed = 0\n\
+                out-dir = \"$tmp\"" > kgenprog.toml
          cmd=$($c_kgp_bin/node/bin/kGenProg-client \
-                    --kgp-args "
-                        -r ./ \
-                        -s $(_get_d4j_param d4j.dir.src.classes) \
-                        -t $(_get_d4j_param d4j.dir.src.tests) \
-                        $(printf -- '-x %s ' $(_get_d4j_param d4j.tests.trigger)) \
-                        --time-limit 1800 \
-                        --test-time-limit 3 \
-                        --max-generation 10000 \
-                        --headcount 10 \
-                        --mutation-generating-count 100 \
-                        --crossover-generating-count 0 \
-                        --random-seed 0 \
-                        -o $tmp"
+                    --kgp-args "--config kgenprog.toml"
             )
          echo $cmd
          timeout 2100 $cmd
@@ -343,4 +350,18 @@ _get_d4j_param() {
 
     #     -i echo '"{}"'
 
+}
+
+_get_d4j_params() {
+    _key=$1
+    cat defects4j.build.properties \
+        | grep $_key \
+        | sed "s/$_key=\(.\+\)/\1/" \
+        | sed 's/,/\n/g' \
+        | sed "s/::.\+//" \
+        | sort \
+        | uniq \
+        | xargs -I% echo \"%\" \
+        | tr "\n" "," \
+        | sed 's/,$//g'
 }
