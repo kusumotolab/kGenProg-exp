@@ -280,12 +280,10 @@ _run_c_kgp() {
                 random-seed = 0\n\
         		log-level = \"INFO\"\n\
                 out-dir = \"$tmp\"" > kgenprog.toml
-    	cmd = $(echo $c_kgp_bin/node/bin/kGenProg-client \
-                --host 172.17.100.14 --port 30080 \
-                --kgp-args "--config kgenprog.toml"
-                )
+	cmd=$(echo $c_kgp_bin/node/bin/kGenProg-client  --host 172.17.100.14 --port 30080 --kgp-args \"--config kgenprog.toml\")
         echo $cmd
-        timeout 2100 $cmd
+        echo $cmd | xargs timeout 2100 
+	
     )) 2>&1 | tee $out/c_kgp-$_target$_idz.result
     
     # -v
