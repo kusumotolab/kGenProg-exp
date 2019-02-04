@@ -8,9 +8,9 @@ m2_repo=$base/.m2
 
 # kgp
 kgp_base=$base/kgp
-kgp_bin_from=$kgp_base/build/libs/kGenProg.jar
+kgp_bin_from=$kgp_base/build/libs/kGenProg*.jar
 kgp_bin=$base/bin/kgp.jar
-kgp_ver=8c0c5081b715a832043e10452990f98698ed4546 # 2019/02
+kgp_ver=exp-for-fse # 2019/02
 
 #c_kgp
 c_kgp_base=$base/c_kgp
@@ -36,7 +36,7 @@ tmp=$base/tmp
 
 # 実験の設定
 timelimit=1800
-mutation_generating_count=120
+mutation_generating_count=240
 crossover_generating_count=0
 headcount=50
 max_generation=1000000000
@@ -230,23 +230,25 @@ _run_kgp() {
          echo $_t
 
          cd $_t
-         cmd=$(echo java -jar $kgp_bin \
-                    -r ./ \
-                    -s $(_get_d4j_param d4j.dir.src.classes) \
-                    -t $(_get_d4j_param d4j.dir.src.tests) \
-                    $(printf -- '-x %s ' $(_get_d4j_param d4j.tests.trigger)) \
-                    --time-limit $timelimit \
-                    --test-time-limit 3 \
-                    --max-generation $max_generation \
-                    --headcount $headcount \
-                    --mutation-generating-count $mutation_generating_count \
-                    --crossover-generating-count $crossover_generating_count \
-                    --random-seed 0 \
-                    -o $tmp
-            )
+	 
+    	echo -e "root-dir = \".\"\n\
+                src = [$(_get_d4j_params d4j.dir.src.classes)]\n\
+                test = [$(_get_d4j_params d4j.dir.src.tests)]\n\
+	        	cp = [\"/opt/apr-data/.m2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar\"]\n\
+                exec-test = [$(_get_d4j_params d4j.tests.trigger)]\n\
+                time-limit = $timelimit\n\
+                test-time-limit = 3\n\
+                max-generation = $max_generation\n\
+                headcount = $headcount\n\
+                mutation-generating-count = $mutation_generating_count\n\
+                crossover-generating-count = $crossover_generating_count\n\
+                random-seed = 0\n\
+        		log-level = \"INFO\"\n\
+                out-dir = \"$tmp\"" > kgenprog.toml
+         cmd=$(echo java -jar $kgp_bin --config kgenprog.toml)
             
          echo $cmd
-         timeout 2100 $cmd
+         echo $cmd | xargs timeout 2400 
 
      )) 2>&1 | tee $out/kgp-$_target$_idz.result
 
@@ -282,10 +284,10 @@ _run_c_kgp() {
                 out-dir = \"$tmp\"" > kgenprog.toml
 	cmd=$(echo $c_kgp_bin/node/bin/kGenProg-client  --host 172.17.100.14 --port 30080 --kgp-args \"--config kgenprog.toml\")
         echo $cmd
-        echo $cmd | xargs timeout 2100 
+        echo $cmd | xargs timeout -k 60 2100 
 	
     )) 2>&1 | tee $out/c_kgp-$_target$_idz.result
-    
+    sleep 300
     # -v
     # --random-seed 123
     # --crossover-generating-count 10
