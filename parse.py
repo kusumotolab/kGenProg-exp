@@ -5,6 +5,7 @@
 
 import pandas as pd
 
+
 def parse(dir, apr, project):
     status                     = extract_array(dir, apr, project, extract_status, "stt")
     time                       = extract_array(dir, apr, project, extract_real_time, "time")
@@ -12,9 +13,9 @@ def parse(dir, apr, project):
     n_syntax_valid_variants    = extract_array(dir, apr, project, extract_n_syntax_valid_variants, "v-sv")
     n_build_succeeded_variants = extract_array(dir, apr, project, extract_n_build_succeeded_variants, "v-bs")
 
-    print_arrays([status, \
-                  time, n_total_variants, \
-                  n_syntax_valid_variants, \
+    print_arrays([status,
+                  time, n_total_variants,
+                  n_syntax_valid_variants,
                   n_build_succeeded_variants])
 
 
@@ -32,9 +33,8 @@ def print_arrays(dfs):
     print(base[1:].to_csv(sep='\t'))
 
 
-
 def extract_array(dir, apr, project, func, label):
-    arr = create_2d_array(dir, apr, project);
+    arr = create_2d_array(dir, apr, project)
     files = list_filtered_files(dir, apr, project)
     for file in files:
         id, seed = extract_id_seed(file, project)
@@ -96,16 +96,17 @@ def extract_n_variants(file):
     ''' fileからのバリアント情報の抜き出し '''
     import re
 
-    total = ""
-    build_succeed = ""
+    total = 0
+    syntax_valid = 0
+    build_succeed = 0
 
     for line in open(file):
-        m = re.search('KGenProgMain - Total Variants: generated (\d+), syntax-valid (\d+), build-succeeded (\d+)', line)
+        m = re.search('Variants: generated (\d+), syntax-valid (\d+), build-succeeded (\d+)', line)
         if m:
-            total = m.group(1)
-            syntax_valid = m.group(2)
-            build_succeed = m.group(3)
-            return (total, syntax_valid, build_succeed)
+            total += int(m.group(1))
+            syntax_valid += int(m.group(2))
+            build_succeed += int(m.group(3))
+            continue
 
         m = re.search('^NR_GENERATIONS=(\d+)', line)
         if m:
@@ -115,10 +116,11 @@ def extract_n_variants(file):
         if m:
             build_succeed = m.group(1)
 
-        if total and build_succeed:
-            return (total, "", build_succeed)
+        # if total and build_succeed:
+            # return (total, "", build_succeed)
 
-    return "", "", ""
+    return (total, syntax_valid, build_succeed)
+    # return "", "", ""
 
 
 def extract_status(file):
@@ -137,10 +139,10 @@ def extract_status(file):
         if re.search('Java heap space', line):
             status.add('e:heap')
 
-        if re.search('KGenProgMain - found enough solutions', line):
+        if re.search('KGenProgMain - enough solutions', line):
             status.add('found')
 
-        if re.search('KGenProgMain - reached the time limit', line):
+        if re.search('KGenProgMain - GA reached the time limit.', line):
             status.add('timeout')
 
         if re.search('^OUTPUT_STATUS=STOP_BY_PATCH_FOUND', line):
@@ -181,7 +183,7 @@ def extract_id_seed(file, project):
     ''' fileからのプロジェクトidと乱数シードの抜き出し '''
     import re
 
-    m = re.search('.*%s(\d+)-(\d+).*' % project, file)
+    m = re.search('.*%s(\d+)(\d+).*' % project, file)
     if m:
         return int(m.group(1)), int(m.group(2))
     else:
