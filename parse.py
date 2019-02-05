@@ -145,24 +145,18 @@ def extract_status(file):
         if re.search('KGenProgMain - GA reached the time limit.', line):
             status.add('timeout')
 
-        if re.search('^OUTPUT_STATUS=STOP_BY_PATCH_FOUND', line):
-            status.add('found')
+        if re.search('xargs: timeout:', line):
+            status.add('timeout')
 
-        # astor
-        if re.search('fr.inria.main.evolution.AstorMain', line):
-            is_astor = True
+        if re.search('UNAVAILABLE: io exception', line):
+            status.add('e:io')
 
-        if re.search('^OUTPUT_STATUS=', line):
-            contains_status = True
+        if re.search('UNAVAILABLE: Network closed for unknown reason', line):
+            status.add('e:network')
 
-        if re.search('^OUTPUT_STATUS=ERROR', line):
-            status.add('e')
-
-        if re.search('^OUTPUT_STATUS=MAX_GENERATION', line):
-            status.add('maxgen')
-
-    #if is_astor and not contains_status:
-    #    status.add('e:timeout')
+    if len(status) == 0:
+        # 強制timeout
+        status.add('timeout')
 
     return list(status)
 
@@ -183,9 +177,9 @@ def extract_id_seed(file, project):
     ''' fileからのプロジェクトidと乱数シードの抜き出し '''
     import re
 
-    m = re.search('.*%s(\d+)(\d+).*' % project, file)
+    m = re.search('.*%s(\d+).*' % project, file)
     if m:
-        return int(m.group(1)), int(m.group(2))
+        return int(m.group(1)), 0
     else:
         raise ValueError(file)
 
