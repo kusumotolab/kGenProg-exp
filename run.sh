@@ -14,8 +14,8 @@ docker run \
        --rm \
        --interactive \
        --tty \
-       --memory=8gb \
-       --cpuset-cpus=$1 \
+       --memory=8g \
+       --cpuset-cpus=0 \
        -v /opt/apr-data:/opt/apr-data \
        -v ${PWD}/util.sh:/root/util.sh \
        -v ${HOME}/.ssh/id_rsa:/root/.ssh/id_rsa \
