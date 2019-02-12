@@ -14,6 +14,8 @@ docker run \
        --rm \
        --interactive \
        --tty \
+       --memory=8gb \
+       --cpuset-cpus=$1 \
        -v /opt/apr-data:/opt/apr-data \
        -v ${PWD}/util.sh:/root/util.sh \
        -v ${HOME}/.ssh/id_rsa:/root/.ssh/id_rsa \
@@ -21,4 +23,5 @@ docker run \
        -e SEED=$SEED \
        apr-exp \
        /bin/bash
+
 #       --cpuset-cpus=0
