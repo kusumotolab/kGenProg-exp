@@ -174,3 +174,14 @@ do
   cat $line | grep '^real'
 done
 ) | tee /tmp/x
+
+dockerのmemory
+```shel
+$ sudo vi /etc/default/grub
+# 末尾に以下を追加
+GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"
+
+$ sudo update-grub
+$ sudo reboot
+
+```
