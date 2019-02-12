@@ -8,14 +8,14 @@ m2_repo=$base/.m2
 
 # kgp
 kgp_base=$base/kgp
-kgp_bin_from=$kgp_base/build/libs/kGenProg*.jar
+kgp_bin_from=$kgp_base/build/libs/kGenProg-1.3.0.jar
 kgp_bin=$base/bin/kgp.jar
 kgp_ver=demo-for-saner # 2019/02
 
 #c_kgp
 c_kgp_base=$base/c_kgp
 c_kgp_bin_from=$c_kgp_base/node/build/install/node # TODO
-c_kgp_bin=$base/bin # TODO
+c_kgp_bin=$base/bin/node # TODO
 c_kgp_ver=demo-for-saner # 2019/02
 
 # astor
@@ -282,7 +282,7 @@ _run_c_kgp() {
                 random-seed = 0\n\
         		log-level = \"INFO\"\n\
                 out-dir = \"$tmp\"" > kgenprog.toml
-	cmd=$(echo $c_kgp_bin/bin/kGenProg-client  --host 172.17.100.14 --port 30081 --kgp-args \"--config kgenprog.toml\")
+	cmd=$(echo $c_kgp_bin/bin/kGenProg-client  --host 172.17.100.14 --port 30080 --kgp-args \"--config kgenprog.toml\")
         echo $cmd
         echo $cmd | xargs timeout -k 60 2100 
 	
