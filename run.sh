@@ -14,6 +14,7 @@ docker run \
        --rm \
        --interactive \
        --tty \
+       -v /etc/localtime:/etc/localtime:ro \
        -v /opt/apr-data:/opt/apr-data \
        -v ${PWD}/util.sh:/root/util.sh \
        -e APR=$APR \
