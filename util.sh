@@ -8,9 +8,9 @@ m2_repo=$base/.m2
 
 # kgp
 kgp_base=$base/kgp
-kgp_bin_from=$kgp_base/build/libs/kGenProg.jar
+kgp_bin_from=$kgp_base/build/libs/kGenProg-1.3.2.jar
 kgp_bin=$base/bin/kgp.jar
-kgp_ver=exp-for-journal # 2018/11
+kgp_ver=exp-for-crossover # 2019/04
 
 # astor
 astor_base=$base/astor
@@ -206,7 +206,7 @@ _run_kgp() {
                     --test-time-limit 3 \
                     --max-generation 10000 \
                     --headcount 5 \
-                    --mutation-generating-count 10 \
+                    --mutation-generating-count 20 \
                     --crossover-generating-count 0 \
                     --random-seed $_seed \
                     -o $tmp
