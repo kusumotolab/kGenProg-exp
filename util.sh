@@ -10,7 +10,7 @@ m2_repo=$base/.m2
 kgp_base=$base/kgp
 kgp_bin_from=$kgp_base/build/libs/kGenProg-1.3.2.jar
 kgp_bin=$base/bin/kgp.jar
-kgp_ver=exp-for-crossover # 2019/04
+kgp_ver=exp-for-crossover # 2018/04
 
 # astor
 astor_base=$base/astor
@@ -175,6 +175,12 @@ run() {
     if [[ $_mode = "kgp" ]]; then
         _run_kgp $_target $_id $_seed
 
+    elif [[ $_mode = "kgpc" ]]; then
+	_run_kgp_crossover $_target $_id $_seed $5 $6 $7 $8 $9
+
+    elif [[ $_mode = "kgpcall" ]]; then
+        _run_kgp_crossover_all $_target $_id $_seed 
+
     elif [[ $_mode = "genp" ]]; then
         _run_astor $_target $_id $_seed jgenprog
 
@@ -221,6 +227,78 @@ _run_kgp() {
     # --crossover-generating-count 10
 }
 
+_run_kgp_crossover() {
+    _target=$1
+    _id=$2
+    _seed=$3
+    _mutation_generating_count=$4
+    _crossover_generating_count=$5
+    _crossover_type=$6
+    _crossover_first_variant=$7
+    _crossover_second_variant=$8
+
+    _idz=$(printf %03d $_id)
+    _t=$example/$_target$_idz
+
+    (time (
+	 date
+	 echo $_t
+
+	 cd $_t
+	 cmd=$(echo java -jar $kgp_bin \
+		    -r ./ \
+		    -s $(_get_d4j_param d4j.dir.src.classes) \
+		    -t $(_get_d4j_param d4j.dir.src.tests) \
+		    $(printf -- '-x %s ' $(_get_d4j_param d4j.tests.trigger)) \
+		    --time-limit 1800 \
+		    --test-time-limit 3 \
+		    --max-generation 10000 \
+		    --headcount 5 \
+		    --mutation-generating-count $_mutation_generating_count \
+	            --crossover-generating-count $_crossover_generating_count \
+		    --crossover-type=$_crossover_type \
+		    --crossover-first-variant=$_crossover_first_variant \
+		    --crossover-second-variant=$_crossover_second_variant \
+		    --random-seed $_seed \
+		    -o $tmp
+	    )
+	 echo $cmd
+	 timeout 2100 $cmd
+
+     )) 2>&1 | tee $out/kgp-$_target$_idz-$_seed-$_mutation_generating_count-$_crossover_generating_count-$_crossover_type-$_crossover_first_variant-$_crossover_second_variant.result
+}
+
+_run_kgp_crossover_all() {
+    #_target=$1
+    #_id=$2
+    #_seed=$3
+    _run_kgp_crossover $1 $2 $3 20 0 Random Random Random
+    _run_kgp_crossover $1 $2 $3 10 10 Random Elite Elite
+    _run_kgp_crossover $1 $2 $3 10 10 Random Elite GeneSimilarity
+    _run_kgp_crossover $1 $2 $3 10 10 Random Elite Random
+    _run_kgp_crossover $1 $2 $3 10 10 Random Elite TestComplementary
+    _run_kgp_crossover $1 $2 $3 10 10 Random Random Elite
+    _run_kgp_crossover $1 $2 $3 10 10 Random Random GeneSimilarity
+    _run_kgp_crossover $1 $2 $3 10 10 Random Random Random
+    _run_kgp_crossover $1 $2 $3 10 10 Random Random TestComplementary
+    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Elite Elite
+    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Elite GeneSimilarity
+    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Elite Random
+    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Elite TestComplementary
+    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Random Elite
+    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Random GeneSimilarity
+    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Random Random
+    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Random TestComplementary
+    _run_kgp_crossover $1 $2 $3 10 10 Uniform Elite Elite
+    _run_kgp_crossover $1 $2 $3 10 10 Uniform Elite GeneSimilarity
+    _run_kgp_crossover $1 $2 $3 10 10 Uniform Elite Random
+    _run_kgp_crossover $1 $2 $3 10 10 Uniform Elite TestComplementary
+    _run_kgp_crossover $1 $2 $3 10 10 Uniform Random Elite
+    _run_kgp_crossover $1 $2 $3 10 10 Uniform Random GeneSimilarity
+    _run_kgp_crossover $1 $2 $3 10 10 Uniform Random Random
+    _run_kgp_crossover $1 $2 $3 10 10 Uniform Random TestComplementary
+}
+    
 _run_astor() {
     _target=$1
     _id=$2
