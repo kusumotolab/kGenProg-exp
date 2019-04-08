@@ -1,0 +1,73 @@
+Sat Apr  6 03:29:12 UTC 2019
+/opt/apr-data/example/math028
+java -jar /opt/apr-data/bin/kgp.jar -r ./ -s src/main/java -t src/test/java -x org.apache.commons.math3.optimization.linear.SimplexSolverTest --time-limit 1800 --test-time-limit 3 --max-generation 10000 --headcount 5 --mutation-generating-count 20 --crossover-generating-count 0 --crossover-type=Random --crossover-first-variant=Random --crossover-second-variant=Random --random-seed 1 -o /opt/apr-data/tmp
+2019-04-06 03:29:12 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = [org.apache.commons.math3.optimization.linear.SimplexSolverTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 20
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 10000
+timeLimit = PT30M
+testTimeLimit = PT3S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 1
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/example/math028
+================================================================
+2019-04-06 03:29:20 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-04-06 03:29:30 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 seconds
+Variants: generated 20, syntax-valid 16, build-succeeded 5
+Fitness: max 0.9615384615384616(1), min 0.11538461538461539(1), ave 0.5538461538461539
+----------------------------------------------------------------
+
+2019-04-06 03:29:30 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-04-06 03:29:38 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 18 seconds
+Variants: generated 20, syntax-valid 15, build-succeeded 3
+Fitness: max 0.9615384615384616(1), min 0.07692307692307693(1), ave 0.641025641025641
+----------------------------------------------------------------
+
+2019-04-06 03:29:38 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-04-06 03:29:47 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 27 seconds
+Variants: generated 20, syntax-valid 17, build-succeeded 4
+Fitness: max 0.8846153846153846(1), min 0.23076923076923078(1), ave 0.5673076923076923
+----------------------------------------------------------------
+
+2019-04-06 03:29:47 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-04-06 03:29:54 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 33 seconds
+Variants: generated 20, syntax-valid 17, build-succeeded 3
+Fitness: max 0.9615384615384616(1), min 0.19230769230769232(1), ave 0.5641025641025641
+----------------------------------------------------------------
+
+2019-04-06 03:29:54 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-04-06 03:29:58 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 38 seconds
+Variants: generated 20, syntax-valid 16, build-succeeded 2
+Fitness: max 1.0(1), min 0.34615384615384615(1), ave 0.6730769230769231
+----------------------------------------------------------------
+
+2019-04-06 03:29:58 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-04-06 03:29:58 [main] [INFO]  KGenProgMain - GA stopped at the era of 5th generation.
+2019-04-06 03:29:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-04-06 03:29:59 [main] [INFO]  KGenProgMain - execution time: 38 seconds
+
+real 46.545
+user 114.874
+sys  2.231
