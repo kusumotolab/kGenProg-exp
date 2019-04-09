@@ -1,0 +1,141 @@
+Tue Apr  9 06:44:24 UTC 2019
+/opt/apr-data/example/math046
+java -jar /opt/apr-data/bin/kgp.jar -r ./ -s src/main/java -t src/test/java -x org.apache.commons.math.complex.ComplexTest --time-limit 1800 --test-time-limit 3 --max-generation 10000 --headcount 5 --mutation-generating-count 10 --crossover-generating-count 10 --crossover-type=Random --crossover-first-variant=Random --crossover-second-variant=Elite --random-seed 1 -o /opt/apr-data/tmp
+2019-04-09 06:44:25 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = [org.apache.commons.math.complex.ComplexTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 10
+headcount = 5
+maxGeneration = 10000
+timeLimit = PT30M
+testTimeLimit = PT3S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 1
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Elite
+currentDirectory = /opt/apr-data/example/math046
+================================================================
+2019-04-09 06:44:36 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-04-09 06:44:51 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 15 seconds
+Variants: generated 10, syntax-valid 10, build-succeeded 2
+Fitness: max 0.9827586206896551(1), min 0.9655172413793104(1), ave 0.9741379310344828
+----------------------------------------------------------------
+
+2019-04-09 06:44:51 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-04-09 06:44:55 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 18 seconds
+Variants: generated 10, syntax-valid 8, build-succeeded 0
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-04-09 06:44:55 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-04-09 06:45:02 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 25 seconds
+Variants: generated 10, syntax-valid 9, build-succeeded 1
+Fitness: max 0.9741379310344828(1), min 0.9741379310344828(1), ave 0.9741379310344828
+----------------------------------------------------------------
+
+2019-04-09 06:45:02 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-04-09 06:45:11 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 34 seconds
+Variants: generated 10, syntax-valid 5, build-succeeded 1
+Fitness: max 0.9568965517241379(1), min 0.9568965517241379(1), ave 0.9568965517241379
+----------------------------------------------------------------
+
+2019-04-09 06:45:11 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-04-09 06:45:45 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 8 seconds
+Variants: generated 10, syntax-valid 10, build-succeeded 5
+Fitness: max 0.9827586206896551(2), min 0.9568965517241379(1), ave 0.9706896551724139
+----------------------------------------------------------------
+
+2019-04-09 06:45:45 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-04-09 06:46:27 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 50 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 6
+Fitness: max 0.9827586206896551(4), min 0.9482758620689655(1), ave 0.9727011494252874
+----------------------------------------------------------------
+
+2019-04-09 06:46:27 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-04-09 06:47:04 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 27 seconds
+Variants: generated 20, syntax-valid 12, build-succeeded 5
+Fitness: max 0.9913793103448276(2), min 0.9568965517241379(1), ave 0.9810344827586206
+----------------------------------------------------------------
+
+2019-04-09 06:47:04 [main] [INFO]  KGenProgMain - entered the era of 8th generation.
+2019-04-09 06:47:39 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 2 seconds
+Variants: generated 20, syntax-valid 12, build-succeeded 4
+Fitness: max 0.9913793103448276(1), min 0.9568965517241379(1), ave 0.9741379310344828
+----------------------------------------------------------------
+
+2019-04-09 06:47:39 [main] [INFO]  KGenProgMain - entered the era of 9th generation.
+2019-04-09 06:48:26 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 49 seconds
+Variants: generated 20, syntax-valid 15, build-succeeded 6
+Fitness: max 1.0(1), min 0.9655172413793104(1), ave 0.9841954022988505
+----------------------------------------------------------------
+
+2019-04-09 06:48:26 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-04-09 06:48:26 [main] [INFO]  KGenProgMain - GA stopped at the era of 9th generation.
+2019-04-09 06:48:26 [main] [INFO]  Patch - 
+--- org.apache.commons.math.complex.Complex
++++ org.apache.commons.math.complex.Complex
+@@ -255,17 +255,15 @@
+             return NaN;
+         }
+ 
+-        if (divisor.isZero) {
+-            // return isZero ? NaN : INF; // See MATH-657
+-            return isZero ? NaN : INF;
+-        }
+-
+         if (divisor.isInfinite() && !isInfinite()) {
+             return ZERO;
+         }
+ 
+         final double c = divisor.getReal();
+         final double d = divisor.getImaginary();
++		if (isNaN) {
++			return NaN;
++		}
+ 
+         if (FastMath.abs(c) < FastMath.abs(d)) {
+             double q = c / d;
+@@ -292,10 +290,8 @@
+         if (isNaN || Double.isNaN(divisor)) {
+             return NaN;
+         }
+-        if (divisor == 0d) {
+-            // return isZero ? NaN : INF; // See MATH-657
+-            return isZero ? NaN : INF;
+-        }
++        if (divisor == 0d)
++			return NaN;
+         if (Double.isInfinite(divisor)) {
+             return !isInfinite() ? ZERO : NaN;
+         }
+2019-04-09 06:48:26 [main] [INFO]  KGenProgMain - execution time: 3 minutes 49 seconds
+
+real 241.783
+user 372.686
+sys  3.555
