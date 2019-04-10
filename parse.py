@@ -37,29 +37,59 @@ def extract_array(dir, apr, project, func, label):
     arr = create_2d_array(dir, apr, project);
     files = list_filtered_files(dir, apr, project)
     for file in files:
-        id, seed = extract_id_seed(file, project)
+        id, seed, mutationNum, crossoverNum, crossoverType, parent1Type, parent2Type = extract_various_data(file, project)
+        #id, seed = extract_id_seed(file, project)
         extract_data = func(file)
-        arr[id][seed] = extract_data
+        index = get_index(mutationNum, crossoverNum, crossoverType, parent1Type, parent2Type)
+        arr[id][index] = extract_data
 
     df = pd.DataFrame(arr)
 
-    # rename column names
+    # rename column names 
     df.columns = ["%s%d" % (label, i) for i in range(df.columns.size)]
     return df
 
+def get_index(mutationNum, crossoverNum, crossoverType, parent1Type, parent2Type):
+    if 0 == crossoverNum: return 0
+    elif 'Random' == crossoverType and 'Elite' == parent1Type and 'Elite' == parent2Type: return 1;
+    elif 'Random' == crossoverType and 'Elite' == parent1Type and 'GeneSimilarity' == parent2Type: return 2;
+    elif 'Random' == crossoverType and 'Elite' == parent1Type and 'Random' == parent2Type: return 3;
+    elif 'Random' == crossoverType and 'Elite' == parent1Type and 'TestComplementary' == parent2Type: return 4;
+    elif 'Random' == crossoverType and 'Random' == parent1Type and 'Elite' == parent2Type: return 5;
+    elif 'Random' == crossoverType and 'Random' == parent1Type and 'GeneSimilarity' == parent2Type: return 6;
+    elif 'Random' == crossoverType and 'Random' == parent1Type and 'Random' == parent2Type: return 7;
+    elif 'Random' == crossoverType and 'Random' == parent1Type and 'TestComplementary' == parent2Type: return 8;
+    elif 'SinglePoint' == crossoverType and 'Elite' == parent1Type and 'Elite' == parent2Type: return 9;
+    elif 'SinglePoint' == crossoverType and 'Elite' == parent1Type and 'GeneSimilarity' == parent2Type: return 10;
+    elif 'SinglePoint' == crossoverType and 'Elite' == parent1Type and 'Random' == parent2Type: return 11;
+    elif 'SinglePoint' == crossoverType and 'Elite' == parent1Type and 'TestComplementary' == parent2Type: return 12;
+    elif 'SinglePoint' == crossoverType and 'Random' == parent1Type and 'Elite' == parent2Type: return 13;
+    elif 'SinglePoint' == crossoverType and 'Random' == parent1Type and 'GeneSimilarity' == parent2Type: return 14;
+    elif 'SinglePoint' == crossoverType and 'Random' == parent1Type and 'Random' == parent2Type: return 15;
+    elif 'SinglePoint' == crossoverType and 'Random' == parent1Type and 'TestComplementary' == parent2Type: return 16;
+    elif 'Uniform' == crossoverType and 'Elite' == parent1Type and 'Elite' == parent2Type: return 17;
+    elif 'Uniform' == crossoverType and 'Elite' == parent1Type and 'GeneSimilarity' == parent2Type: return 18;
+    elif 'Uniform' == crossoverType and 'Elite' == parent1Type and 'Random' == parent2Type: return 19;
+    elif 'Uniform' == crossoverType and 'Elite' == parent1Type and 'TestComplementary' == parent2Type: return 20;
+    elif 'Uniform' == crossoverType and 'Random' == parent1Type and 'Elite' == parent2Type: return 21;
+    elif 'Uniform' == crossoverType and 'Random' == parent1Type and 'GeneSimilarity' == parent2Type: return 22;
+    elif 'Uniform' == crossoverType and 'Random' == parent1Type and 'Random' == parent2Type: return 23;
+    elif 'Uniform' == crossoverType and 'Random' == parent1Type and 'TestComplementary' == parent2Type: return 24;
+    else:
+        print('error')
+        return 100
+    
 
 def create_2d_array(dir, apr, project):
     list_filtered_files(dir, apr, project)
 
     maxId = 0
-    maxSeed = 0
+    maxSeed = 24
 
     files = list_filtered_files(dir, apr, project)
     for file in files:
-        id, seed = extract_id_seed(file, project)
-
+        id, seed, mutationNum, crossoverNum, crossoverType, parent1Type, parent2Type = extract_various_data(file, project)        
         maxId = max(maxId, id)
-        maxSeed = max(maxSeed, seed)
 
     return [[""] * (maxSeed+1) for i in range(maxId+1)]
 
@@ -96,29 +126,18 @@ def extract_n_variants(file):
     ''' fileからのバリアント情報の抜き出し '''
     import re
 
-    total = ""
-    build_succeed = ""
+    generated = 0;
+    syntax_valid = 0;
+    build_succeeded = 0;
 
-    for line in open(file):
-        m = re.search('KGenProgMain - Total Variants: generated (\d+), syntax-valid (\d+), build-succeeded (\d+)', line)
+    for line in open(file):        
+        m = re.search('Variants: generated (\d+), syntax-valid (\d+), build-succeeded (\d+)', line)        
         if m:
-            total = m.group(1)
-            syntax_valid = m.group(2)
-            build_succeed = m.group(3)
-            return (total, syntax_valid, build_succeed)
+            generated += int(m.group(1))
+            syntax_valid += int(m.group(2))
+            build_succeeded += int(m.group(3))
 
-        m = re.search('^NR_GENERATIONS=(\d+)', line)
-        if m:
-            total = m.group(1)
-
-        m = re.search('^NR_RIGHT_COMPILATIONS=(\d+)', line)
-        if m:
-            build_succeed = m.group(1)
-
-        if total and build_succeed:
-            return (total, "", build_succeed)
-
-    return "", "", ""
+    return generated, syntax_valid, build_succeeded
 
 
 def extract_status(file):
@@ -134,33 +153,23 @@ def extract_status(file):
         if re.search('GC overhead limit exceeded', line):
             status.add('e:heap')
 
-        if re.search('Java heap space', line):
+        elif re.search('Java heap space', line):
             status.add('e:heap')
 
-        if re.search('KGenProgMain - found enough solutions', line):
+        elif re.search('KGenProgMain - enough solutions have been found', line):
             status.add('found')
 
-        if re.search('KGenProgMain - reached the time limit', line):
+        elif re.search('KGenProgMain - GA reached the time limit', line):
             status.add('timeout')
 
-        if re.search('^OUTPUT_STATUS=STOP_BY_PATCH_FOUND', line):
-            status.add('found')
-
-        # astor
-        if re.search('fr.inria.main.evolution.AstorMain', line):
-            is_astor = True
-
-        if re.search('^OUTPUT_STATUS=', line):
-            contains_status = True
-
-        if re.search('^OUTPUT_STATUS=ERROR', line):
-            status.add('e')
-
-        if re.search('^OUTPUT_STATUS=MAX_GENERATION', line):
+        elif re.search('KGenProgMain - GA reached the maximum generation', line):
             status.add('maxgen')
 
-    #if is_astor and not contains_status:
-    #    status.add('e:timeout')
+        else:
+            pass
+
+    if len(status) is 0:
+        status.add('killed')
 
     return list(status)
 
@@ -177,13 +186,13 @@ def extract_real_time(file):
     return 0
 
 
-def extract_id_seed(file, project):
-    ''' fileからのプロジェクトidと乱数シードの抜き出し '''
+def extract_various_data(file, project):
+    ''' fileからのプロジェクトid，乱数シード，変異数，交叉数，交叉種別，第一親選択方法，第二親選択方法の抜き出し '''
     import re
 
-    m = re.search('.*%s(\d+)-(\d+).*' % project, file)
+    m = re.search('.*%s(\d+)-(\d+)-(\d+)-(\d+)-(\w+)-(\w+)-(\w+).*' % project, file)
     if m:
-        return int(m.group(1)), int(m.group(2))
+        return int(m.group(1)), int(m.group(2)), int(m.group(3)), int(m.group(4)), m.group(5), m.group(6), m.group(7)
     else:
         raise ValueError(file)
 
