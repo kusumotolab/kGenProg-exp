@@ -6,16 +6,14 @@
 import pandas as pd
 
 def parse(dir, apr, project):
-    status                     = extract_array(dir, apr, project, extract_status, "stt")
-    time                       = extract_array(dir, apr, project, extract_real_time, "time")
     n_total_variants           = extract_array(dir, apr, project, extract_n_total_variants, "v")
-    n_syntax_valid_variants    = extract_array(dir, apr, project, extract_n_syntax_valid_variants, "v-sv")
     n_build_succeeded_variants = extract_array(dir, apr, project, extract_n_build_succeeded_variants, "v-bs")
+    time                       = extract_array(dir, apr, project, extract_real_time, "time")
+    status                     = extract_array(dir, apr, project, extract_status, "stt")
 
-    print_arrays([status, \
-                  time, n_total_variants, \
-                  n_syntax_valid_variants, \
-                  n_build_succeeded_variants])
+    print_arrays([n_total_variants, \
+                  n_build_succeeded_variants, \
+                  time, status])
 
 
 def print_arrays(dfs):
@@ -34,17 +32,17 @@ def print_arrays(dfs):
 
 
 def extract_array(dir, apr, project, func, label):
-    arr = create_2d_array(dir, apr, project);
+    arr, workers_map = create_2d_array(dir, apr, project);
     files = list_filtered_files(dir, apr, project)
     for file in files:
-        id, seed = extract_id_seed(file, project)
+        id, workers = extract_id_workers(file, project)
         extract_data = func(file)
-        arr[id][seed] = extract_data
+        arr[id][workers_map[workers]] = extract_data
 
     df = pd.DataFrame(arr)
 
     # rename column names
-    df.columns = ["%s%d" % (label, i) for i in range(df.columns.size)]
+    df.columns = ["%s%d" % (label, i) for i in workers_map.keys()]
     return df
 
 
@@ -52,16 +50,22 @@ def create_2d_array(dir, apr, project):
     list_filtered_files(dir, apr, project)
 
     maxId = 0
-    maxSeed = 0
+    workers = []
 
     files = list_filtered_files(dir, apr, project)
     for file in files:
-        id, seed = extract_id_seed(file, project)
+        id, worker = extract_id_workers(file, project)
 
         maxId = max(maxId, id)
-        maxSeed = max(maxSeed, seed)
-
-    return [[""] * (maxSeed+1) for i in range(maxId+1)]
+        if worker not in workers:
+            workers.append(worker)
+    workers.sort()
+    workers_map = {}
+    i = 0;
+    for w in workers:
+        workers_map[w] = i
+        i += 1
+    return [[""] * len(workers) for i in range(maxId+1)], workers_map
 
 
 def list_filtered_files(dir, apr, project):
@@ -96,71 +100,29 @@ def extract_n_variants(file):
     ''' fileからのバリアント情報の抜き出し '''
     import re
 
-    total = ""
-    build_succeed = ""
+    total = 0
+    syntax_valid = 0
+    build_succeed = 0
 
     for line in open(file):
-        m = re.search('KGenProgMain - Total Variants: generated (\d+), syntax-valid (\d+), build-succeeded (\d+)', line)
-        if m:
-            total = m.group(1)
-            syntax_valid = m.group(2)
-            build_succeed = m.group(3)
-            return (total, syntax_valid, build_succeed)
+        m = re.search('Variants: generated (\d+), syntax-valid (\d+), build-succeeded (\d+)', line)
+        if isinstance(m, type(None)):
+            continue
+        total += int(m.group(1))
+        syntax_valid += int(m.group(2))
+        build_succeed += int(m.group(3))
 
-        m = re.search('^NR_GENERATIONS=(\d+)', line)
-        if m:
-            total = m.group(1)
-
-        m = re.search('^NR_RIGHT_COMPILATIONS=(\d+)', line)
-        if m:
-            build_succeed = m.group(1)
-
-        if total and build_succeed:
-            return (total, "", build_succeed)
-
-    return "", "", ""
+    return str(total), str(syntax_valid), str(build_succeed)
 
 
 def extract_status(file):
     ''' fileからの実行結果ステータスの抜き出し '''
     import re
 
-    is_astor = False
-    contains_status = False
-
     status = set()
     for line in open(file):
-        # kgp
-        if re.search('GC overhead limit exceeded', line):
-            status.add('e:heap')
-
-        if re.search('Java heap space', line):
-            status.add('e:heap')
-
-        if re.search('KGenProgMain - found enough solutions', line):
+        if re.search('KGenProgMain - enough solutions have been found.', line):
             status.add('found')
-
-        if re.search('KGenProgMain - reached the time limit', line):
-            status.add('timeout')
-
-        if re.search('^OUTPUT_STATUS=STOP_BY_PATCH_FOUND', line):
-            status.add('found')
-
-        # astor
-        if re.search('fr.inria.main.evolution.AstorMain', line):
-            is_astor = True
-
-        if re.search('^OUTPUT_STATUS=', line):
-            contains_status = True
-
-        if re.search('^OUTPUT_STATUS=ERROR', line):
-            status.add('e')
-
-        if re.search('^OUTPUT_STATUS=MAX_GENERATION', line):
-            status.add('maxgen')
-
-    #if is_astor and not contains_status:
-    #    status.add('e:timeout')
 
     return list(status)
 
@@ -177,16 +139,15 @@ def extract_real_time(file):
     return 0
 
 
-def extract_id_seed(file, project):
-    ''' fileからのプロジェクトidと乱数シードの抜き出し '''
+def extract_id_workers(file, project):
+    ''' fileからのプロジェクトidとworkerの台数の抜き出し '''
     import re
 
-    m = re.search('.*%s(\d+)-(\d+).*' % project, file)
+    m = re.search('.*%s(\d+)-(\d+)workers.*' % project, file)
     if m:
         return int(m.group(1)), int(m.group(2))
     else:
         raise ValueError(file)
-
 
 if __name__ == "__main__":
     import sys
