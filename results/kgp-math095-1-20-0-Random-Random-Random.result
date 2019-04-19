@@ -1,0 +1,92 @@
+Sat Apr 13 07:51:18 UTC 2019
+/opt/apr-data/example/math095
+java -jar /opt/apr-data/bin/kgp.jar -r ./ -s src/java -t src/test -x org.apache.commons.math.distribution.FDistributionTest --time-limit 1800 --test-time-limit 3 --max-generation 10000 --headcount 5 --mutation-generating-count 20 --crossover-generating-count 0 --crossover-type=Random --crossover-first-variant=Random --crossover-second-variant=Random --random-seed 1 -o /opt/apr-data/tmp
+2019-04-13 07:51:18 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = [org.apache.commons.math.distribution.FDistributionTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 20
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 10000
+timeLimit = PT30M
+testTimeLimit = PT3S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 1
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/example/math095
+================================================================
+2019-04-13 07:51:23 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-04-13 07:51:24 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 seconds
+Variants: generated 20, syntax-valid 18, build-succeeded 4
+Fitness: max 0.8888888888888888(2), min 0.4444444444444444(1), ave 0.6944444444444444
+----------------------------------------------------------------
+
+2019-04-13 07:51:24 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-04-13 07:51:25 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 20, syntax-valid 18, build-succeeded 1
+Fitness: max 0.8888888888888888(1), min 0.8888888888888888(1), ave 0.8888888888888888
+----------------------------------------------------------------
+
+2019-04-13 07:51:25 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-04-13 07:51:26 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 20, syntax-valid 18, build-succeeded 2
+Fitness: max 0.8888888888888888(1), min 0.5555555555555556(1), ave 0.7222222222222222
+----------------------------------------------------------------
+
+2019-04-13 07:51:26 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-04-13 07:51:27 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 seconds
+Variants: generated 20, syntax-valid 18, build-succeeded 3
+Fitness: max 0.8888888888888888(2), min 0.4444444444444444(1), ave 0.7407407407407408
+----------------------------------------------------------------
+
+2019-04-13 07:51:27 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-04-13 07:51:28 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 seconds
+Variants: generated 20, syntax-valid 16, build-succeeded 4
+Fitness: max 1.0(1), min 0.4444444444444444(1), ave 0.8055555555555556
+----------------------------------------------------------------
+
+2019-04-13 07:51:28 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-04-13 07:51:28 [main] [INFO]  KGenProgMain - GA stopped at the era of 5th generation.
+2019-04-13 07:51:28 [main] [INFO]  Patch - 
+--- org.apache.commons.math.distribution.FDistributionImpl
++++ org.apache.commons.math.distribution.FDistributionImpl
+@@ -78,6 +78,7 @@
+             ret = Beta.regularizedBeta((n * x) / (m + n * x),
+                 0.5 * n,
+                 0.5 * m);
++			return ret;
+         }
+         return ret;
+     }
+@@ -145,7 +146,7 @@
+         double d = getDenominatorDegreesOfFreedom();
+             // use mean
+             ret = d / (d - 2.0);
+-        return ret;
++        return 1;
+     }
+     
+     /**
+2019-04-13 07:51:28 [main] [INFO]  KGenProgMain - execution time: 5 seconds
+
+real 9.981
+user 49.296
+sys  1.019

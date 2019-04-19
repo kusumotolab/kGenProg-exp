@@ -1,0 +1,226 @@
+Fri Apr 12 07:37:19 UTC 2019
+/opt/apr-data/example/math058
+java -jar /opt/apr-data/bin/kgp.jar -r ./ -s src/main/java -t src/test/java -x org.apache.commons.math.optimization.fitting.GaussianFitterTest --time-limit 1800 --test-time-limit 3 --max-generation 10000 --headcount 5 --mutation-generating-count 10 --crossover-generating-count 10 --crossover-type=Uniform --crossover-first-variant=Random --crossover-second-variant=Random --random-seed 1 -o /opt/apr-data/tmp
+2019-04-12 07:37:20 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = [org.apache.commons.math.optimization.fitting.GaussianFitterTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 10
+headcount = 5
+maxGeneration = 10000
+timeLimit = PT30M
+testTimeLimit = PT3S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 1
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Uniform
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/example/math058
+================================================================
+2019-04-12 07:37:26 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-04-12 07:37:27 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 0 seconds
+Variants: generated 10, syntax-valid 7, build-succeeded 0
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-04-12 07:37:27 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-04-12 07:37:31 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 seconds
+Variants: generated 10, syntax-valid 7, build-succeeded 1
+Fitness: max 0.875(1), min 0.875(1), ave 0.875
+----------------------------------------------------------------
+
+2019-04-12 07:37:31 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-04-12 07:37:32 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 seconds
+Variants: generated 10, syntax-valid 8, build-succeeded 1
+Fitness: max 0.875(1), min 0.875(1), ave 0.875
+----------------------------------------------------------------
+
+2019-04-12 07:37:32 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-04-12 07:37:35 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 8 seconds
+Variants: generated 10, syntax-valid 6, build-succeeded 2
+Fitness: max 0.875(2), min 0.875(2), ave 0.875
+----------------------------------------------------------------
+
+2019-04-12 07:37:35 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-04-12 07:37:37 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 seconds
+Variants: generated 20, syntax-valid 7, build-succeeded 2
+Fitness: max 0.875(2), min 0.875(2), ave 0.875
+----------------------------------------------------------------
+
+2019-04-12 07:37:37 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-04-12 07:37:39 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 12 seconds
+Variants: generated 20, syntax-valid 4, build-succeeded 2
+Fitness: max 0.875(2), min 0.875(2), ave 0.875
+----------------------------------------------------------------
+
+2019-04-12 07:37:39 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-04-12 07:37:40 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 13 seconds
+Variants: generated 20, syntax-valid 10, build-succeeded 2
+Fitness: max 0.875(2), min 0.875(2), ave 0.875
+----------------------------------------------------------------
+
+2019-04-12 07:37:40 [main] [INFO]  KGenProgMain - entered the era of 8th generation.
+2019-04-12 07:37:48 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 21 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 6
+Fitness: max 0.875(6), min 0.875(6), ave 0.875
+----------------------------------------------------------------
+
+2019-04-12 07:37:48 [main] [INFO]  KGenProgMain - entered the era of 9th generation.
+2019-04-12 07:38:01 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 34 seconds
+Variants: generated 20, syntax-valid 8, build-succeeded 5
+Fitness: max 0.875(5), min 0.875(5), ave 0.875
+----------------------------------------------------------------
+
+2019-04-12 07:38:01 [main] [INFO]  KGenProgMain - entered the era of 10th generation.
+2019-04-12 07:38:03 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 36 seconds
+Variants: generated 20, syntax-valid 9, build-succeeded 2
+Fitness: max 0.875(2), min 0.875(2), ave 0.875
+----------------------------------------------------------------
+
+2019-04-12 07:38:03 [main] [INFO]  KGenProgMain - entered the era of 11th generation.
+2019-04-12 07:38:13 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 46 seconds
+Variants: generated 20, syntax-valid 10, build-succeeded 5
+Fitness: max 0.875(5), min 0.875(5), ave 0.875
+----------------------------------------------------------------
+
+2019-04-12 07:38:13 [main] [INFO]  KGenProgMain - entered the era of 12th generation.
+2019-04-12 07:38:23 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 56 seconds
+Variants: generated 20, syntax-valid 12, build-succeeded 7
+Fitness: max 0.875(5), min 0.25(2), ave 0.6964285714285714
+----------------------------------------------------------------
+
+2019-04-12 07:38:23 [main] [INFO]  KGenProgMain - entered the era of 13th generation.
+2019-04-12 07:38:33 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 7 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 5
+Fitness: max 0.875(4), min 0.25(1), ave 0.75
+----------------------------------------------------------------
+
+2019-04-12 07:38:33 [main] [INFO]  KGenProgMain - entered the era of 14th generation.
+2019-04-12 07:38:42 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 15 seconds
+Variants: generated 20, syntax-valid 7, build-succeeded 3
+Fitness: max 0.875(3), min 0.875(3), ave 0.875
+----------------------------------------------------------------
+
+2019-04-12 07:38:42 [main] [INFO]  KGenProgMain - entered the era of 15th generation.
+2019-04-12 07:38:46 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 19 seconds
+Variants: generated 20, syntax-valid 12, build-succeeded 6
+Fitness: max 0.875(6), min 0.875(6), ave 0.875
+----------------------------------------------------------------
+
+2019-04-12 07:38:46 [main] [INFO]  KGenProgMain - entered the era of 16th generation.
+2019-04-12 07:39:00 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 33 seconds
+Variants: generated 20, syntax-valid 8, build-succeeded 2
+Fitness: max 0.875(1), min 0.25(1), ave 0.5625
+----------------------------------------------------------------
+
+2019-04-12 07:39:00 [main] [INFO]  KGenProgMain - entered the era of 17th generation.
+2019-04-12 07:39:02 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 35 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 3
+Fitness: max 0.875(3), min 0.875(3), ave 0.875
+----------------------------------------------------------------
+
+2019-04-12 07:39:02 [main] [INFO]  KGenProgMain - entered the era of 18th generation.
+2019-04-12 07:39:07 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 40 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 5
+Fitness: max 1.0(1), min 0.875(4), ave 0.9
+----------------------------------------------------------------
+
+2019-04-12 07:39:07 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-04-12 07:39:07 [main] [INFO]  KGenProgMain - GA stopped at the era of 18th generation.
+2019-04-12 07:39:07 [main] [INFO]  Patch - 
+--- org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizer
++++ org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizer
+@@ -383,9 +383,8 @@
+                 if (ratio <= 0.25) {
+                     double tmp =
+                         (actRed < 0) ? (0.5 * dirDer / (dirDer + 0.5 * actRed)) : 0.5;
+-                        if ((0.1 * cost >= previousCost) || (tmp < 0.1)) {
+-                            tmp = 0.1;
+-                        }
++                        if ((0.1 * cost >= previousCost) || (tmp < 0.1))
++							objective = oldObj;
+                         delta = tmp * FastMath.min(delta, 10.0 * lmNorm);
+                         lmPar /= tmp;
+                 } else if ((lmPar == 0) || (ratio >= 0.75)) {
+@@ -539,24 +538,17 @@
+             int pj = permutation[j];
+             double sum = 0;
+             for (int i = 0; i <= j; ++i) {
+-                sum += weightedResidualJacobian[i][pj] * qy[i];
+             }
+-            sum /= diag[pj];
+             sum2 += sum * sum;
+         }
+         double gNorm = FastMath.sqrt(sum2);
+         double paru = gNorm / delta;
+-        if (paru == 0) {
+-            // 2.2251e-308 is the smallest positive real for IEE754
+-            paru = 2.2251e-308 / FastMath.min(delta, 0.1);
+-        }
++        if (paru == 0)
+ 
+         // if the input par lies outside of the interval (parl,paru),
+         // set par to the closer endpoint
+         lmPar = FastMath.min(paru, FastMath.max(lmPar, parl));
+-        if (lmPar == 0) {
+-            lmPar = gNorm / dxNorm;
+-        }
++        if (lmPar == 0)
+ 
+         for (int countdown = 10; countdown >= 0; --countdown) {
+ 
+@@ -599,7 +591,6 @@
+                 work1[pj] /= work2[j];
+                 double tmp = work1[pj];
+                 for (int i = j + 1; i < solvedCols; ++i) {
+-                    work1[permutation[i]] -= weightedResidualJacobian[i][pj] * tmp;
+                 }
+             }
+             sum2 = 0;
+2019-04-12 07:39:07 [main] [INFO]  KGenProgMain - execution time: 1 minutes 40 seconds
+
+real 107.980
+user 200.009
+sys  2.548

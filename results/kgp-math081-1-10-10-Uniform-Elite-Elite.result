@@ -1,0 +1,114 @@
+Sun Apr 14 16:41:15 UTC 2019
+/opt/apr-data/example/math081
+java -jar /opt/apr-data/bin/kgp.jar -r ./ -s src/main/java -t src/test/java -x org.apache.commons.math.linear.EigenDecompositionImplTest --time-limit 1800 --test-time-limit 3 --max-generation 10000 --headcount 5 --mutation-generating-count 10 --crossover-generating-count 10 --crossover-type=Uniform --crossover-first-variant=Elite --crossover-second-variant=Elite --random-seed 1 -o /opt/apr-data/tmp
+2019-04-14 16:41:15 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = [org.apache.commons.math.linear.EigenDecompositionImplTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 10
+headcount = 5
+maxGeneration = 10000
+timeLimit = PT30M
+testTimeLimit = PT3S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 1
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Uniform
+firstVariantSelectionStrategy = Elite
+secondVariantSelectionStrategy = Elite
+currentDirectory = /opt/apr-data/example/math081
+================================================================
+2019-04-14 16:41:21 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-04-14 16:41:23 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 seconds
+Variants: generated 10, syntax-valid 9, build-succeeded 1
+Fitness: max 0.5294117647058824(1), min 0.5294117647058824(1), ave 0.5294117647058824
+----------------------------------------------------------------
+
+2019-04-14 16:41:23 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-04-14 16:41:27 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 seconds
+Variants: generated 10, syntax-valid 9, build-succeeded 4
+Fitness: max 0.9411764705882353(3), min 0.5294117647058824(1), ave 0.8382352941176471
+----------------------------------------------------------------
+
+2019-04-14 16:41:27 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-04-14 16:41:30 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 8 seconds
+Variants: generated 10, syntax-valid 10, build-succeeded 2
+Fitness: max 0.9411764705882353(1), min 0.8235294117647058(1), ave 0.8823529411764706
+----------------------------------------------------------------
+
+2019-04-14 16:41:30 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-04-14 16:41:31 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 seconds
+Variants: generated 10, syntax-valid 6, build-succeeded 0
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-04-14 16:41:31 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-04-14 16:41:32 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 seconds
+Variants: generated 10, syntax-valid 10, build-succeeded 1
+Fitness: max 0.5294117647058824(1), min 0.5294117647058824(1), ave 0.5294117647058824
+----------------------------------------------------------------
+
+2019-04-14 16:41:32 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-04-14 16:41:36 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 14 seconds
+Variants: generated 10, syntax-valid 6, build-succeeded 4
+Fitness: max 1.0(1), min 0.7647058823529411(1), ave 0.8823529411764706
+----------------------------------------------------------------
+
+2019-04-14 16:41:36 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-04-14 16:41:36 [main] [INFO]  KGenProgMain - GA stopped at the era of 6th generation.
+2019-04-14 16:41:36 [main] [INFO]  Patch - 
+--- org.apache.commons.math.linear.EigenDecompositionImpl
++++ org.apache.commons.math.linear.EigenDecompositionImpl
+@@ -572,7 +572,7 @@
+         final int lowerStart = 4 * m;
+         final int upperStart = 5 * m;
+         lowerSpectra = Double.POSITIVE_INFINITY;
+-        upperSpectra = Double.NEGATIVE_INFINITY;
++        double s = 0.0;
+         double eMax = 0;
+ 
+         double eCurrent = 0;
+@@ -885,9 +885,7 @@
+             pingPong = 0;
+             int maxIter = 30 * (n0 - i0);
+             for (int k = 0; i0 < n0; ++k) {
+-                if (k >= maxIter) {
+-                    throw new InvalidMatrixException(new MaxIterationsExceededException(maxIter));
+-                }
++                if (k >= maxIter)
+ 
+                 // perform one step
+                 n0 = goodStep(i0, n0);
+@@ -1478,9 +1476,7 @@
+                     if (dMin == dN) {
+                         gam = dN;
+                         a2 = 0.0;
+-                        if (work[nn - 5]  >  work[nn - 7]) {
+-                            return;
+-                        }
++                        if (work[nn - 5]  >  work[nn - 7])
+                         b2 = work[nn - 5] / work[nn - 7];
+                         np = nn - 9;
+                     } else {
+2019-04-14 16:41:36 [main] [INFO]  KGenProgMain - execution time: 14 seconds
+
+real 21.152
+user 79.509
+sys  1.392

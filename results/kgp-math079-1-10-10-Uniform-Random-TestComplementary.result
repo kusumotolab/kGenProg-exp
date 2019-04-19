@@ -1,0 +1,90 @@
+Sun Apr 14 14:03:31 UTC 2019
+/opt/apr-data/example/math079
+java -jar /opt/apr-data/bin/kgp.jar -r ./ -s src/main/java -t src/test/java -x org.apache.commons.math.stat.clustering.KMeansPlusPlusClustererTest --time-limit 1800 --test-time-limit 3 --max-generation 10000 --headcount 5 --mutation-generating-count 10 --crossover-generating-count 10 --crossover-type=Uniform --crossover-first-variant=Random --crossover-second-variant=TestComplementary --random-seed 1 -o /opt/apr-data/tmp
+2019-04-14 14:03:31 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = [org.apache.commons.math.stat.clustering.KMeansPlusPlusClustererTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 10
+headcount = 5
+maxGeneration = 10000
+timeLimit = PT30M
+testTimeLimit = PT3S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 1
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Uniform
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = TestComplementary
+currentDirectory = /opt/apr-data/example/math079
+================================================================
+2019-04-14 14:03:37 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-04-14 14:03:38 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 0 seconds
+Variants: generated 10, syntax-valid 9, build-succeeded 1
+Fitness: max 0.5(1), min 0.5(1), ave 0.5
+----------------------------------------------------------------
+
+2019-04-14 14:03:38 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-04-14 14:03:39 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 seconds
+Variants: generated 10, syntax-valid 5, build-succeeded 0
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-04-14 14:03:39 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-04-14 14:03:39 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 seconds
+Variants: generated 10, syntax-valid 8, build-succeeded 1
+Fitness: max 0.5(1), min 0.5(1), ave 0.5
+----------------------------------------------------------------
+
+2019-04-14 14:03:39 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-04-14 14:03:39 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 10, syntax-valid 7, build-succeeded 1
+Fitness: max 0.5(1), min 0.5(1), ave 0.5
+----------------------------------------------------------------
+
+2019-04-14 14:03:39 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+Exception in thread "main" java.lang.NullPointerException
+	at jp.kusumotolab.kgenprog.ga.crossover.SecondVariantTestComplementaryBasedSelection.lambda$getSuccessedNumber$3(SecondVariantTestComplementaryBasedSelection.java:52)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:174)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.LongPipeline.reduce(LongPipeline.java:438)
+	at java.util.stream.LongPipeline.sum(LongPipeline.java:396)
+	at java.util.stream.ReferencePipeline.count(ReferencePipeline.java:526)
+	at jp.kusumotolab.kgenprog.ga.crossover.SecondVariantTestComplementaryBasedSelection.getSuccessedNumber(SecondVariantTestComplementaryBasedSelection.java:53)
+	at jp.kusumotolab.kgenprog.ga.crossover.SecondVariantTestComplementaryBasedSelection.lambda$exec$1(SecondVariantTestComplementaryBasedSelection.java:39)
+	at java.util.Comparator.lambda$comparingLong$6043328a$1(Comparator.java:511)
+	at java.util.Collections$ReverseComparator2.compare(Collections.java:5178)
+	at java.util.Comparator.lambda$thenComparing$36697e65$1(Comparator.java:216)
+	at java.util.Collections$ReverseComparator2.compare(Collections.java:5178)
+	at java.util.TimSort.countRunAndMakeAscending(TimSort.java:355)
+	at java.util.TimSort.sort(TimSort.java:220)
+	at java.util.Arrays.sort(Arrays.java:1512)
+	at java.util.ArrayList.sort(ArrayList.java:1462)
+	at java.util.Collections.sort(Collections.java:175)
+	at jp.kusumotolab.kgenprog.ga.crossover.SecondVariantTestComplementaryBasedSelection.exec(SecondVariantTestComplementaryBasedSelection.java:43)
+	at jp.kusumotolab.kgenprog.ga.crossover.UniformCrossover.makeVariants(UniformCrossover.java:34)
+	at jp.kusumotolab.kgenprog.ga.crossover.CrossoverAdaptor.exec(CrossoverAdaptor.java:57)
+	at jp.kusumotolab.kgenprog.KGenProgMain.run(KGenProgMain.java:83)
+	at jp.kusumotolab.kgenprog.CUILauncher.launch(CUILauncher.java:65)
+	at jp.kusumotolab.kgenprog.CUILauncher.main(CUILauncher.java:30)
+
+real 9.340
+user 59.345
+sys  0.904

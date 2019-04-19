@@ -1,0 +1,220 @@
+Sun Apr 14 14:03:40 UTC 2019
+/opt/apr-data/example/math080
+java -jar /opt/apr-data/bin/kgp.jar -r ./ -s src/main/java -t src/test/java -x org.apache.commons.math.linear.EigenDecompositionImplTest --time-limit 1800 --test-time-limit 3 --max-generation 10000 --headcount 5 --mutation-generating-count 20 --crossover-generating-count 0 --crossover-type=Random --crossover-first-variant=Random --crossover-second-variant=Random --random-seed 1 -o /opt/apr-data/tmp
+2019-04-14 14:03:40 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = [org.apache.commons.math.linear.EigenDecompositionImplTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 20
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 10000
+timeLimit = PT30M
+testTimeLimit = PT3S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 1
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/example/math080
+================================================================
+2019-04-14 14:03:47 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-04-14 14:03:52 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 seconds
+Variants: generated 20, syntax-valid 18, build-succeeded 4
+Fitness: max 0.9444444444444444(3), min 0.6111111111111112(1), ave 0.8611111111111112
+----------------------------------------------------------------
+
+2019-04-14 14:03:52 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-04-14 14:03:59 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 11 seconds
+Variants: generated 20, syntax-valid 17, build-succeeded 5
+Fitness: max 0.9444444444444444(2), min 0.05555555555555555(1), ave 0.6666666666666667
+----------------------------------------------------------------
+
+2019-04-14 14:03:59 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-04-14 14:04:03 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 15 seconds
+Variants: generated 20, syntax-valid 16, build-succeeded 3
+Fitness: max 0.9444444444444444(2), min 0.5(1), ave 0.7962962962962963
+----------------------------------------------------------------
+
+2019-04-14 14:04:03 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-04-14 14:04:12 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 24 seconds
+Variants: generated 20, syntax-valid 15, build-succeeded 5
+Fitness: max 0.9444444444444444(4), min 0.8333333333333334(1), ave 0.9222222222222222
+----------------------------------------------------------------
+
+2019-04-14 14:04:12 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-04-14 14:04:16 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 28 seconds
+Variants: generated 20, syntax-valid 18, build-succeeded 4
+Fitness: max 0.9444444444444444(3), min 0.6111111111111112(1), ave 0.8611111111111112
+----------------------------------------------------------------
+
+2019-04-14 14:04:16 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-04-14 14:04:25 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 37 seconds
+Variants: generated 20, syntax-valid 14, build-succeeded 5
+Fitness: max 0.9444444444444444(5), min 0.9444444444444444(5), ave 0.9444444444444444
+----------------------------------------------------------------
+
+2019-04-14 14:04:25 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-04-14 14:04:32 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 45 seconds
+Variants: generated 20, syntax-valid 18, build-succeeded 7
+Fitness: max 0.9444444444444444(5), min 0.5(2), ave 0.8174603174603174
+----------------------------------------------------------------
+
+2019-04-14 14:04:32 [main] [INFO]  KGenProgMain - entered the era of 8th generation.
+2019-04-14 14:05:09 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 21 seconds
+Variants: generated 20, syntax-valid 18, build-succeeded 6
+Fitness: max 0.9444444444444444(5), min 0.4444444444444444(1), ave 0.861111111111111
+----------------------------------------------------------------
+
+2019-04-14 14:05:09 [main] [INFO]  KGenProgMain - entered the era of 9th generation.
+2019-04-14 14:05:41 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 54 seconds
+Variants: generated 20, syntax-valid 17, build-succeeded 1
+Fitness: max 0.4444444444444444(1), min 0.4444444444444444(1), ave 0.4444444444444444
+----------------------------------------------------------------
+
+2019-04-14 14:05:41 [main] [INFO]  KGenProgMain - entered the era of 10th generation.
+2019-04-14 14:05:48 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 0 seconds
+Variants: generated 20, syntax-valid 17, build-succeeded 7
+Fitness: max 0.9444444444444444(3), min 0.5(1), ave 0.7857142857142857
+----------------------------------------------------------------
+
+2019-04-14 14:05:48 [main] [INFO]  KGenProgMain - entered the era of 11th generation.
+2019-04-14 14:05:53 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 5 seconds
+Variants: generated 20, syntax-valid 17, build-succeeded 4
+Fitness: max 0.9444444444444444(3), min 0.6111111111111112(1), ave 0.8611111111111112
+----------------------------------------------------------------
+
+2019-04-14 14:05:53 [main] [INFO]  KGenProgMain - entered the era of 12th generation.
+2019-04-14 14:05:57 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 10 seconds
+Variants: generated 20, syntax-valid 17, build-succeeded 4
+Fitness: max 0.9444444444444444(1), min 0.5(2), ave 0.6944444444444444
+----------------------------------------------------------------
+
+2019-04-14 14:05:57 [main] [INFO]  KGenProgMain - entered the era of 13th generation.
+2019-04-14 14:06:04 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 16 seconds
+Variants: generated 20, syntax-valid 15, build-succeeded 6
+Fitness: max 1.0(1), min 0.8888888888888888(1), ave 0.9444444444444443
+----------------------------------------------------------------
+
+2019-04-14 14:06:04 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-04-14 14:06:04 [main] [INFO]  KGenProgMain - GA stopped at the era of 13th generation.
+2019-04-14 14:06:04 [main] [INFO]  Patch - 
+--- org.apache.commons.math.linear.AbstractRealMatrix
++++ org.apache.commons.math.linear.AbstractRealMatrix
+@@ -63,7 +63,6 @@
+                     "invalid column dimension {0} (must be positive)",
+                     columnDimension);
+         }
+-        lu = null;
+     }
+ 
+     /** {@inheritDoc} */
+2019-04-14 14:06:04 [main] [INFO]  Patch - 
+--- org.apache.commons.math.linear.EigenDecompositionImpl
++++ org.apache.commons.math.linear.EigenDecompositionImpl
+@@ -868,7 +868,6 @@
+             i0 = 0;
+             for (int i = 4 * (n0 - 2); i >= 0; i -= 4) {
+                 if (work[i + 2] <= 0) {
+-                    i0 = 1 + i / 4;
+                     break;
+                 }
+                 if (diagMin >= 4 * offDiagMax) {
+@@ -1136,8 +1135,6 @@
+             for (int i = 0; i < j; i += 4) {
+                 for (int k = 0; k < 4; k += step) {
+                     final double tmp = work[i + k];
+-                    work[i + k] = work[j - k];
+-                    work[j - k] = tmp;
+                 }
+                 j -= 4;
+             }
+@@ -1365,9 +1362,6 @@
+                     final double tmp = work[j4 + 2] / work[j4 - 3];
+                     work[j4 - 1] = work[j4] * tmp;
+                     d *= tmp;
+-                } else {
+-                    work[j4 - 1] = work[j4 + 2] * (work[j4] / work[j4 - 3]);
+-                    d *= work[j4 + 2] / work[j4 - 3];
+                 }
+                 dMin = Math.min(dMin, d);
+                 eMin = Math.min(eMin, work[j4 - 1]);
+@@ -1382,7 +1376,6 @@
+         work[j4 - 2] = dN2 + work[j4p2];
+         if (work[j4 - 2] == 0.0) {
+             work[j4] = 0.0;
+-            dN1  = work[j4p2 + 2];
+             dMin = dN1;
+             eMin = 0.0;
+         } else if ((MathUtils.SAFE_MIN * work[j4p2 + 2] < work[j4 - 2]) &&
+@@ -1403,7 +1396,6 @@
+         if (work[j4 - 2] == 0.0) {
+             work[j4] = 0.0;
+             dN   = work[j4p2 + 2];
+-            dMin = dN;
+             eMin = 0.0;
+         } else if ((MathUtils.SAFE_MIN * work[j4p2 + 2] < work[j4 - 2]) &&
+                    (MathUtils.SAFE_MIN * work[j4 - 2] < work[j4p2 + 2])) {
+@@ -1541,25 +1533,7 @@
+                 double a2 = (work[np - 8] / b2) * (1 + work[np - 4] / b1);
+ 
+                 // approximate contribution to norm squared from i < nn-2.
+-                if (end - start > 3) {
+-                    b2 = work[nn - 13] / work[nn - 15];
+-                    a2 = a2 + b2;
+-                    for (int i4 = nn - 17; i4 >= 4 * start + 2 + pingPong; i4 -= 4) {
+-                        if (b2 == 0.0) {
+-                            break;
+-                        }
+-                        b1 = b2;
+-                        if (work[i4]  >  work[i4 - 2]) {
+-                            return;
+-                        }
+-                        b2 = b2 * (work[i4] / work[i4 - 2]);
+-                        a2 = a2 + b2;
+-                        if (100 * Math.max(b2, b1) < a2 || cnst1 < a2)  {
+-                            break;
+-                        }
+-                    }
+-                    a2 = cnst3 * a2;
+-                }
++                if (end - start > 3)
+ 
+                 if (a2 < cnst1) {
+                     tau = gam * (1 - Math.sqrt(a2)) / (1 + a2);
+2019-04-14 14:06:04 [main] [INFO]  KGenProgMain - execution time: 2 minutes 16 seconds
+
+real 143.865
+user 227.601
+sys  2.477
