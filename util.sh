@@ -281,22 +281,22 @@ _run_kgp_crossover_all() {
     _run_kgp_crossover $1 $2 $3 10 10 Random Random GeneSimilarity
     _run_kgp_crossover $1 $2 $3 10 10 Random Random Random
     _run_kgp_crossover $1 $2 $3 10 10 Random Random TestComplementary
-    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Elite Elite
-    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Elite GeneSimilarity
-    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Elite Random
-    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Elite TestComplementary
-    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Random Elite
-    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Random GeneSimilarity
-    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Random Random
-    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Random TestComplementary
-    _run_kgp_crossover $1 $2 $3 10 10 Uniform Elite Elite
-    _run_kgp_crossover $1 $2 $3 10 10 Uniform Elite GeneSimilarity
-    _run_kgp_crossover $1 $2 $3 10 10 Uniform Elite Random
-    _run_kgp_crossover $1 $2 $3 10 10 Uniform Elite TestComplementary
-    _run_kgp_crossover $1 $2 $3 10 10 Uniform Random Elite
-    _run_kgp_crossover $1 $2 $3 10 10 Uniform Random GeneSimilarity
-    _run_kgp_crossover $1 $2 $3 10 10 Uniform Random Random
-    _run_kgp_crossover $1 $2 $3 10 10 Uniform Random TestComplementary
+#    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Elite Elite
+#    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Elite GeneSimilarity
+#    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Elite Random
+#    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Elite TestComplementary
+#    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Random Elite
+#    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Random GeneSimilarity
+#    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Random Random
+#    _run_kgp_crossover $1 $2 $3 10 10 SinglePoint Random TestComplementary
+#    _run_kgp_crossover $1 $2 $3 10 10 Uniform Elite Elite
+#    _run_kgp_crossover $1 $2 $3 10 10 Uniform Elite GeneSimilarity
+#    _run_kgp_crossover $1 $2 $3 10 10 Uniform Elite Random
+#    _run_kgp_crossover $1 $2 $3 10 10 Uniform Elite TestComplementary
+#    _run_kgp_crossover $1 $2 $3 10 10 Uniform Random Elite
+#    _run_kgp_crossover $1 $2 $3 10 10 Uniform Random GeneSimilarity
+#    _run_kgp_crossover $1 $2 $3 10 10 Uniform Random Random
+#    _run_kgp_crossover $1 $2 $3 10 10 Uniform Random TestComplementary
 }
     
 _run_astor() {
