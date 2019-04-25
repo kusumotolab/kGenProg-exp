@@ -40,7 +40,7 @@ def extract_array(dir, apr, project, func, label):
         id, seed, mutationNum, crossoverNum, crossoverType, parent1Type, parent2Type = extract_various_data(file, project)
         #id, seed = extract_id_seed(file, project)
         extract_data = func(file)
-        index = get_index(mutationNum, crossoverNum, crossoverType, parent1Type, parent2Type)
+        index = get_index(mutationNum, crossoverNum, crossoverType, parent1Type, parent2Type, seed)
         arr[id][index] = extract_data
 
     df = pd.DataFrame(arr)
@@ -49,32 +49,33 @@ def extract_array(dir, apr, project, func, label):
     df.columns = ["%s%d" % (label, i) for i in range(df.columns.size)]
     return df
 
-def get_index(mutationNum, crossoverNum, crossoverType, parent1Type, parent2Type):
-    if 0 == crossoverNum: return 0
-    elif 'Random' == crossoverType and 'Elite' == parent1Type and 'Elite' == parent2Type: return 1;
-    elif 'Random' == crossoverType and 'Elite' == parent1Type and 'GeneSimilarity' == parent2Type: return 2;
-    elif 'Random' == crossoverType and 'Elite' == parent1Type and 'Random' == parent2Type: return 3;
-    elif 'Random' == crossoverType and 'Elite' == parent1Type and 'TestComplementary' == parent2Type: return 4;
-    elif 'Random' == crossoverType and 'Random' == parent1Type and 'Elite' == parent2Type: return 5;
-    elif 'Random' == crossoverType and 'Random' == parent1Type and 'GeneSimilarity' == parent2Type: return 6;
-    elif 'Random' == crossoverType and 'Random' == parent1Type and 'Random' == parent2Type: return 7;
-    elif 'Random' == crossoverType and 'Random' == parent1Type and 'TestComplementary' == parent2Type: return 8;
-    elif 'SinglePoint' == crossoverType and 'Elite' == parent1Type and 'Elite' == parent2Type: return 9;
-    elif 'SinglePoint' == crossoverType and 'Elite' == parent1Type and 'GeneSimilarity' == parent2Type: return 10;
-    elif 'SinglePoint' == crossoverType and 'Elite' == parent1Type and 'Random' == parent2Type: return 11;
-    elif 'SinglePoint' == crossoverType and 'Elite' == parent1Type and 'TestComplementary' == parent2Type: return 12;
-    elif 'SinglePoint' == crossoverType and 'Random' == parent1Type and 'Elite' == parent2Type: return 13;
-    elif 'SinglePoint' == crossoverType and 'Random' == parent1Type and 'GeneSimilarity' == parent2Type: return 14;
-    elif 'SinglePoint' == crossoverType and 'Random' == parent1Type and 'Random' == parent2Type: return 15;
-    elif 'SinglePoint' == crossoverType and 'Random' == parent1Type and 'TestComplementary' == parent2Type: return 16;
-    elif 'Uniform' == crossoverType and 'Elite' == parent1Type and 'Elite' == parent2Type: return 17;
-    elif 'Uniform' == crossoverType and 'Elite' == parent1Type and 'GeneSimilarity' == parent2Type: return 18;
-    elif 'Uniform' == crossoverType and 'Elite' == parent1Type and 'Random' == parent2Type: return 19;
-    elif 'Uniform' == crossoverType and 'Elite' == parent1Type and 'TestComplementary' == parent2Type: return 20;
-    elif 'Uniform' == crossoverType and 'Random' == parent1Type and 'Elite' == parent2Type: return 21;
-    elif 'Uniform' == crossoverType and 'Random' == parent1Type and 'GeneSimilarity' == parent2Type: return 22;
-    elif 'Uniform' == crossoverType and 'Random' == parent1Type and 'Random' == parent2Type: return 23;
-    elif 'Uniform' == crossoverType and 'Random' == parent1Type and 'TestComplementary' == parent2Type: return 24;
+def get_index(mutationNum, crossoverNum, crossoverType, parent1Type, parent2Type, seed):
+    box = (seed - 1) * 9;
+    if 0 == crossoverNum: return 0 + box
+    elif 'Random' == crossoverType and 'Elite' == parent1Type and 'Elite' == parent2Type: return 1 + box;
+    elif 'Random' == crossoverType and 'Elite' == parent1Type and 'GeneSimilarity' == parent2Type: return 2  + box;
+    elif 'Random' == crossoverType and 'Elite' == parent1Type and 'Random' == parent2Type: return 3  + box;
+    elif 'Random' == crossoverType and 'Elite' == parent1Type and 'TestComplementary' == parent2Type: return 4  + box;
+    elif 'Random' == crossoverType and 'Random' == parent1Type and 'Elite' == parent2Type: return 5  + box;
+    elif 'Random' == crossoverType and 'Random' == parent1Type and 'GeneSimilarity' == parent2Type: return 6  + box;
+    elif 'Random' == crossoverType and 'Random' == parent1Type and 'Random' == parent2Type: return 7  + box;
+    elif 'Random' == crossoverType and 'Random' == parent1Type and 'TestComplementary' == parent2Type: return 8  + box;
+#    elif 'SinglePoint' == crossoverType and 'Elite' == parent1Type and 'Elite' == parent2Type: return 9;
+#    elif 'SinglePoint' == crossoverType and 'Elite' == parent1Type and 'GeneSimilarity' == parent2Type: return 10;
+#    elif 'SinglePoint' == crossoverType and 'Elite' == parent1Type and 'Random' == parent2Type: return 11;
+#    elif 'SinglePoint' == crossoverType and 'Elite' == parent1Type and 'TestComplementary' == parent2Type: return 12;
+#    elif 'SinglePoint' == crossoverType and 'Random' == parent1Type and 'Elite' == parent2Type: return 13;
+#    elif 'SinglePoint' == crossoverType and 'Random' == parent1Type and 'GeneSimilarity' == parent2Type: return 14;
+#    elif 'SinglePoint' == crossoverType and 'Random' == parent1Type and 'Random' == parent2Type: return 15;
+#    elif 'SinglePoint' == crossoverType and 'Random' == parent1Type and 'TestComplementary' == parent2Type: return 16;
+#    elif 'Uniform' == crossoverType and 'Elite' == parent1Type and 'Elite' == parent2Type: return 17;
+#    elif 'Uniform' == crossoverType and 'Elite' == parent1Type and 'GeneSimilarity' == parent2Type: return 18;
+#    elif 'Uniform' == crossoverType and 'Elite' == parent1Type and 'Random' == parent2Type: return 19;
+#    elif 'Uniform' == crossoverType and 'Elite' == parent1Type and 'TestComplementary' == parent2Type: return 20;
+#    elif 'Uniform' == crossoverType and 'Random' == parent1Type and 'Elite' == parent2Type: return 21;
+#    elif 'Uniform' == crossoverType and 'Random' == parent1Type and 'GeneSimilarity' == parent2Type: return 22;
+#    elif 'Uniform' == crossoverType and 'Random' == parent1Type and 'Random' == parent2Type: return 23;
+#    elif 'Uniform' == crossoverType and 'Random' == parent1Type and 'TestComplementary' == parent2Type: return 24;
     else:
         print('error')
         return 100
@@ -84,7 +85,7 @@ def create_2d_array(dir, apr, project):
     list_filtered_files(dir, apr, project)
 
     maxId = 0
-    maxSeed = 24
+    maxSeed = 36
 
     files = list_filtered_files(dir, apr, project)
     for file in files:
