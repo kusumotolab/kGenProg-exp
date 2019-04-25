@@ -1,0 +1,488 @@
+Sun Apr 21 06:09:06 UTC 2019
+/opt/apr-data/example/math006
+java -jar /opt/apr-data/bin/kgp.jar -r ./ -s src/main/java -t src/test/java -x org.apache.commons.math3.optim.nonlinear.scalar.gradient.NonLinearConjugateGradientOptimizerTest -x org.apache.commons.math3.optim.nonlinear.scalar.noderiv.CMAESOptimizerTest -x org.apache.commons.math3.optim.nonlinear.scalar.noderiv.PowellOptimizerTest -x org.apache.commons.math3.optim.nonlinear.scalar.noderiv.SimplexOptimizerMultiDirectionalTest -x org.apache.commons.math3.optim.nonlinear.scalar.noderiv.SimplexOptimizerNelderMeadTest -x org.apache.commons.math3.optim.nonlinear.vector.jacobian.GaussNewtonOptimizerTest -x org.apache.commons.math3.optim.nonlinear.vector.jacobian.LevenbergMarquardtOptimizerTest --time-limit 1800 --test-time-limit 3 --max-generation 10000 --headcount 5 --mutation-generating-count 10 --crossover-generating-count 10 --crossover-type=Random --crossover-first-variant=Elite --crossover-second-variant=TestComplementary --random-seed 3 -o /opt/apr-data/tmp
+2019-04-21 06:09:07 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = [org.apache.commons.math3.optim.nonlinear.scalar.gradient.NonLinearConjugateGradientOptimizerTest, org.apache.commons.math3.optim.nonlinear.scalar.noderiv.CMAESOptimizerTest, org.apache.commons.math3.optim.nonlinear.scalar.noderiv.PowellOptimizerTest, org.apache.commons.math3.optim.nonlinear.scalar.noderiv.SimplexOptimizerMultiDirectionalTest, org.apache.commons.math3.optim.nonlinear.scalar.noderiv.SimplexOptimizerNelderMeadTest, org.apache.commons.math3.optim.nonlinear.vector.jacobian.GaussNewtonOptimizerTest, org.apache.commons.math3.optim.nonlinear.vector.jacobian.LevenbergMarquardtOptimizerTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 10
+headcount = 5
+maxGeneration = 10000
+timeLimit = PT30M
+testTimeLimit = PT3S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 3
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Elite
+secondVariantSelectionStrategy = TestComplementary
+currentDirectory = /opt/apr-data/example/math006
+================================================================
+2019-04-21 06:09:26 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-04-21 06:09:53 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 26 seconds
+Variants: generated 10, syntax-valid 8, build-succeeded 2
+Fitness: max 0.6952380952380952(2), min 0.6952380952380952(2), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:09:53 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-04-21 06:09:58 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 32 seconds
+Variants: generated 10, syntax-valid 8, build-succeeded 0
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-04-21 06:09:58 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-04-21 06:09:58 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 32 seconds
+Variants: generated 10, syntax-valid 8, build-succeeded 0
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-04-21 06:09:58 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-04-21 06:10:11 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 45 seconds
+Variants: generated 20, syntax-valid 10, build-succeeded 1
+Fitness: max 0.6952380952380952(1), min 0.6952380952380952(1), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:10:11 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-04-21 06:10:14 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 48 seconds
+Variants: generated 20, syntax-valid 8, build-succeeded 0
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-04-21 06:10:14 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-04-21 06:10:15 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 48 seconds
+Variants: generated 20, syntax-valid 9, build-succeeded 0
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-04-21 06:10:15 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-04-21 06:10:27 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 1 seconds
+Variants: generated 20, syntax-valid 10, build-succeeded 1
+Fitness: max 0.6952380952380952(1), min 0.6952380952380952(1), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:10:27 [main] [INFO]  KGenProgMain - entered the era of 8th generation.
+2019-04-21 06:10:39 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 13 seconds
+Variants: generated 20, syntax-valid 8, build-succeeded 1
+Fitness: max 0.6952380952380952(1), min 0.6952380952380952(1), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:10:39 [main] [INFO]  KGenProgMain - entered the era of 9th generation.
+2019-04-21 06:11:07 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 41 seconds
+Variants: generated 20, syntax-valid 8, build-succeeded 2
+Fitness: max 0.6952380952380952(2), min 0.6952380952380952(2), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:11:07 [main] [INFO]  KGenProgMain - entered the era of 10th generation.
+2019-04-21 06:11:46 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 19 seconds
+Variants: generated 20, syntax-valid 10, build-succeeded 3
+Fitness: max 0.6952380952380952(3), min 0.6952380952380952(3), ave 0.6952380952380951
+----------------------------------------------------------------
+
+2019-04-21 06:11:46 [main] [INFO]  KGenProgMain - entered the era of 11th generation.
+2019-04-21 06:12:35 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 9 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 4
+Fitness: max 0.6952380952380952(3), min 0.6857142857142857(1), ave 0.6928571428571428
+----------------------------------------------------------------
+
+2019-04-21 06:12:35 [main] [INFO]  KGenProgMain - entered the era of 12th generation.
+2019-04-21 06:12:38 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 12 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 0
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-04-21 06:12:38 [main] [INFO]  KGenProgMain - entered the era of 13th generation.
+2019-04-21 06:12:38 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 12 seconds
+Variants: generated 20, syntax-valid 6, build-succeeded 0
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-04-21 06:12:38 [main] [INFO]  KGenProgMain - entered the era of 14th generation.
+2019-04-21 06:12:52 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 25 seconds
+Variants: generated 20, syntax-valid 10, build-succeeded 1
+Fitness: max 0.6952380952380952(1), min 0.6952380952380952(1), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:12:52 [main] [INFO]  KGenProgMain - entered the era of 15th generation.
+2019-04-21 06:13:18 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 52 seconds
+Variants: generated 20, syntax-valid 10, build-succeeded 2
+Fitness: max 0.6952380952380952(2), min 0.6952380952380952(2), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:13:18 [main] [INFO]  KGenProgMain - entered the era of 16th generation.
+2019-04-21 06:13:36 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 minutes 9 seconds
+Variants: generated 20, syntax-valid 8, build-succeeded 1
+Fitness: max 0.6952380952380952(1), min 0.6952380952380952(1), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:13:36 [main] [INFO]  KGenProgMain - entered the era of 17th generation.
+2019-04-21 06:13:50 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 minutes 24 seconds
+Variants: generated 20, syntax-valid 10, build-succeeded 1
+Fitness: max 0.6952380952380952(1), min 0.6952380952380952(1), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:13:50 [main] [INFO]  KGenProgMain - entered the era of 18th generation.
+2019-04-21 06:14:54 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 minutes 27 seconds
+Variants: generated 20, syntax-valid 15, build-succeeded 5
+Fitness: max 0.6952380952380952(5), min 0.6952380952380952(5), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:14:54 [main] [INFO]  KGenProgMain - entered the era of 19th generation.
+2019-04-21 06:15:34 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 minutes 7 seconds
+Variants: generated 20, syntax-valid 12, build-succeeded 3
+Fitness: max 0.6952380952380952(3), min 0.6952380952380952(3), ave 0.6952380952380951
+----------------------------------------------------------------
+
+2019-04-21 06:15:34 [main] [INFO]  KGenProgMain - entered the era of 20th generation.
+2019-04-21 06:16:12 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 minutes 46 seconds
+Variants: generated 20, syntax-valid 7, build-succeeded 3
+Fitness: max 0.6952380952380952(3), min 0.6952380952380952(3), ave 0.6952380952380951
+----------------------------------------------------------------
+
+2019-04-21 06:16:12 [main] [INFO]  KGenProgMain - entered the era of 21st generation.
+2019-04-21 06:16:53 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 7 minutes 27 seconds
+Variants: generated 20, syntax-valid 12, build-succeeded 3
+Fitness: max 0.6952380952380952(3), min 0.6952380952380952(3), ave 0.6952380952380951
+----------------------------------------------------------------
+
+2019-04-21 06:16:53 [main] [INFO]  KGenProgMain - entered the era of 22nd generation.
+2019-04-21 06:17:19 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 7 minutes 52 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 2
+Fitness: max 0.6952380952380952(2), min 0.6952380952380952(2), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:17:19 [main] [INFO]  KGenProgMain - entered the era of 23rd generation.
+2019-04-21 06:17:50 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 8 minutes 24 seconds
+Variants: generated 20, syntax-valid 12, build-succeeded 3
+Fitness: max 0.6952380952380952(3), min 0.6952380952380952(3), ave 0.6952380952380951
+----------------------------------------------------------------
+
+2019-04-21 06:17:50 [main] [INFO]  KGenProgMain - entered the era of 24th generation.
+2019-04-21 06:18:15 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 8 minutes 49 seconds
+Variants: generated 20, syntax-valid 12, build-succeeded 2
+Fitness: max 0.6952380952380952(1), min 0.6476190476190476(1), ave 0.6714285714285715
+----------------------------------------------------------------
+
+2019-04-21 06:18:15 [main] [INFO]  KGenProgMain - entered the era of 25th generation.
+2019-04-21 06:18:51 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 minutes 25 seconds
+Variants: generated 20, syntax-valid 12, build-succeeded 3
+Fitness: max 0.6952380952380952(2), min 0.6666666666666666(1), ave 0.6857142857142856
+----------------------------------------------------------------
+
+2019-04-21 06:18:51 [main] [INFO]  KGenProgMain - entered the era of 26th generation.
+2019-04-21 06:19:50 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 minutes 24 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 5
+Fitness: max 0.6952380952380952(5), min 0.6952380952380952(5), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:19:50 [main] [INFO]  KGenProgMain - entered the era of 27th generation.
+2019-04-21 06:20:22 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 minutes 56 seconds
+Variants: generated 20, syntax-valid 12, build-succeeded 3
+Fitness: max 0.6952380952380952(3), min 0.6952380952380952(3), ave 0.6952380952380951
+----------------------------------------------------------------
+
+2019-04-21 06:20:22 [main] [INFO]  KGenProgMain - entered the era of 28th generation.
+2019-04-21 06:20:36 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 11 minutes 10 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 1
+Fitness: max 0.6952380952380952(1), min 0.6952380952380952(1), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:20:36 [main] [INFO]  KGenProgMain - entered the era of 29th generation.
+2019-04-21 06:21:07 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 11 minutes 41 seconds
+Variants: generated 20, syntax-valid 8, build-succeeded 3
+Fitness: max 0.6952380952380952(3), min 0.6952380952380952(3), ave 0.6952380952380951
+----------------------------------------------------------------
+
+2019-04-21 06:21:07 [main] [INFO]  KGenProgMain - entered the era of 30th generation.
+2019-04-21 06:21:52 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 12 minutes 25 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 4
+Fitness: max 0.6952380952380952(4), min 0.6952380952380952(4), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:21:52 [main] [INFO]  KGenProgMain - entered the era of 31st generation.
+2019-04-21 06:22:25 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 12 minutes 59 seconds
+Variants: generated 20, syntax-valid 9, build-succeeded 3
+Fitness: max 0.6952380952380952(3), min 0.6952380952380952(3), ave 0.6952380952380951
+----------------------------------------------------------------
+
+2019-04-21 06:22:25 [main] [INFO]  KGenProgMain - entered the era of 32nd generation.
+2019-04-21 06:23:03 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 13 minutes 37 seconds
+Variants: generated 20, syntax-valid 10, build-succeeded 4
+Fitness: max 0.6952380952380952(4), min 0.6952380952380952(4), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:23:03 [main] [INFO]  KGenProgMain - entered the era of 33rd generation.
+2019-04-21 06:23:36 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 14 minutes 9 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 3
+Fitness: max 0.6952380952380952(3), min 0.6952380952380952(3), ave 0.6952380952380951
+----------------------------------------------------------------
+
+2019-04-21 06:23:36 [main] [INFO]  KGenProgMain - entered the era of 34th generation.
+2019-04-21 06:24:01 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 14 minutes 35 seconds
+Variants: generated 20, syntax-valid 9, build-succeeded 2
+Fitness: max 0.6952380952380952(2), min 0.6952380952380952(2), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:24:01 [main] [INFO]  KGenProgMain - entered the era of 35th generation.
+2019-04-21 06:24:25 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 14 minutes 58 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 2
+Fitness: max 0.6952380952380952(2), min 0.6952380952380952(2), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:24:25 [main] [INFO]  KGenProgMain - entered the era of 36th generation.
+2019-04-21 06:24:36 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 15 minutes 10 seconds
+Variants: generated 20, syntax-valid 9, build-succeeded 1
+Fitness: max 0.6571428571428571(1), min 0.6571428571428571(1), ave 0.6571428571428571
+----------------------------------------------------------------
+
+2019-04-21 06:24:36 [main] [INFO]  KGenProgMain - entered the era of 37th generation.
+2019-04-21 06:25:03 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 15 minutes 37 seconds
+Variants: generated 20, syntax-valid 10, build-succeeded 3
+Fitness: max 0.6952380952380952(3), min 0.6952380952380952(3), ave 0.6952380952380951
+----------------------------------------------------------------
+
+2019-04-21 06:25:03 [main] [INFO]  KGenProgMain - entered the era of 38th generation.
+2019-04-21 06:25:42 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 16 minutes 16 seconds
+Variants: generated 20, syntax-valid 19, build-succeeded 4
+Fitness: max 0.6952380952380952(3), min 0.6761904761904762(1), ave 0.6904761904761905
+----------------------------------------------------------------
+
+2019-04-21 06:25:42 [main] [INFO]  KGenProgMain - entered the era of 39th generation.
+2019-04-21 06:26:05 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 16 minutes 39 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 2
+Fitness: max 0.6952380952380952(2), min 0.6952380952380952(2), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:26:05 [main] [INFO]  KGenProgMain - entered the era of 40th generation.
+2019-04-21 06:26:43 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 17 minutes 17 seconds
+Variants: generated 20, syntax-valid 12, build-succeeded 4
+Fitness: max 0.6952380952380952(4), min 0.6952380952380952(4), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:26:43 [main] [INFO]  KGenProgMain - entered the era of 41st generation.
+2019-04-21 06:27:17 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 17 minutes 51 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 3
+Fitness: max 0.6952380952380952(2), min 0.4666666666666667(1), ave 0.6190476190476191
+----------------------------------------------------------------
+
+2019-04-21 06:27:17 [main] [INFO]  KGenProgMain - entered the era of 42nd generation.
+2019-04-21 06:27:58 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 18 minutes 31 seconds
+Variants: generated 20, syntax-valid 15, build-succeeded 4
+Fitness: max 0.6952380952380952(4), min 0.6952380952380952(4), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:27:58 [main] [INFO]  KGenProgMain - entered the era of 43rd generation.
+2019-04-21 06:28:33 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 19 minutes 6 seconds
+Variants: generated 20, syntax-valid 8, build-succeeded 3
+Fitness: max 0.6952380952380952(2), min 0.6666666666666666(1), ave 0.6857142857142856
+----------------------------------------------------------------
+
+2019-04-21 06:28:33 [main] [INFO]  KGenProgMain - entered the era of 44th generation.
+2019-04-21 06:30:08 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 20 minutes 42 seconds
+Variants: generated 20, syntax-valid 15, build-succeeded 10
+Fitness: max 0.6952380952380952(9), min 0.6857142857142857(1), ave 0.6942857142857143
+----------------------------------------------------------------
+
+2019-04-21 06:30:08 [main] [INFO]  KGenProgMain - entered the era of 45th generation.
+2019-04-21 06:30:51 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 21 minutes 25 seconds
+Variants: generated 20, syntax-valid 12, build-succeeded 4
+Fitness: max 0.6952380952380952(4), min 0.6952380952380952(4), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:30:51 [main] [INFO]  KGenProgMain - entered the era of 46th generation.
+2019-04-21 06:31:35 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 22 minutes 8 seconds
+Variants: generated 20, syntax-valid 13, build-succeeded 4
+Fitness: max 0.6952380952380952(3), min 0.6666666666666666(1), ave 0.6880952380952381
+----------------------------------------------------------------
+
+2019-04-21 06:31:35 [main] [INFO]  KGenProgMain - entered the era of 47th generation.
+2019-04-21 06:32:14 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 22 minutes 48 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 4
+Fitness: max 0.6952380952380952(4), min 0.6952380952380952(4), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:32:14 [main] [INFO]  KGenProgMain - entered the era of 48th generation.
+2019-04-21 06:33:01 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 23 minutes 34 seconds
+Variants: generated 20, syntax-valid 13, build-succeeded 4
+Fitness: max 0.6952380952380952(4), min 0.6952380952380952(4), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:33:01 [main] [INFO]  KGenProgMain - entered the era of 49th generation.
+2019-04-21 06:34:04 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 24 minutes 38 seconds
+Variants: generated 20, syntax-valid 14, build-succeeded 6
+Fitness: max 0.6952380952380952(5), min 0.6857142857142857(1), ave 0.6936507936507935
+----------------------------------------------------------------
+
+2019-04-21 06:34:04 [main] [INFO]  KGenProgMain - entered the era of 50th generation.
+2019-04-21 06:34:56 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 25 minutes 30 seconds
+Variants: generated 20, syntax-valid 14, build-succeeded 5
+Fitness: max 0.6952380952380952(5), min 0.6952380952380952(5), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:34:56 [main] [INFO]  KGenProgMain - entered the era of 51st generation.
+2019-04-21 06:35:45 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 26 minutes 18 seconds
+Variants: generated 20, syntax-valid 15, build-succeeded 5
+Fitness: max 0.6952380952380952(5), min 0.6952380952380952(5), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:35:45 [main] [INFO]  KGenProgMain - entered the era of 52nd generation.
+2019-04-21 06:36:43 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 27 minutes 16 seconds
+Variants: generated 20, syntax-valid 15, build-succeeded 6
+Fitness: max 0.6952380952380952(4), min 0.6761904761904762(2), ave 0.6888888888888888
+----------------------------------------------------------------
+
+2019-04-21 06:36:43 [main] [INFO]  KGenProgMain - entered the era of 53rd generation.
+2019-04-21 06:37:22 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 27 minutes 56 seconds
+Variants: generated 20, syntax-valid 15, build-succeeded 4
+Fitness: max 0.6952380952380952(4), min 0.6952380952380952(4), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:37:22 [main] [INFO]  KGenProgMain - entered the era of 54th generation.
+2019-04-21 06:37:54 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 28 minutes 28 seconds
+Variants: generated 20, syntax-valid 15, build-succeeded 3
+Fitness: max 0.6952380952380952(3), min 0.6952380952380952(3), ave 0.6952380952380951
+----------------------------------------------------------------
+
+2019-04-21 06:37:54 [main] [INFO]  KGenProgMain - entered the era of 55th generation.
+2019-04-21 06:38:45 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 29 minutes 19 seconds
+Variants: generated 20, syntax-valid 15, build-succeeded 5
+Fitness: max 0.6952380952380952(4), min 0.6476190476190476(1), ave 0.6857142857142857
+----------------------------------------------------------------
+
+2019-04-21 06:38:45 [main] [INFO]  KGenProgMain - entered the era of 56th generation.
+2019-04-21 06:39:23 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 29 minutes 56 seconds
+Variants: generated 20, syntax-valid 13, build-succeeded 4
+Fitness: max 0.6952380952380952(3), min 0.6190476190476191(1), ave 0.6761904761904762
+----------------------------------------------------------------
+
+2019-04-21 06:39:23 [main] [INFO]  KGenProgMain - entered the era of 57th generation.
+2019-04-21 06:39:37 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 30 minutes 10 seconds
+Variants: generated 20, syntax-valid 9, build-succeeded 1
+Fitness: max 0.6952380952380952(1), min 0.6952380952380952(1), ave 0.6952380952380952
+----------------------------------------------------------------
+
+2019-04-21 06:39:37 [main] [INFO]  KGenProgMain - GA reached the time limit.
+2019-04-21 06:39:37 [main] [INFO]  KGenProgMain - GA stopped at the era of 57th generation.
+2019-04-21 06:39:37 [main] [INFO]  KGenProgMain - execution time: 30 minutes 10 seconds
+
+real 1830.723
+user 2439.111
+sys  14.414

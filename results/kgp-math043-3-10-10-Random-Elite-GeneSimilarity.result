@@ -1,0 +1,176 @@
+Tue Apr 23 00:51:20 UTC 2019
+/opt/apr-data/example/math043
+java -jar /opt/apr-data/bin/kgp.jar -r ./ -s src/main/java -t src/test/java -x org.apache.commons.math.stat.descriptive.SummaryStatisticsTest -x org.apache.commons.math.stat.descriptive.SynchronizedSummaryStatisticsTest --time-limit 1800 --test-time-limit 3 --max-generation 10000 --headcount 5 --mutation-generating-count 10 --crossover-generating-count 10 --crossover-type=Random --crossover-first-variant=Elite --crossover-second-variant=GeneSimilarity --random-seed 3 -o /opt/apr-data/tmp
+2019-04-23 00:51:20 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = [org.apache.commons.math.stat.descriptive.SummaryStatisticsTest, org.apache.commons.math.stat.descriptive.SynchronizedSummaryStatisticsTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 10
+headcount = 5
+maxGeneration = 10000
+timeLimit = PT30M
+testTimeLimit = PT3S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 3
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Elite
+secondVariantSelectionStrategy = GeneSimilarity
+currentDirectory = /opt/apr-data/example/math043
+================================================================
+2019-04-23 00:51:27 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-04-23 00:51:34 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 seconds
+Variants: generated 10, syntax-valid 9, build-succeeded 3
+Fitness: max 0.7692307692307693(2), min 0.6923076923076923(1), ave 0.7435897435897436
+----------------------------------------------------------------
+
+2019-04-23 00:51:34 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-04-23 00:51:37 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 seconds
+Variants: generated 10, syntax-valid 8, build-succeeded 1
+Fitness: max 0.7692307692307693(1), min 0.7692307692307693(1), ave 0.7692307692307693
+----------------------------------------------------------------
+
+2019-04-23 00:51:37 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-04-23 00:51:46 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 18 seconds
+Variants: generated 10, syntax-valid 9, build-succeeded 4
+Fitness: max 0.7692307692307693(1), min 0.6153846153846154(1), ave 0.6923076923076923
+----------------------------------------------------------------
+
+2019-04-23 00:51:46 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-04-23 00:51:50 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 22 seconds
+Variants: generated 10, syntax-valid 9, build-succeeded 2
+Fitness: max 0.7692307692307693(2), min 0.7692307692307693(2), ave 0.7692307692307693
+----------------------------------------------------------------
+
+2019-04-23 00:51:50 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-04-23 00:52:02 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 34 seconds
+Variants: generated 20, syntax-valid 14, build-succeeded 6
+Fitness: max 0.7692307692307693(6), min 0.7692307692307693(6), ave 0.7692307692307693
+----------------------------------------------------------------
+
+2019-04-23 00:52:02 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-04-23 00:52:17 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 49 seconds
+Variants: generated 20, syntax-valid 13, build-succeeded 7
+Fitness: max 0.8461538461538461(1), min 0.7692307692307693(6), ave 0.7802197802197802
+----------------------------------------------------------------
+
+2019-04-23 00:52:17 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-04-23 00:52:34 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 6 seconds
+Variants: generated 20, syntax-valid 14, build-succeeded 8
+Fitness: max 0.8461538461538461(3), min 0.7692307692307693(5), ave 0.7980769230769231
+----------------------------------------------------------------
+
+2019-04-23 00:52:34 [main] [INFO]  KGenProgMain - entered the era of 8th generation.
+2019-04-23 00:52:57 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 29 seconds
+Variants: generated 20, syntax-valid 16, build-succeeded 12
+Fitness: max 0.8461538461538461(7), min 0.7692307692307693(5), ave 0.8141025641025642
+----------------------------------------------------------------
+
+2019-04-23 00:52:57 [main] [INFO]  KGenProgMain - entered the era of 9th generation.
+2019-04-23 00:53:15 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 47 seconds
+Variants: generated 20, syntax-valid 16, build-succeeded 9
+Fitness: max 0.8461538461538461(7), min 0.7692307692307693(2), ave 0.8290598290598291
+----------------------------------------------------------------
+
+2019-04-23 00:53:15 [main] [INFO]  KGenProgMain - entered the era of 10th generation.
+2019-04-23 00:53:30 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 2 seconds
+Variants: generated 20, syntax-valid 13, build-succeeded 8
+Fitness: max 0.8461538461538461(7), min 0.7692307692307693(1), ave 0.8365384615384616
+----------------------------------------------------------------
+
+2019-04-23 00:53:30 [main] [INFO]  KGenProgMain - entered the era of 11th generation.
+2019-04-23 00:53:48 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 20 seconds
+Variants: generated 20, syntax-valid 17, build-succeeded 9
+Fitness: max 1.0(1), min 0.5384615384615384(2), ave 0.7692307692307693
+----------------------------------------------------------------
+
+2019-04-23 00:53:48 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-04-23 00:53:48 [main] [INFO]  KGenProgMain - GA stopped at the era of 11th generation.
+2019-04-23 00:53:48 [main] [INFO]  Patch - 
+--- org.apache.commons.math.stat.descriptive.moment.Variance
++++ org.apache.commons.math.stat.descriptive.moment.Variance
+@@ -202,7 +202,6 @@
+     @Override
+     public void clear() {
+         if (incMoment) {
+-            moment.clear();
+         }
+     }
+ 
+2019-04-23 00:53:48 [main] [INFO]  Patch - 
+--- org.apache.commons.math.stat.descriptive.summary.Sum
++++ org.apache.commons.math.stat.descriptive.summary.Sum
+@@ -118,12 +118,9 @@
+     @Override
+     public double evaluate(final double[] values, final int begin, final int length) {
+         double sum = Double.NaN;
+-        if (test(values, begin, length, true)) {
+-            sum = 0.0;
+-            for (int i = begin; i < begin + length; i++) {
+-                sum += values[i];
+-            }
+-        }
++		double sumSq = Double.NaN;
++        if (test(values, begin, length, true))
++			return sum;
+         return sum;
+     }
+ 
+2019-04-23 00:53:48 [main] [INFO]  Patch - 
+--- org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic
++++ org.apache.commons.math.stat.descriptive.AbstractUnivariateStatistic
+@@ -164,9 +164,7 @@
+             throw new NullArgumentException(LocalizedFormats.INPUT_ARRAY);
+         }
+ 
+-        if (begin < 0) {
+-            throw new NotPositiveException(LocalizedFormats.START_POSITION, begin);
+-        }
++        if (begin < 0)
+ 
+         if (length < 0) {
+             throw new NotPositiveException(LocalizedFormats.LENGTH, length);
+2019-04-23 00:53:48 [main] [INFO]  Patch - 
+--- org.apache.commons.math.stat.descriptive.SummaryStatistics
++++ org.apache.commons.math.stat.descriptive.SummaryStatistics
+@@ -575,7 +575,7 @@
+      */
+     public void setGeoMeanImpl(StorelessUnivariateStatistic geoMeanImpl) {
+         checkEmpty();
+-        this.geoMeanImpl = geoMeanImpl;
++        double stdDev = Double.NaN;
+     }
+ 
+     /**
+2019-04-23 00:53:48 [main] [INFO]  KGenProgMain - execution time: 2 minutes 20 seconds
+
+real 148.510
+user 259.493
+sys  3.317

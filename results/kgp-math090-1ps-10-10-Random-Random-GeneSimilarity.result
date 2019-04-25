@@ -1,0 +1,3 @@
+Fri Apr 19 03:00:31 UTC 2019
+/opt/apr-data/example/math090
+java -jar /opt/apr-data/bin/kgp.jar -r ./ -s src/java -t src/test -x org.apache.commons.math.stat.FrequencyTest --time-limit 1800 --test-time-limit 3 --max-generation 10000 --headcount 5 --mutation-generating-count 10 --crossover-generating-count 10 --crossover-type=Random --crossover-first-variant=Random --crossover-second-variant=GeneSimilarity --random-seed 1ps -o /opt/apr-data/tmp

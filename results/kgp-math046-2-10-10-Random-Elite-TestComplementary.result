@@ -1,0 +1,110 @@
+Mon Apr 22 23:54:29 UTC 2019
+/opt/apr-data/example/math046
+java -jar /opt/apr-data/bin/kgp.jar -r ./ -s src/main/java -t src/test/java -x org.apache.commons.math.complex.ComplexTest --time-limit 1800 --test-time-limit 3 --max-generation 10000 --headcount 5 --mutation-generating-count 10 --crossover-generating-count 10 --crossover-type=Random --crossover-first-variant=Elite --crossover-second-variant=TestComplementary --random-seed 2 -o /opt/apr-data/tmp
+2019-04-22 23:54:30 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = [org.apache.commons.math.complex.ComplexTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 10
+headcount = 5
+maxGeneration = 10000
+timeLimit = PT30M
+testTimeLimit = PT3S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 2
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Elite
+secondVariantSelectionStrategy = TestComplementary
+currentDirectory = /opt/apr-data/example/math046
+================================================================
+2019-04-22 23:54:41 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-04-22 23:55:08 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 27 seconds
+Variants: generated 10, syntax-valid 9, build-succeeded 4
+Fitness: max 0.9913793103448276(1), min 0.9568965517241379(1), ave 0.9741379310344828
+----------------------------------------------------------------
+
+2019-04-22 23:55:08 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-04-22 23:55:15 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 34 seconds
+Variants: generated 10, syntax-valid 8, build-succeeded 0
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-04-22 23:55:15 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-04-22 23:55:36 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 55 seconds
+Variants: generated 10, syntax-valid 8, build-succeeded 3
+Fitness: max 0.9913793103448276(1), min 0.9568965517241379(1), ave 0.9770114942528735
+----------------------------------------------------------------
+
+2019-04-22 23:55:36 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-04-22 23:55:38 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 57 seconds
+Variants: generated 20, syntax-valid 9, build-succeeded 0
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-04-22 23:55:38 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-04-22 23:56:04 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 23 seconds
+Variants: generated 20, syntax-valid 10, build-succeeded 4
+Fitness: max 0.9913793103448276(2), min 0.9741379310344828(2), ave 0.9827586206896552
+----------------------------------------------------------------
+
+2019-04-22 23:56:04 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-04-22 23:56:14 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 32 seconds
+Variants: generated 20, syntax-valid 10, build-succeeded 1
+Fitness: max 0.9827586206896551(1), min 0.9827586206896551(1), ave 0.9827586206896551
+----------------------------------------------------------------
+
+2019-04-22 23:56:14 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-04-22 23:56:46 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 4 seconds
+Variants: generated 20, syntax-valid 11, build-succeeded 5
+Fitness: max 1.0(1), min 0.9741379310344828(2), ave 0.9862068965517242
+----------------------------------------------------------------
+
+2019-04-22 23:56:46 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-04-22 23:56:46 [main] [INFO]  KGenProgMain - GA stopped at the era of 7th generation.
+2019-04-22 23:56:46 [main] [INFO]  Patch - 
+--- org.apache.commons.math.complex.Complex
++++ org.apache.commons.math.complex.Complex
+@@ -256,8 +256,6 @@
+         }
+ 
+         if (divisor.isZero) {
+-            // return isZero ? NaN : INF; // See MATH-657
+-            return isZero ? NaN : INF;
+         }
+ 
+         if (divisor.isInfinite() && !isInfinite()) {
+@@ -293,8 +291,7 @@
+             return NaN;
+         }
+         if (divisor == 0d) {
+-            // return isZero ? NaN : INF; // See MATH-657
+-            return isZero ? NaN : INF;
++            return NaN;
+         }
+         if (Double.isInfinite(divisor)) {
+             return !isInfinite() ? ZERO : NaN;
+2019-04-22 23:56:46 [main] [INFO]  KGenProgMain - execution time: 2 minutes 4 seconds
+
+real 136.449
+user 269.790
+sys  2.851
