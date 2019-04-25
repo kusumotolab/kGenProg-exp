@@ -13,7 +13,8 @@ def parse(dir, apr, project):
     n_build_succeeded_variants = extract_array(dir, apr, project, extract_n_build_succeeded_variants, "v-bs")
 
     print_arrays([status, \
-                  time, n_total_variants, \
+                  time, \
+                  n_total_variants, \
                   n_syntax_valid_variants, \
                   n_build_succeeded_variants])
 
@@ -27,9 +28,12 @@ def print_arrays(dfs):
         base = base.join(df)
         head.extend(list(df.columns.values))
 
+    # shrink empty lines
+    base = base[base["time0"] != ""]
+
     head = map(lambda h: re.sub('\d+$', '', h) ,head)
     print("", *head, sep='\t')
-    print(base[1:].to_csv(sep='\t'))
+    print(base.to_csv(sep='\t'))
 
 
 
