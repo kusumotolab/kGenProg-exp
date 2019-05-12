@@ -16,7 +16,9 @@ kgp_ver=exp-for-fse # 2019/02
 c_kgp_base=$base/c_kgp
 c_kgp_bin_from=$c_kgp_base/node/build/install/node # TODO
 c_kgp_bin=$base/bin/ # TODO
-c_kgp_ver=exp-for-fse # 2019/02
+# c_kgp_ver=tmp-debug # 2019/02
+c_kgp_ver=exp-for-fse # 2019/02 
+# c_kgp_ver=demo-for-fse # 2019/02
 
 # astor
 astor_base=$base/astor
@@ -36,10 +38,10 @@ tmp=$base/tmp
 
 # 実験の設定
 timelimit=1800
-mutation_generating_count=240
+mutation_generating_count=1000
 crossover_generating_count=0
-headcount=50
-max_generation=1000000000
+headcount=5
+max_generation=100000
 
 # to share repository caches
 export MAVEN_OPTS="-Dmaven.repo.local=$m2_repo"
@@ -50,7 +52,7 @@ export TIMEFORMAT=$'\nreal %3R\nuser %3U\nsys  %3S'
 
 # avoid confirmation
 alias cp='cp -f'
-
+alias client='$c_kgp_bin/node/bin/kGenProg-client'
 
 ################################################################################
 build() {
@@ -282,10 +284,10 @@ _run_c_kgp() {
                 random-seed = 0\n\
         		log-level = \"INFO\"\n\
                 out-dir = \"$tmp\"" > kgenprog.toml
-	cmd=$(echo $c_kgp_bin/node/bin/kGenProg-client  --host 172.17.100.14 --port 30080 --kgp-args \"--config kgenprog.toml\")
+	cmd=$(echo $c_kgp_bin/node/bin/kGenProg-client  --host 172.17.100.95 --port 30081 --kgp-args \"--config kgenprog.toml\")
         echo $cmd
-        echo $cmd | xargs timeout -k 60 2100 
-	
+        echo $cmd | xargs timeout -k 60 2100
+	mv build_time.log $out/c_kgp-build-time-$_target$_idz.result
     )) 2>&1 | tee $out/c_kgp-$_target$_idz.result
     sleep 300
     # -v
