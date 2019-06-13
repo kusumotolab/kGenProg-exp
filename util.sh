@@ -8,9 +8,9 @@ m2_repo=$base/.m2
 
 # kgp
 kgp_base=$base/kgp
-kgp_bin_from=$kgp_base/build/libs/kGenProg.jar
+kgp_bin_from=$kgp_base/build/libs/kGenProg-1.3.5.jar
 kgp_bin=$base/bin/kgp.jar
-kgp_ver=exp-for-journal # 2018/11
+kgp_ver=master # 2018/11
 
 # astor
 astor_base=$base/astor
@@ -27,6 +27,13 @@ d4j_bin=$d4j_base/framework/bin/defects4j
 example=$base/example
 out=$base/out
 tmp=$base/tmp
+
+# 実験の設定
+timelimit=1800
+mutation_generating_count=10
+crossover_generating_count=0
+headcount=5
+max_generation=10000
 
 # to share repository caches
 export MAVEN_OPTS="-Dmaven.repo.local=$m2_repo"
@@ -187,7 +194,6 @@ run() {
 _run_kgp() {
     _target=$1
     _id=$2
-    _seed=$3
 
     _idz=$(printf %03d $_id)
     _t=$example/$_target$_idz
@@ -197,24 +203,27 @@ _run_kgp() {
          echo $_t
 
          cd $_t
-         cmd=$(echo java -jar $kgp_bin \
-                    -r ./ \
-                    -s $(_get_d4j_param d4j.dir.src.classes) \
-                    -t $(_get_d4j_param d4j.dir.src.tests) \
-                    $(printf -- '-x %s ' $(_get_d4j_param d4j.tests.trigger)) \
-                    --time-limit 1800 \
-                    --test-time-limit 3 \
-                    --max-generation 10000 \
-                    --headcount 5 \
-                    --mutation-generating-count 10 \
-                    --crossover-generating-count 0 \
-                    --random-seed $_seed \
-                    -o $tmp
-            )
+	 
+    	echo -e "root-dir = \".\"\n\
+                src = [$(_get_d4j_params d4j.dir.src.classes)]\n\
+                test = [$(_get_d4j_params d4j.dir.src.tests)]\n\
+	        	cp = [\"/opt/apr-data/.m2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar\"]\n\
+                exec-test = [$(_get_d4j_params d4j.tests.trigger)]\n\
+                time-limit = $timelimit\n\
+                test-time-limit = 3\n\
+                max-generation = $max_generation\n\
+                headcount = $headcount\n\
+                mutation-generating-count = $mutation_generating_count\n\
+                crossover-generating-count = $crossover_generating_count\n\
+                random-seed = 0\n\
+        		log-level = \"INFO\"\n\
+                out-dir = \"$tmp\"" > kgenprog.toml
+         cmd=$(echo java -jar $kgp_bin --config kgenprog.toml)
+            
          echo $cmd
-         timeout 2100 $cmd
+         echo $cmd | xargs timeout 2400 
 
-     )) 2>&1 | tee $out/kgp-$_target$_idz-$_seed.result
+     )) 2>&1 | tee $out/kgp-$_target$_idz.result
 
     # -v
     # --random-seed 123
@@ -280,4 +289,18 @@ _get_d4j_param() {
 
     #     -i echo '"{}"'
 
+}
+
+_get_d4j_params() {
+    _key=$1
+    cat defects4j.build.properties \
+        | grep $_key \
+        | sed "s/$_key=\(.\+\)/\1/" \
+        | sed 's/,/\n/g' \
+        | sed "s/::.\+//" \
+        | sort \
+        | uniq \
+        | xargs -I% echo \"%\" \
+        | tr "\n" "," \
+        | sed 's/,$//g'
 }
