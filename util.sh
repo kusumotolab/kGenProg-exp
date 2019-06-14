@@ -251,7 +251,7 @@ _run_skgp() {
 	 
     	echo -e "root-dir = \".\"\n\
                 src = [$(_get_d4j_params d4j.dir.src.classes)]\n\
-                test = [$(_get_d4j_params d4j.dir.src.tests)]\n\
+                test = [$tests]\n\
 	        	cp = [\"/opt/apr-data/.m2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar\"]\n\
                 exec-test = [$(_get_d4j_params d4j.tests.trigger)]\n\
                 time-limit = $timelimit\n\
