@@ -25,7 +25,7 @@ d4j_bin=$d4j_base/framework/bin/defects4j
 
 # common
 ##########################
-user_home=/home/t-kuma
+user_home=/opt/t-kuma
 example=$user_home/example
 out=$user_home/out
 ##########################
