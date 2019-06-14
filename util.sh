@@ -24,8 +24,11 @@ d4j_ver=8a2bb51a58dc805496c3ba6b9f1240ac61e37f76
 d4j_bin=$d4j_base/framework/bin/defects4j
 
 # common
-example=$base/example
-out=$base/out
+##########################
+user_home=/home/t-kuma
+example=$user_home/example
+out=$user_home/out
+##########################
 tmp=$base/tmp
 
 # 実験の設定
@@ -181,7 +184,8 @@ run() {
     # 実行
     if [[ $_mode = "kgp" ]]; then
         _run_kgp $_target $_id $_seed
-
+    elif [[ $_mode = "skgp" ]]; then
+        _run_skgp $_target $_id $_seed
     elif [[ $_mode = "genp" ]]; then
         _run_astor $_target $_id $_seed jgenprog
 
@@ -224,6 +228,47 @@ _run_kgp() {
          echo $cmd | xargs timeout 2400 
 
      )) 2>&1 | tee $out/kgp-$_target$_idz.result
+
+    # -v
+    # --random-seed 123
+    # --crossover-generating-count 10
+}
+
+_run_skgp() {
+    _target=$1
+    _id=$2
+
+    _idz=$(printf %03d $_id)
+    _t=$example/$_target$_idz
+
+    (time (
+         date
+         echo $_t
+
+         cd $_t
+	 
+	 tests=Separated$(_get_d4j_params d4j.dir.src.tests)
+	 
+    	echo -e "root-dir = \".\"\n\
+                src = [$(_get_d4j_params d4j.dir.src.classes)]\n\
+                test = [$(_get_d4j_params d4j.dir.src.tests)]\n\
+	        	cp = [\"/opt/apr-data/.m2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar\"]\n\
+                exec-test = [$(_get_d4j_params d4j.tests.trigger)]\n\
+                time-limit = $timelimit\n\
+                test-time-limit = 3\n\
+                max-generation = $max_generation\n\
+                headcount = $headcount\n\
+                mutation-generating-count = $mutation_generating_count\n\
+                crossover-generating-count = $crossover_generating_count\n\
+                random-seed = 0\n\
+        		log-level = \"INFO\"\n\
+                out-dir = \"$tmp\"" > kgenprog.toml
+         cmd=$(echo java -jar $kgp_bin --config kgenprog.toml)
+            
+         echo $cmd
+         echo $cmd | xargs timeout 2400 
+
+     )) 2>&1 | tee $out/skgp-$_target$_idz.result
 
     # -v
     # --random-seed 123
