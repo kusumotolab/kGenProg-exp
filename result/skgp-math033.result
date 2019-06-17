@@ -1,0 +1,1854 @@
+Sat Jun 15 15:51:36 UTC 2019
+/opt/apr-data/t-kuma-example/math033
+java -jar /opt/apr-data/bin/kgp.jar --config kgenprog.toml
+2019-06-15 15:51:36 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = 
+executionTests = [org.apache.commons.math3.optimization.linear.SimplexSolverTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 10000
+timeLimit = PT30M
+testTimeLimit = PT3S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 0
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/t-kuma-example/math033
+================================================================
+2019-06-15 15:51:45 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-06-15 15:51:52 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 seconds
+Variants: generated 10, build-succeeded 1, build-failed 9, syntax-invalid 0, redundant 0
+Fitness: max 0.9404761904761905(1), min 0.9404761904761905(1), ave 0.9404761904761905
+----------------------------------------------------------------
+
+2019-06-15 15:51:52 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-06-15 15:52:03 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 17 seconds
+Variants: generated 10, build-succeeded 2, build-failed 6, syntax-invalid 1, redundant 1
+Fitness: max 0.9523809523809523(1), min 0.9285714285714286(1), ave 0.9404761904761905
+----------------------------------------------------------------
+
+2019-06-15 15:52:03 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-06-15 15:52:16 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 30 seconds
+Variants: generated 10, build-succeeded 2, build-failed 6, syntax-invalid 0, redundant 2
+Fitness: max 0.4166666666666667(1), min 0.35714285714285715(1), ave 0.3869047619047619
+----------------------------------------------------------------
+
+2019-06-15 15:52:16 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-06-15 15:52:33 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 47 seconds
+Variants: generated 10, build-succeeded 3, build-failed 5, syntax-invalid 0, redundant 2
+Fitness: max 0.9523809523809523(1), min 0.05952380952380952(1), ave 0.47222222222222215
+----------------------------------------------------------------
+
+2019-06-15 15:52:33 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-06-15 15:52:39 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 53 seconds
+Variants: generated 10, build-succeeded 1, build-failed 6, syntax-invalid 0, redundant 3
+Fitness: max 0.0(1), min 0.0(1), ave 0.0
+----------------------------------------------------------------
+
+2019-06-15 15:52:39 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-06-15 15:52:44 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 58 seconds
+Variants: generated 10, build-succeeded 1, build-failed 6, syntax-invalid 0, redundant 3
+Fitness: max 0.27380952380952384(1), min 0.27380952380952384(1), ave 0.27380952380952384
+----------------------------------------------------------------
+
+2019-06-15 15:52:44 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-06-15 15:52:55 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 9 seconds
+Variants: generated 10, build-succeeded 2, build-failed 7, syntax-invalid 0, redundant 1
+Fitness: max 0.38095238095238093(1), min 0.35714285714285715(1), ave 0.36904761904761907
+----------------------------------------------------------------
+
+2019-06-15 15:52:55 [main] [INFO]  KGenProgMain - entered the era of 8th generation.
+2019-06-15 15:53:05 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 19 seconds
+Variants: generated 10, build-succeeded 2, build-failed 7, syntax-invalid 0, redundant 1
+Fitness: max 0.9404761904761905(1), min 0.38095238095238093(1), ave 0.6607142857142857
+----------------------------------------------------------------
+
+2019-06-15 15:53:05 [main] [INFO]  KGenProgMain - entered the era of 9th generation.
+2019-06-15 15:53:11 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 25 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 0, redundant 2
+Fitness: max 0.011904761904761904(1), min 0.011904761904761904(1), ave 0.011904761904761904
+----------------------------------------------------------------
+
+2019-06-15 15:53:11 [main] [INFO]  KGenProgMain - entered the era of 10th generation.
+2019-06-15 15:53:16 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 31 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 0.4523809523809524(1), min 0.4523809523809524(1), ave 0.4523809523809524
+----------------------------------------------------------------
+
+2019-06-15 15:53:16 [main] [INFO]  KGenProgMain - entered the era of 11th generation.
+2019-06-15 15:53:23 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 37 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 0.2857142857142857(1), min 0.2857142857142857(1), ave 0.2857142857142857
+----------------------------------------------------------------
+
+2019-06-15 15:53:23 [main] [INFO]  KGenProgMain - entered the era of 12th generation.
+2019-06-15 15:53:42 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 56 seconds
+Variants: generated 10, build-succeeded 4, build-failed 5, syntax-invalid 0, redundant 1
+Fitness: max 0.9523809523809523(1), min 0.7142857142857143(1), ave 0.8660714285714286
+----------------------------------------------------------------
+
+2019-06-15 15:53:42 [main] [INFO]  KGenProgMain - entered the era of 13th generation.
+2019-06-15 15:53:54 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 8 seconds
+Variants: generated 10, build-succeeded 2, build-failed 4, syntax-invalid 0, redundant 4
+Fitness: max 0.9523809523809523(1), min 0.5238095238095238(1), ave 0.7380952380952381
+----------------------------------------------------------------
+
+2019-06-15 15:53:54 [main] [INFO]  KGenProgMain - entered the era of 14th generation.
+2019-06-15 15:54:04 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 18 seconds
+Variants: generated 10, build-succeeded 2, build-failed 4, syntax-invalid 0, redundant 4
+Fitness: max 0.9523809523809523(1), min 0.5119047619047619(1), ave 0.7321428571428571
+----------------------------------------------------------------
+
+2019-06-15 15:54:04 [main] [INFO]  KGenProgMain - entered the era of 15th generation.
+2019-06-15 15:54:18 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 32 seconds
+Variants: generated 10, build-succeeded 2, build-failed 5, syntax-invalid 0, redundant 3
+Fitness: max 0.9523809523809523(1), min 0.5119047619047619(1), ave 0.7321428571428571
+----------------------------------------------------------------
+
+2019-06-15 15:54:18 [main] [INFO]  KGenProgMain - entered the era of 16th generation.
+2019-06-15 15:54:18 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 32 seconds
+Variants: generated 10, build-succeeded 0, build-failed 7, syntax-invalid 0, redundant 3
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 15:54:18 [main] [INFO]  KGenProgMain - entered the era of 17th generation.
+2019-06-15 15:54:25 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 39 seconds
+Variants: generated 10, build-succeeded 1, build-failed 6, syntax-invalid 0, redundant 3
+Fitness: max 0.9523809523809523(1), min 0.9523809523809523(1), ave 0.9523809523809523
+----------------------------------------------------------------
+
+2019-06-15 15:54:25 [main] [INFO]  KGenProgMain - entered the era of 18th generation.
+2019-06-15 15:54:36 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 50 seconds
+Variants: generated 10, build-succeeded 2, build-failed 8, syntax-invalid 0, redundant 0
+Fitness: max 0.21428571428571427(1), min 0.047619047619047616(1), ave 0.13095238095238093
+----------------------------------------------------------------
+
+2019-06-15 15:54:36 [main] [INFO]  KGenProgMain - entered the era of 19th generation.
+2019-06-15 15:54:41 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 55 seconds
+Variants: generated 10, build-succeeded 1, build-failed 6, syntax-invalid 0, redundant 3
+Fitness: max 0.5476190476190477(1), min 0.5476190476190477(1), ave 0.5476190476190477
+----------------------------------------------------------------
+
+2019-06-15 15:54:41 [main] [INFO]  KGenProgMain - entered the era of 20th generation.
+2019-06-15 15:54:51 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 5 seconds
+Variants: generated 10, build-succeeded 2, build-failed 4, syntax-invalid 0, redundant 4
+Fitness: max 0.9523809523809523(1), min 0.6904761904761905(1), ave 0.8214285714285714
+----------------------------------------------------------------
+
+2019-06-15 15:54:51 [main] [INFO]  KGenProgMain - entered the era of 21st generation.
+2019-06-15 15:55:02 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 17 seconds
+Variants: generated 10, build-succeeded 2, build-failed 7, syntax-invalid 0, redundant 1
+Fitness: max 0.9523809523809523(1), min 0.0(1), ave 0.47619047619047616
+----------------------------------------------------------------
+
+2019-06-15 15:55:02 [main] [INFO]  KGenProgMain - entered the era of 22nd generation.
+2019-06-15 15:55:04 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 18 seconds
+Variants: generated 10, build-succeeded 0, build-failed 7, syntax-invalid 0, redundant 3
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 15:55:04 [main] [INFO]  KGenProgMain - entered the era of 23rd generation.
+2019-06-15 15:55:12 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 26 seconds
+Variants: generated 10, build-succeeded 1, build-failed 5, syntax-invalid 0, redundant 4
+Fitness: max 0.9404761904761905(1), min 0.9404761904761905(1), ave 0.9404761904761905
+----------------------------------------------------------------
+
+2019-06-15 15:55:12 [main] [INFO]  KGenProgMain - entered the era of 24th generation.
+2019-06-15 15:55:17 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 31 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 0, redundant 2
+Fitness: max 0.9523809523809523(1), min 0.9523809523809523(1), ave 0.9523809523809523
+----------------------------------------------------------------
+
+2019-06-15 15:55:17 [main] [INFO]  KGenProgMain - entered the era of 25th generation.
+2019-06-15 15:55:24 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 38 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 0.9523809523809523(1), min 0.9523809523809523(1), ave 0.9523809523809523
+----------------------------------------------------------------
+
+2019-06-15 15:55:24 [main] [INFO]  KGenProgMain - entered the era of 26th generation.
+2019-06-15 15:55:25 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 39 seconds
+Variants: generated 10, build-succeeded 0, build-failed 8, syntax-invalid 0, redundant 2
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 15:55:25 [main] [INFO]  KGenProgMain - entered the era of 27th generation.
+2019-06-15 15:55:30 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 45 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 0.2619047619047619(1), min 0.2619047619047619(1), ave 0.2619047619047619
+----------------------------------------------------------------
+
+2019-06-15 15:55:30 [main] [INFO]  KGenProgMain - entered the era of 28th generation.
+2019-06-15 15:55:36 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 50 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 0.4523809523809524(1), min 0.4523809523809524(1), ave 0.4523809523809524
+----------------------------------------------------------------
+
+2019-06-15 15:55:36 [main] [INFO]  KGenProgMain - entered the era of 29th generation.
+2019-06-15 15:55:36 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 50 seconds
+Variants: generated 10, build-succeeded 0, build-failed 7, syntax-invalid 0, redundant 3
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 15:55:36 [main] [INFO]  KGenProgMain - entered the era of 30th generation.
+2019-06-15 15:55:41 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 55 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 0.5952380952380952(1), min 0.5952380952380952(1), ave 0.5952380952380952
+----------------------------------------------------------------
+
+2019-06-15 15:55:41 [main] [INFO]  KGenProgMain - entered the era of 31st generation.
+2019-06-15 15:55:41 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 56 seconds
+Variants: generated 10, build-succeeded 0, build-failed 8, syntax-invalid 0, redundant 2
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 15:55:41 [main] [INFO]  KGenProgMain - entered the era of 32nd generation.
+2019-06-15 15:55:47 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 minutes 1 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 0, redundant 2
+Fitness: max 0.17857142857142858(1), min 0.17857142857142858(1), ave 0.17857142857142858
+----------------------------------------------------------------
+
+2019-06-15 15:55:47 [main] [INFO]  KGenProgMain - entered the era of 33rd generation.
+2019-06-15 15:56:02 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 minutes 16 seconds
+Variants: generated 10, build-succeeded 3, build-failed 6, syntax-invalid 0, redundant 1
+Fitness: max 0.7619047619047619(1), min 0.5119047619047619(1), ave 0.6349206349206349
+----------------------------------------------------------------
+
+2019-06-15 15:56:02 [main] [INFO]  KGenProgMain - entered the era of 34th generation.
+2019-06-15 15:56:02 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 minutes 16 seconds
+Variants: generated 10, build-succeeded 0, build-failed 8, syntax-invalid 0, redundant 2
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 15:56:02 [main] [INFO]  KGenProgMain - entered the era of 35th generation.
+2019-06-15 15:56:16 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 minutes 30 seconds
+Variants: generated 10, build-succeeded 2, build-failed 6, syntax-invalid 0, redundant 2
+Fitness: max 0.9523809523809523(1), min 0.8690476190476191(1), ave 0.9107142857142857
+----------------------------------------------------------------
+
+2019-06-15 15:56:16 [main] [INFO]  KGenProgMain - entered the era of 36th generation.
+2019-06-15 15:56:18 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 minutes 32 seconds
+Variants: generated 10, build-succeeded 0, build-failed 9, syntax-invalid 0, redundant 1
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 15:56:18 [main] [INFO]  KGenProgMain - entered the era of 37th generation.
+2019-06-15 15:56:28 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 minutes 42 seconds
+Variants: generated 10, build-succeeded 2, build-failed 4, syntax-invalid 0, redundant 4
+Fitness: max 0.10714285714285714(1), min 0.0(1), ave 0.05357142857142857
+----------------------------------------------------------------
+
+2019-06-15 15:56:28 [main] [INFO]  KGenProgMain - entered the era of 38th generation.
+2019-06-15 15:56:28 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 minutes 42 seconds
+Variants: generated 10, build-succeeded 0, build-failed 7, syntax-invalid 0, redundant 3
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 15:56:28 [main] [INFO]  KGenProgMain - entered the era of 39th generation.
+2019-06-15 15:56:33 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 minutes 47 seconds
+Variants: generated 10, build-succeeded 1, build-failed 5, syntax-invalid 0, redundant 4
+Fitness: max 0.08333333333333333(1), min 0.08333333333333333(1), ave 0.08333333333333333
+----------------------------------------------------------------
+
+2019-06-15 15:56:33 [main] [INFO]  KGenProgMain - entered the era of 40th generation.
+2019-06-15 15:56:48 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 minutes 2 seconds
+Variants: generated 10, build-succeeded 3, build-failed 4, syntax-invalid 0, redundant 3
+Fitness: max 0.9523809523809523(1), min 0.21428571428571427(1), ave 0.6190476190476191
+----------------------------------------------------------------
+
+2019-06-15 15:56:48 [main] [INFO]  KGenProgMain - entered the era of 41st generation.
+2019-06-15 15:57:00 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 minutes 14 seconds
+Variants: generated 10, build-succeeded 2, build-failed 7, syntax-invalid 0, redundant 1
+Fitness: max 0.44047619047619047(1), min 0.047619047619047616(1), ave 0.24404761904761904
+----------------------------------------------------------------
+
+2019-06-15 15:57:00 [main] [INFO]  KGenProgMain - entered the era of 42nd generation.
+2019-06-15 15:57:05 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 minutes 19 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 0, redundant 2
+Fitness: max 0.5476190476190477(1), min 0.5476190476190477(1), ave 0.5476190476190477
+----------------------------------------------------------------
+
+2019-06-15 15:57:05 [main] [INFO]  KGenProgMain - entered the era of 43rd generation.
+2019-06-15 15:57:10 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 minutes 24 seconds
+Variants: generated 10, build-succeeded 1, build-failed 6, syntax-invalid 0, redundant 3
+Fitness: max 0.9523809523809523(1), min 0.9523809523809523(1), ave 0.9523809523809523
+----------------------------------------------------------------
+
+2019-06-15 15:57:10 [main] [INFO]  KGenProgMain - entered the era of 44th generation.
+2019-06-15 15:57:17 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 minutes 31 seconds
+Variants: generated 10, build-succeeded 1, build-failed 5, syntax-invalid 0, redundant 4
+Fitness: max 0.05952380952380952(1), min 0.05952380952380952(1), ave 0.05952380952380952
+----------------------------------------------------------------
+
+2019-06-15 15:57:17 [main] [INFO]  KGenProgMain - entered the era of 45th generation.
+2019-06-15 15:57:22 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 minutes 36 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 0, redundant 2
+Fitness: max 0.40476190476190477(1), min 0.40476190476190477(1), ave 0.40476190476190477
+----------------------------------------------------------------
+
+2019-06-15 15:57:22 [main] [INFO]  KGenProgMain - entered the era of 46th generation.
+2019-06-15 15:57:37 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 minutes 51 seconds
+Variants: generated 10, build-succeeded 3, build-failed 6, syntax-invalid 0, redundant 1
+Fitness: max 0.9523809523809523(1), min 0.0(1), ave 0.5
+----------------------------------------------------------------
+
+2019-06-15 15:57:37 [main] [INFO]  KGenProgMain - entered the era of 47th generation.
+2019-06-15 15:57:39 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 minutes 53 seconds
+Variants: generated 10, build-succeeded 0, build-failed 6, syntax-invalid 0, redundant 4
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 15:57:39 [main] [INFO]  KGenProgMain - entered the era of 48th generation.
+2019-06-15 15:57:39 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 minutes 53 seconds
+Variants: generated 10, build-succeeded 0, build-failed 7, syntax-invalid 0, redundant 3
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 15:57:39 [main] [INFO]  KGenProgMain - entered the era of 49th generation.
+2019-06-15 15:57:44 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 minutes 58 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 0, redundant 2
+Fitness: max 0.9523809523809523(1), min 0.9523809523809523(1), ave 0.9523809523809523
+----------------------------------------------------------------
+
+2019-06-15 15:57:44 [main] [INFO]  KGenProgMain - entered the era of 50th generation.
+2019-06-15 15:57:51 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 minutes 5 seconds
+Variants: generated 10, build-succeeded 1, build-failed 6, syntax-invalid 0, redundant 3
+Fitness: max 0.8809523809523809(1), min 0.8809523809523809(1), ave 0.8809523809523809
+----------------------------------------------------------------
+
+2019-06-15 15:57:51 [main] [INFO]  KGenProgMain - entered the era of 51st generation.
+2019-06-15 15:57:51 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 minutes 5 seconds
+Variants: generated 10, build-succeeded 0, build-failed 9, syntax-invalid 0, redundant 1
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 15:57:51 [main] [INFO]  KGenProgMain - entered the era of 52nd generation.
+2019-06-15 15:57:51 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 minutes 5 seconds
+Variants: generated 10, build-succeeded 0, build-failed 9, syntax-invalid 0, redundant 1
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 15:57:51 [main] [INFO]  KGenProgMain - entered the era of 53rd generation.
+2019-06-15 15:58:06 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 minutes 20 seconds
+Variants: generated 10, build-succeeded 2, build-failed 4, syntax-invalid 0, redundant 4
+Fitness: max 0.09523809523809523(1), min 0.047619047619047616(1), ave 0.07142857142857142
+----------------------------------------------------------------
+
+2019-06-15 15:58:06 [main] [INFO]  KGenProgMain - entered the era of 54th generation.
+2019-06-15 15:58:12 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 minutes 26 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 0.9523809523809523(1), min 0.9523809523809523(1), ave 0.9523809523809523
+----------------------------------------------------------------
+
+2019-06-15 15:58:12 [main] [INFO]  KGenProgMain - entered the era of 55th generation.
+2019-06-15 15:58:17 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 minutes 31 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 0.21428571428571427(1), min 0.21428571428571427(1), ave 0.21428571428571427
+----------------------------------------------------------------
+
+2019-06-15 15:58:17 [main] [INFO]  KGenProgMain - entered the era of 56th generation.
+2019-06-15 15:58:22 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 minutes 36 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 0.9523809523809523(1), min 0.9523809523809523(1), ave 0.9523809523809523
+----------------------------------------------------------------
+
+2019-06-15 15:58:22 [main] [INFO]  KGenProgMain - entered the era of 57th generation.
+2019-06-15 15:58:29 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 minutes 43 seconds
+Variants: generated 10, build-succeeded 1, build-failed 6, syntax-invalid 0, redundant 3
+Fitness: max 0.23809523809523808(1), min 0.23809523809523808(1), ave 0.23809523809523808
+----------------------------------------------------------------
+
+2019-06-15 15:58:29 [main] [INFO]  KGenProgMain - entered the era of 58th generation.
+2019-06-15 15:58:29 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 minutes 43 seconds
+Variants: generated 10, build-succeeded 0, build-failed 6, syntax-invalid 0, redundant 4
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 15:58:29 [main] [INFO]  KGenProgMain - entered the era of 59th generation.
+2019-06-15 15:58:34 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 minutes 48 seconds
+Variants: generated 10, build-succeeded 1, build-failed 6, syntax-invalid 0, redundant 3
+Fitness: max 0.2619047619047619(1), min 0.2619047619047619(1), ave 0.2619047619047619
+----------------------------------------------------------------
+
+2019-06-15 15:58:34 [main] [INFO]  KGenProgMain - entered the era of 60th generation.
+2019-06-15 15:58:34 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 minutes 48 seconds
+Variants: generated 10, build-succeeded 0, build-failed 9, syntax-invalid 0, redundant 1
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 15:58:34 [main] [INFO]  KGenProgMain - entered the era of 61st generation.
+2019-06-15 15:58:40 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 minutes 54 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 0.32142857142857145(1), min 0.32142857142857145(1), ave 0.32142857142857145
+----------------------------------------------------------------
+
+2019-06-15 15:58:40 [main] [INFO]  KGenProgMain - entered the era of 62nd generation.
+2019-06-15 15:58:40 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 minutes 54 seconds
+Variants: generated 10, build-succeeded 0, build-failed 8, syntax-invalid 0, redundant 2
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 15:58:40 [main] [INFO]  KGenProgMain - entered the era of 63rd generation.
+2019-06-15 15:58:45 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 minutes 59 seconds
+Variants: generated 10, build-succeeded 1, build-failed 6, syntax-invalid 0, redundant 3
+Fitness: max 0.23809523809523808(1), min 0.23809523809523808(1), ave 0.23809523809523808
+----------------------------------------------------------------
+
+2019-06-15 15:58:45 [main] [INFO]  KGenProgMain - entered the era of 64th generation.
+2019-06-15 15:58:56 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 7 minutes 10 seconds
+Variants: generated 10, build-succeeded 2, build-failed 8, syntax-invalid 0, redundant 0
+Fitness: max 0.9523809523809523(1), min 0.7857142857142857(1), ave 0.8690476190476191
+----------------------------------------------------------------
+
+2019-06-15 15:58:56 [main] [INFO]  KGenProgMain - entered the era of 65th generation.
+2019-06-15 15:59:06 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 7 minutes 20 seconds
+Variants: generated 10, build-succeeded 2, build-failed 5, syntax-invalid 0, redundant 3
+Fitness: max 0.32142857142857145(1), min 0.0(1), ave 0.16071428571428573
+----------------------------------------------------------------
+
+2019-06-15 15:59:06 [main] [INFO]  KGenProgMain - entered the era of 66th generation.
+2019-06-15 15:59:17 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 7 minutes 31 seconds
+Variants: generated 10, build-succeeded 2, build-failed 7, syntax-invalid 0, redundant 1
+Fitness: max 0.6904761904761905(1), min 0.47619047619047616(1), ave 0.5833333333333333
+----------------------------------------------------------------
+
+2019-06-15 15:59:17 [main] [INFO]  KGenProgMain - entered the era of 67th generation.
+2019-06-15 16:00:53 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 minutes 7 seconds
+Variants: generated 10, build-succeeded 2, build-failed 4, syntax-invalid 0, redundant 4
+Fitness: max 0.047619047619047616(1), min 0.0(1), ave 0.023809523809523808
+----------------------------------------------------------------
+
+2019-06-15 16:00:53 [main] [INFO]  KGenProgMain - entered the era of 68th generation.
+2019-06-15 16:00:53 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 minutes 7 seconds
+Variants: generated 10, build-succeeded 0, build-failed 5, syntax-invalid 0, redundant 5
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 16:00:53 [main] [INFO]  KGenProgMain - entered the era of 69th generation.
+2019-06-15 16:01:04 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 minutes 18 seconds
+Variants: generated 10, build-succeeded 2, build-failed 6, syntax-invalid 0, redundant 2
+Fitness: max 0.40476190476190477(1), min 0.2857142857142857(1), ave 0.34523809523809523
+----------------------------------------------------------------
+
+2019-06-15 16:01:04 [main] [INFO]  KGenProgMain - entered the era of 70th generation.
+2019-06-15 16:01:19 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 minutes 33 seconds
+Variants: generated 10, build-succeeded 3, build-failed 5, syntax-invalid 0, redundant 2
+Fitness: max 0.9523809523809523(1), min 0.09523809523809523(1), ave 0.5595238095238094
+----------------------------------------------------------------
+
+2019-06-15 16:01:19 [main] [INFO]  KGenProgMain - entered the era of 71st generation.
+2019-06-15 16:01:25 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 minutes 39 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 0.0(1), min 0.0(1), ave 0.0
+----------------------------------------------------------------
+
+2019-06-15 16:01:25 [main] [INFO]  KGenProgMain - entered the era of 72nd generation.
+2019-06-15 16:01:26 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 minutes 40 seconds
+Variants: generated 10, build-succeeded 0, build-failed 7, syntax-invalid 0, redundant 3
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 16:01:26 [main] [INFO]  KGenProgMain - entered the era of 73rd generation.
+2019-06-15 16:01:26 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 minutes 40 seconds
+Variants: generated 10, build-succeeded 0, build-failed 5, syntax-invalid 0, redundant 5
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 16:01:26 [main] [INFO]  KGenProgMain - entered the era of 74th generation.
+2019-06-15 16:01:31 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 minutes 45 seconds
+Variants: generated 10, build-succeeded 1, build-failed 5, syntax-invalid 0, redundant 4
+Fitness: max 0.9523809523809523(1), min 0.9523809523809523(1), ave 0.9523809523809523
+----------------------------------------------------------------
+
+2019-06-15 16:01:31 [main] [INFO]  KGenProgMain - entered the era of 75th generation.
+2019-06-15 16:01:33 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 minutes 47 seconds
+Variants: generated 10, build-succeeded 0, build-failed 9, syntax-invalid 0, redundant 1
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 16:01:33 [main] [INFO]  KGenProgMain - entered the era of 76th generation.
+2019-06-15 16:01:38 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 minutes 52 seconds
+Variants: generated 10, build-succeeded 1, build-failed 5, syntax-invalid 0, redundant 4
+Fitness: max 0.9523809523809523(1), min 0.9523809523809523(1), ave 0.9523809523809523
+----------------------------------------------------------------
+
+2019-06-15 16:01:38 [main] [INFO]  KGenProgMain - entered the era of 77th generation.
+2019-06-15 16:01:50 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 minutes 4 seconds
+Variants: generated 10, build-succeeded 2, build-failed 4, syntax-invalid 0, redundant 4
+Fitness: max 0.7619047619047619(1), min 0.2619047619047619(1), ave 0.5119047619047619
+----------------------------------------------------------------
+
+2019-06-15 16:01:50 [main] [INFO]  KGenProgMain - entered the era of 78th generation.
+2019-06-15 16:01:50 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 minutes 4 seconds
+Variants: generated 10, build-succeeded 0, build-failed 8, syntax-invalid 0, redundant 2
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 16:01:50 [main] [INFO]  KGenProgMain - entered the era of 79th generation.
+2019-06-15 16:02:05 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 minutes 19 seconds
+Variants: generated 10, build-succeeded 3, build-failed 4, syntax-invalid 0, redundant 3
+Fitness: max 0.9523809523809523(1), min 0.0(1), ave 0.45634920634920634
+----------------------------------------------------------------
+
+2019-06-15 16:02:05 [main] [INFO]  KGenProgMain - entered the era of 80th generation.
+2019-06-15 16:02:07 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 minutes 21 seconds
+Variants: generated 10, build-succeeded 0, build-failed 6, syntax-invalid 0, redundant 4
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 16:02:07 [main] [INFO]  KGenProgMain - entered the era of 81st generation.
+2019-06-15 16:02:07 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 minutes 21 seconds
+Variants: generated 10, build-succeeded 0, build-failed 8, syntax-invalid 0, redundant 2
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 16:02:07 [main] [INFO]  KGenProgMain - entered the era of 82nd generation.
+2019-06-15 16:02:07 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 minutes 21 seconds
+Variants: generated 10, build-succeeded 0, build-failed 9, syntax-invalid 0, redundant 1
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 16:02:07 [main] [INFO]  KGenProgMain - entered the era of 83rd generation.
+2019-06-15 16:02:13 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 minutes 27 seconds
+Variants: generated 10, build-succeeded 1, build-failed 6, syntax-invalid 0, redundant 3
+Fitness: max 0.9523809523809523(1), min 0.9523809523809523(1), ave 0.9523809523809523
+----------------------------------------------------------------
+
+2019-06-15 16:02:13 [main] [INFO]  KGenProgMain - entered the era of 84th generation.
+2019-06-15 16:02:14 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 minutes 28 seconds
+Variants: generated 10, build-succeeded 0, build-failed 7, syntax-invalid 0, redundant 3
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 16:02:14 [main] [INFO]  KGenProgMain - entered the era of 85th generation.
+2019-06-15 16:02:20 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 minutes 34 seconds
+Variants: generated 10, build-succeeded 1, build-failed 5, syntax-invalid 0, redundant 4
+Fitness: max 0.5476190476190477(1), min 0.5476190476190477(1), ave 0.5476190476190477
+----------------------------------------------------------------
+
+2019-06-15 16:02:20 [main] [INFO]  KGenProgMain - entered the era of 86th generation.
+2019-06-15 16:02:30 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 minutes 44 seconds
+Variants: generated 10, build-succeeded 2, build-failed 8, syntax-invalid 0, redundant 0
+Fitness: max 0.9523809523809523(1), min 0.8928571428571429(1), ave 0.9226190476190477
+----------------------------------------------------------------
+
+2019-06-15 16:02:30 [main] [INFO]  KGenProgMain - entered the era of 87th generation.
+2019-06-15 16:02:31 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 minutes 45 seconds
+Variants: generated 10, build-succeeded 0, build-failed 6, syntax-invalid 0, redundant 4
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 16:02:31 [main] [INFO]  KGenProgMain - entered the era of 88th generation.
+2019-06-15 16:02:37 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 minutes 51 seconds
+Variants: generated 10, build-succeeded 1, build-failed 9, syntax-invalid 0, redundant 0
+Fitness: max 0.09523809523809523(1), min 0.09523809523809523(1), ave 0.09523809523809523
+----------------------------------------------------------------
+
+2019-06-15 16:02:37 [main] [INFO]  KGenProgMain - entered the era of 89th generation.
+2019-06-15 16:02:42 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 minutes 56 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 0.4642857142857143(1), min 0.4642857142857143(1), ave 0.4642857142857143
+----------------------------------------------------------------
+
+2019-06-15 16:02:42 [main] [INFO]  KGenProgMain - entered the era of 90th generation.
+2019-06-15 16:03:00 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 11 minutes 14 seconds
+Variants: generated 10, build-succeeded 2, build-failed 6, syntax-invalid 0, redundant 2
+Fitness: max 0.9404761904761905(1), min 0.5952380952380952(1), ave 0.7678571428571428
+----------------------------------------------------------------
+
+2019-06-15 16:03:00 [main] [INFO]  KGenProgMain - entered the era of 91st generation.
+2019-06-15 16:03:05 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 11 minutes 20 seconds
+Variants: generated 10, build-succeeded 1, build-failed 5, syntax-invalid 0, redundant 4
+Fitness: max 0.05952380952380952(1), min 0.05952380952380952(1), ave 0.05952380952380952
+----------------------------------------------------------------
+
+2019-06-15 16:03:05 [main] [INFO]  KGenProgMain - entered the era of 92nd generation.
+2019-06-15 16:03:16 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 11 minutes 30 seconds
+Variants: generated 10, build-succeeded 2, build-failed 6, syntax-invalid 0, redundant 2
+Fitness: max 0.5952380952380952(1), min 0.0(1), ave 0.2976190476190476
+----------------------------------------------------------------
+
+2019-06-15 16:03:16 [main] [INFO]  KGenProgMain - entered the era of 93rd generation.
+2019-06-15 16:03:16 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 11 minutes 30 seconds
+Variants: generated 10, build-succeeded 0, build-failed 9, syntax-invalid 0, redundant 1
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 16:03:16 [main] [INFO]  KGenProgMain - entered the era of 94th generation.
+2019-06-15 16:03:27 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 11 minutes 41 seconds
+Variants: generated 10, build-succeeded 2, build-failed 6, syntax-invalid 0, redundant 2
+Fitness: max 0.9523809523809523(2), min 0.9523809523809523(2), ave 0.9523809523809523
+----------------------------------------------------------------
+
+2019-06-15 16:03:27 [main] [INFO]  KGenProgMain - entered the era of 95th generation.
+2019-06-15 16:03:43 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 11 minutes 57 seconds
+Variants: generated 10, build-succeeded 1, build-failed 6, syntax-invalid 0, redundant 3
+Fitness: max 0.047619047619047616(1), min 0.047619047619047616(1), ave 0.047619047619047616
+----------------------------------------------------------------
+
+2019-06-15 16:03:43 [main] [INFO]  KGenProgMain - entered the era of 96th generation.
+2019-06-15 16:03:57 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 12 minutes 11 seconds
+Variants: generated 10, build-succeeded 1, build-failed 6, syntax-invalid 0, redundant 3
+Fitness: max 0.9404761904761905(1), min 0.9404761904761905(1), ave 0.9404761904761905
+----------------------------------------------------------------
+
+2019-06-15 16:03:57 [main] [INFO]  KGenProgMain - entered the era of 97th generation.
+2019-06-15 16:04:23 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 12 minutes 37 seconds
+Variants: generated 10, build-succeeded 2, build-failed 8, syntax-invalid 0, redundant 0
+Fitness: max 0.9523809523809523(1), min 0.17857142857142858(1), ave 0.5654761904761905
+----------------------------------------------------------------
+
+2019-06-15 16:04:23 [main] [INFO]  KGenProgMain - entered the era of 98th generation.
+2019-06-15 16:04:35 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 12 minutes 49 seconds
+Variants: generated 10, build-succeeded 1, build-failed 9, syntax-invalid 0, redundant 0
+Fitness: max 0.11904761904761904(1), min 0.11904761904761904(1), ave 0.11904761904761904
+----------------------------------------------------------------
+
+2019-06-15 16:04:35 [main] [INFO]  KGenProgMain - entered the era of 99th generation.
+2019-06-15 16:05:02 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 13 minutes 16 seconds
+Variants: generated 10, build-succeeded 2, build-failed 8, syntax-invalid 0, redundant 0
+Fitness: max 0.10714285714285714(1), min 0.0(1), ave 0.05357142857142857
+----------------------------------------------------------------
+
+2019-06-15 16:05:02 [main] [INFO]  KGenProgMain - entered the era of 100th generation.
+2019-06-15 16:05:20 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 13 minutes 34 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 0, redundant 2
+Fitness: max 0.0(1), min 0.0(1), ave 0.0
+----------------------------------------------------------------
+
+2019-06-15 16:05:20 [main] [INFO]  KGenProgMain - entered the era of 101st generation.
+2019-06-15 16:06:01 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 14 minutes 15 seconds
+Variants: generated 10, build-succeeded 3, build-failed 5, syntax-invalid 0, redundant 2
+Fitness: max 0.6190476190476191(1), min 0.05952380952380952(1), ave 0.3888888888888889
+----------------------------------------------------------------
+
+2019-06-15 16:06:01 [main] [INFO]  KGenProgMain - entered the era of 102nd generation.
+2019-06-15 16:06:16 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 14 minutes 30 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 0, redundant 2
+Fitness: max 0.6190476190476191(1), min 0.6190476190476191(1), ave 0.6190476190476191
+----------------------------------------------------------------
+
+2019-06-15 16:06:16 [main] [INFO]  KGenProgMain - entered the era of 103rd generation.
+2019-06-15 16:06:53 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 15 minutes 7 seconds
+Variants: generated 10, build-succeeded 2, build-failed 5, syntax-invalid 0, redundant 3
+Fitness: max 0.8809523809523809(1), min 0.6904761904761905(1), ave 0.7857142857142857
+----------------------------------------------------------------
+
+2019-06-15 16:06:53 [main] [INFO]  KGenProgMain - entered the era of 104th generation.
+2019-06-15 16:06:53 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 15 minutes 7 seconds
+Variants: generated 10, build-succeeded 0, build-failed 7, syntax-invalid 0, redundant 3
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 16:06:53 [main] [INFO]  KGenProgMain - entered the era of 105th generation.
+2019-06-15 16:07:29 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 15 minutes 43 seconds
+Variants: generated 10, build-succeeded 2, build-failed 7, syntax-invalid 0, redundant 1
+Fitness: max 0.03571428571428571(1), min 0.011904761904761904(1), ave 0.023809523809523808
+----------------------------------------------------------------
+
+2019-06-15 16:07:29 [main] [INFO]  KGenProgMain - entered the era of 106th generation.
+2019-06-15 16:08:11 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 16 minutes 25 seconds
+Variants: generated 10, build-succeeded 2, build-failed 6, syntax-invalid 0, redundant 2
+Fitness: max 0.9523809523809523(1), min 0.6904761904761905(1), ave 0.8214285714285714
+----------------------------------------------------------------
+
+2019-06-15 16:08:11 [main] [INFO]  KGenProgMain - entered the era of 107th generation.
+2019-06-15 16:08:15 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 16 minutes 29 seconds
+Variants: generated 10, build-succeeded 0, build-failed 8, syntax-invalid 0, redundant 2
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 16:08:15 [main] [INFO]  KGenProgMain - entered the era of 108th generation.
+2019-06-15 16:09:07 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 17 minutes 21 seconds
+Variants: generated 10, build-succeeded 2, build-failed 6, syntax-invalid 0, redundant 2
+Fitness: max 0.011904761904761904(1), min 0.0(1), ave 0.005952380952380952
+----------------------------------------------------------------
+
+2019-06-15 16:09:07 [main] [INFO]  KGenProgMain - entered the era of 109th generation.
+2019-06-15 16:10:16 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 18 minutes 30 seconds
+Variants: generated 10, build-succeeded 2, build-failed 5, syntax-invalid 0, redundant 3
+Fitness: max 0.8809523809523809(1), min 0.5833333333333334(1), ave 0.7321428571428572
+----------------------------------------------------------------
+
+2019-06-15 16:10:16 [main] [INFO]  KGenProgMain - entered the era of 110th generation.
+2019-06-15 16:11:11 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 19 minutes 25 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 0, redundant 2
+Fitness: max 0.9523809523809523(1), min 0.9523809523809523(1), ave 0.9523809523809523
+----------------------------------------------------------------
+
+2019-06-15 16:11:11 [main] [INFO]  KGenProgMain - entered the era of 111th generation.
+2019-06-15 16:11:14 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 19 minutes 28 seconds
+Variants: generated 10, build-succeeded 0, build-failed 6, syntax-invalid 0, redundant 4
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 16:11:14 [main] [INFO]  KGenProgMain - entered the era of 112th generation.
+2019-06-15 16:13:08 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 21 minutes 22 seconds
+Variants: generated 10, build-succeeded 2, build-failed 4, syntax-invalid 0, redundant 4
+Fitness: max 0.9166666666666666(1), min 0.0(1), ave 0.4583333333333333
+----------------------------------------------------------------
+
+2019-06-15 16:13:08 [main] [INFO]  KGenProgMain - entered the era of 113th generation.
+2019-06-15 16:13:14 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 21 minutes 28 seconds
+Variants: generated 10, build-succeeded 0, build-failed 6, syntax-invalid 0, redundant 4
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-15 16:13:14 [main] [INFO]  KGenProgMain - entered the era of 114th generation.
+2019-06-15 16:17:17 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 25 minutes 31 seconds
+Variants: generated 10, build-succeeded 2, build-failed 5, syntax-invalid 0, redundant 3
+Fitness: max 0.4523809523809524(1), min 0.03571428571428571(1), ave 0.24404761904761904
+----------------------------------------------------------------
+
+2019-06-15 16:17:17 [main] [INFO]  KGenProgMain - entered the era of 115th generation.
+2019-06-15 16:21:25 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 29 minutes 39 seconds
+Variants: generated 10, build-succeeded 1, build-failed 4, syntax-invalid 0, redundant 5
+Fitness: max 0.0(1), min 0.0(1), ave 0.0
+----------------------------------------------------------------
+
+2019-06-15 16:21:25 [main] [INFO]  KGenProgMain - entered the era of 116th generation.
+2019-06-15 16:22:08 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 30 minutes 22 seconds
+Variants: generated 10, build-succeeded 1, build-failed 6, syntax-invalid 0, redundant 3
+Fitness: max 0.8214285714285714(1), min 0.8214285714285714(1), ave 0.8214285714285714
+----------------------------------------------------------------
+
+2019-06-15 16:22:08 [main] [INFO]  KGenProgMain - GA reached the time limit.
+2019-06-15 16:22:08 [main] [INFO]  KGenProgMain - GA stopped at the era of 116th generation.
+2019-06-15 16:22:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:55 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:58 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:58 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:58 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:58 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:58 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:58 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:58 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:58 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:58 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:58 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:58 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:22:58 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:03 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:08 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:11 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:11 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:11 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:11 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:11 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:11 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:11 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:11 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:16 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:16 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:16 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:16 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:16 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:16 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:16 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:16 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:16 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:16 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:16 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:16 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:16 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:21 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:26 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:39 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:42 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:44 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:47 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:47 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:47 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:47 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:47 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:47 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:52 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:57 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:23:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:00 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:02 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:04 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:04 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:05 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:07 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:10 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:12 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:12 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:12 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:12 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:12 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:12 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:12 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:12 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:12 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:12 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:12 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:12 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:12 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:13 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:15 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:17 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:17 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:17 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:17 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:17 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:17 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:18 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:20 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:23 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:25 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:28 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:30 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:33 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:35 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:35 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:35 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:35 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:35 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:35 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:35 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:35 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:35 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:36 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:40 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:40 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:41 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:43 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:46 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:48 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:49 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:51 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:53 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:53 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:53 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:53 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:53 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:53 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:53 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:53 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:53 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:53 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:53 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:53 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:54 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:56 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:58 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:24:59 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:01 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:04 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:04 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:04 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:04 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:04 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:04 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:04 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:04 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:04 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:04 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:04 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:04 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 16:25:04 [main] [INFO]  KGenProgMain - execution time: 33 minutes 18 seconds
+
+real 2008.817
+user 16907.018
+sys  17.228

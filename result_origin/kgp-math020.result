@@ -1,0 +1,69 @@
+Sat Jun 15 05:53:05 UTC 2019
+/opt/apr-data/example/math020
+java -jar /opt/apr-data/bin/kgp.jar --config kgenprog.toml
+2019-06-15 05:53:05 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = 
+executionTests = [org.apache.commons.math3.optimization.direct.CMAESOptimizerTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 10000
+timeLimit = PT30M
+testTimeLimit = PT3S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 0
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/example/math020
+================================================================
+2019-06-15 05:53:16 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-06-15 05:53:22 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 1, redundant 0
+Fitness: max 0.9583333333333334(1), min 0.9583333333333334(1), ave 0.9583333333333334
+----------------------------------------------------------------
+
+2019-06-15 05:53:22 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-06-15 05:53:38 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 21 seconds
+Variants: generated 10, build-succeeded 3, build-failed 7, syntax-invalid 0, redundant 0
+Fitness: max 1.0(1), min 0.4166666666666667(1), ave 0.7916666666666666
+----------------------------------------------------------------
+
+2019-06-15 05:53:38 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-06-15 05:53:38 [main] [INFO]  KGenProgMain - GA stopped at the era of 2nd generation.
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-15 05:53:38 [main] [INFO]  KGenProgMain - execution time: 21 seconds
+
+real 33.596
+user 94.985
+sys  1.578

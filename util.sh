@@ -25,10 +25,11 @@ d4j_bin=$d4j_base/framework/bin/defects4j
 
 # common
 ##########################
-example=$base/t-kuma/example
-out=$base/t-kuma/out
-##########################
+example=$base/example
+texample=$base/t-kuma-example
+out=$base/out
 tmp=$base/tmp
+##########################
 
 # 実験の設定
 timelimit=1800
@@ -238,7 +239,7 @@ _run_skgp() {
     _id=$2
 
     _idz=$(printf %03d $_id)
-    _t=$example/$_target$_idz
+    _t=$texample/$_target$_idz
 
     (time (
          date
@@ -246,11 +247,9 @@ _run_skgp() {
 
          cd $_t
 	 
-	 tests=Separated$(_get_d4j_params d4j.dir.src.tests)
-	 
     	echo -e "root-dir = \".\"\n\
                 src = [$(_get_d4j_params d4j.dir.src.classes)]\n\
-                test = [$tests]\n\
+		test = [$(_get_d4j_params d4j.dir.src.tests)]\n\
 	        	cp = [\"/opt/apr-data/.m2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar\"]\n\
                 exec-test = [$(_get_d4j_params d4j.tests.trigger)]\n\
                 time-limit = $timelimit\n\

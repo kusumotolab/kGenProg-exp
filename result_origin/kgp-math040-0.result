@@ -1,0 +1,50 @@
+Wed Jun 12 01:24:24 UTC 2019
+/opt/apr-data/example/math040
+java -jar /opt/apr-data/bin/kgp.jar -r ./ -s src/main/java -t src/test/java -x org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest --time-limit 1800 --test-time-limit 3 --max-generation 10000 --headcount 5 --mutation-generating-count 10 --crossover-generating-count 0 --random-seed 0 -o /opt/apr-data/tmp
+JUNIT4_CUSTOM
+2019-06-12 01:24:24 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = [org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest]
+workingDir = /tmp/kgenprog-work2741565129661929698
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 10000
+timeLimit = PT30M
+testTimeLimit = PT3S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 0
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /opt/apr-data/example/math040
+================================================================
+2019-06-12 01:24:32 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-06-12 01:24:43 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 11 seconds
+Variants: generated 10, syntax-valid 9, build-succeeded 4
+Fitness: max 1.0(1), min 0.9333333333333333(3), ave 0.95
+----------------------------------------------------------------
+
+2019-06-12 01:24:43 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-06-12 01:24:43 [main] [INFO]  Patch - 
+--- org.apache.commons.math.util.Incrementor
++++ org.apache.commons.math.util.Incrementor
+@@ -62,7 +62,6 @@
+              new MaxCountExceededCallback() {
+                  /** {@inheritDoc} */
+                  public void trigger(int max) {
+-                     throw new MaxCountExceededException(max);
+                  }
+              });
+     }
+2019-06-12 01:24:43 [main] [INFO]  KGenProgMain - execution time: 11 seconds
+2019-06-12 01:24:43 [main] [INFO]  KGenProgMain - Total Variants: generated 10, syntax-valid 9, build-succeeded 4
+
+
+real 19.485
+user 67.426
+sys  1.347

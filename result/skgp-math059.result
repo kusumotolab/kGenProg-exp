@@ -1,0 +1,30 @@
+Sun Jun 16 15:08:19 UTC 2019
+/opt/apr-data/t-kuma-example/math059
+java -jar /opt/apr-data/bin/kgp.jar --config kgenprog.toml
+2019-06-16 15:08:19 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = 
+executionTests = [org.apache.commons.math.util.FastMathTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 10000
+timeLimit = PT30M
+testTimeLimit = PT3S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 0
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/t-kuma-example/math059
+================================================================
+2019-06-16 15:08:30 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+
+real 2400.077
+user 2436.930
+sys  0.955
