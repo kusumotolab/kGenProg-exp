@@ -158,9 +158,9 @@ def extract_id_seed(file, project):
     ''' fileからのプロジェクトidと乱数シードの抜き出し '''
     import re
 
-    m = re.search('.*%s(\d+)-(\d+).*' % project, file)
+    m = re.search('.*%s(\d+).*' % project, file)
     if m:
-        return int(m.group(1)), int(m.group(2))
+        return int(m.group(1)), 0
     else:
         raise ValueError(file)
 
