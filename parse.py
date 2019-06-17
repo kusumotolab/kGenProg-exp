@@ -9,14 +9,13 @@ def parse(dir, apr, project):
     status                     = extract_array(dir, apr, project, extract_status, "stt")
     time                       = extract_array(dir, apr, project, extract_real_time, "time")
     n_total_variants           = extract_array(dir, apr, project, extract_n_total_variants, "v")
-    n_syntax_valid_variants    = extract_array(dir, apr, project, extract_n_syntax_valid_variants, "v-sv")
+#    n_syntax_valid_variants    = extract_array(dir, apr, project, extract_n_syntax_valid_variants, "v-sv")
     n_build_succeeded_variants = extract_array(dir, apr, project, extract_n_build_succeeded_variants, "v-bs")
     fitness                    = extract_array(dir, apr, project, extract_fitness, "fit")
  
     
     print_arrays([status, \
                   time, n_total_variants, \
-                  n_syntax_valid_variants, \
                   n_build_succeeded_variants, \
                   fitness])
 
@@ -103,11 +102,10 @@ def extract_n_variants(file):
     build_succeed = 0
     
     for line in open(file):
-        m = re.search('Variants: generated (\d+), syntax-valid (\d+), build-succeeded (\d+)', line)
+        m = re.search('Variants: generated (\d+), build-succeeded (\d+), build-failed (\d+), syntax-invalid (\d+), redundant (\d+)', line)
         if isinstance(m, type(None)):
             continue
         total += int(m.group(1))
-        syntax_valid += int(m.group(2))
         build_succeed += int(m.group(3))
 
     return str(total), str(syntax_valid), str(build_succeed)
@@ -136,7 +134,7 @@ def extract_status(file):
 
     status = set()
     for line in open(file):
-        if re.search('KGenProgMain - found enough solutions', line):
+        if re.search('KGenProgMain - found enough solutions.', line):
             status.add('found')
 
     return list(status)
