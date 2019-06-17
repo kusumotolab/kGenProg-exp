@@ -118,7 +118,7 @@ def extract_fitness(file):
     
     maxfitness = set();
     
-        for line in open(file):
+    for line in open(file):
         m = re.search('Fitness: max (\d.\d+), min (\d.\d+), ave (\d.\d+)', line)
         if isinstance(m, type(None)):
             continue
