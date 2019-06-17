@@ -11,11 +11,14 @@ def parse(dir, apr, project):
     n_total_variants           = extract_array(dir, apr, project, extract_n_total_variants, "v")
     n_syntax_valid_variants    = extract_array(dir, apr, project, extract_n_syntax_valid_variants, "v-sv")
     n_build_succeeded_variants = extract_array(dir, apr, project, extract_n_build_succeeded_variants, "v-bs")
-
+    fitness                    = extract_array(dir, apr, project, extract_fitness, "fit")
+ 
+    
     print_arrays([status, \
                   time, n_total_variants, \
                   n_syntax_valid_variants, \
-                  n_build_succeeded_variants])
+                  n_build_succeeded_variants, \
+                  fitness])
 
 
 def print_arrays(dfs):
@@ -91,34 +94,37 @@ def extract_n_total_variants(file):
     total, syntax_valid, build_succeeded = extract_n_variants(file)
     return total
 
-
 def extract_n_variants(file):
     ''' fileからのバリアント情報の抜き出し '''
     import re
 
-    total = ""
-    build_succeed = ""
-
+    total = 0
+    syntax_valid = 0
+    build_succeed = 0
+    
     for line in open(file):
-        m = re.search('KGenProgMain - Total Variants: generated (\d+), syntax-valid (\d+), build-succeeded (\d+)', line)
-        if m:
-            total = m.group(1)
-            syntax_valid = m.group(2)
-            build_succeed = m.group(3)
-            return (total, syntax_valid, build_succeed)
+        m = re.search('Variants: generated (\d+), syntax-valid (\d+), build-succeeded (\d+)', line)
+        if isinstance(m, type(None)):
+            continue
+        total += int(m.group(1))
+        syntax_valid += int(m.group(2))
+        build_succeed += int(m.group(3))
 
-        m = re.search('^NR_GENERATIONS=(\d+)', line)
-        if m:
-            total = m.group(1)
+    return str(total), str(syntax_valid), str(build_succeed)
 
-        m = re.search('^NR_RIGHT_COMPILATIONS=(\d+)', line)
-        if m:
-            build_succeed = m.group(1)
 
-        if total and build_succeed:
-            return (total, "", build_succeed)
-
-    return "", "", ""
+def extract_fitness(file):
+    import re
+    
+    maxfitness = set();
+    
+        for line in open(file):
+        m = re.search('Fitness: max (\d.\d+), min (\d.\d+), ave (\d.\d+)', line)
+        if isinstance(m, type(None)):
+            continue
+        maxfitness.add(str(m.group(1)))
+        
+    return list(maxfitness)
 
 
 def extract_status(file):
@@ -130,37 +136,8 @@ def extract_status(file):
 
     status = set()
     for line in open(file):
-        # kgp
-        if re.search('GC overhead limit exceeded', line):
-            status.add('e:heap')
-
-        if re.search('Java heap space', line):
-            status.add('e:heap')
-
         if re.search('KGenProgMain - found enough solutions', line):
             status.add('found')
-
-        if re.search('KGenProgMain - reached the time limit', line):
-            status.add('timeout')
-
-        if re.search('^OUTPUT_STATUS=STOP_BY_PATCH_FOUND', line):
-            status.add('found')
-
-        # astor
-        if re.search('fr.inria.main.evolution.AstorMain', line):
-            is_astor = True
-
-        if re.search('^OUTPUT_STATUS=', line):
-            contains_status = True
-
-        if re.search('^OUTPUT_STATUS=ERROR', line):
-            status.add('e')
-
-        if re.search('^OUTPUT_STATUS=MAX_GENERATION', line):
-            status.add('maxgen')
-
-    #if is_astor and not contains_status:
-    #    status.add('e:timeout')
 
     return list(status)
 
