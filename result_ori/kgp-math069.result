@@ -1,0 +1,132 @@
+Mon Jun 17 04:15:19 UTC 2019
+/opt/apr-data/example/math069
+java -jar /opt/apr-data/bin/kgp.jar --config kgenprog.toml
+2019-06-17 04:15:20 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = 
+executionTests = [org.apache.commons.math.stat.correlation.PearsonsCorrelationTest, org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 10000
+timeLimit = PT30M
+testTimeLimit = PT3S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 0
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/example/math069
+================================================================
+2019-06-17 04:15:24 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-06-17 04:15:25 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 1, redundant 1
+Fitness: max 0.8823529411764706(1), min 0.8823529411764706(1), ave 0.8823529411764706
+----------------------------------------------------------------
+
+2019-06-17 04:15:25 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-06-17 04:15:27 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 0, redundant 2
+Fitness: max 0.6470588235294118(1), min 0.6470588235294118(1), ave 0.6470588235294118
+----------------------------------------------------------------
+
+2019-06-17 04:15:27 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-06-17 04:15:27 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 10, build-succeeded 0, build-failed 8, syntax-invalid 0, redundant 2
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-17 04:15:27 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-06-17 04:15:27 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 10, build-succeeded 0, build-failed 10, syntax-invalid 0, redundant 0
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-17 04:15:27 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-06-17 04:15:28 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 0, redundant 2
+Fitness: max 0.8823529411764706(1), min 0.8823529411764706(1), ave 0.8823529411764706
+----------------------------------------------------------------
+
+2019-06-17 04:15:28 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-06-17 04:39:25 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 24 minutes 0 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 0.5882352941176471(1), min 0.5882352941176471(1), ave 0.5882352941176471
+----------------------------------------------------------------
+
+2019-06-17 04:39:25 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-06-17 04:39:26 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 24 minutes 1 seconds
+Variants: generated 10, build-succeeded 1, build-failed 9, syntax-invalid 0, redundant 0
+Fitness: max 0.8823529411764706(1), min 0.8823529411764706(1), ave 0.8823529411764706
+----------------------------------------------------------------
+
+2019-06-17 04:39:26 [main] [INFO]  KGenProgMain - entered the era of 8th generation.
+2019-06-17 04:39:28 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 24 minutes 3 seconds
+Variants: generated 10, build-succeeded 3, build-failed 6, syntax-invalid 0, redundant 1
+Fitness: max 1.0(1), min 0.8235294117647058(1), ave 0.9019607843137255
+----------------------------------------------------------------
+
+2019-06-17 04:39:28 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-06-17 04:39:28 [main] [INFO]  KGenProgMain - GA stopped at the era of 8th generation.
+2019-06-17 04:39:28 [main] [INFO]  Patch - 
+--- org.apache.commons.math.stat.regression.SimpleRegression
++++ org.apache.commons.math.stat.regression.SimpleRegression
+@@ -127,7 +127,6 @@
+             double dy = y - ybar;
+             sumXX += dx * dx * (double) n / (n + 1d);
+             sumYY += dy * dy * (double) n / (n + 1d);
+-            sumXY += dx * dy * (double) n / (n + 1d);
+             xbar += dx / (n + 1.0);
+             ybar += dy / (n + 1.0);
+         }
+@@ -295,9 +294,10 @@
+     * @return the slope of the regression line
+     */
+     public double getSlope() {
+-        if (n < 2) {
+-            return Double.NaN; //not enough data
+-        }
++        if (n < 2)
++			if (n > 2) {
++				distribution.setDegreesOfFreedom(n - 2);
++			}
+         if (Math.abs(sumXX) < 10 * Double.MIN_VALUE) {
+             return Double.NaN; //not enough variation in x
+         }
+2019-06-17 04:39:28 [main] [INFO]  Patch - 
+--- org.apache.commons.math.linear.BlockRealMatrix
++++ org.apache.commons.math.linear.BlockRealMatrix
+@@ -674,7 +674,6 @@
+                     for (int i = 0; i < iHeight; ++i) {
+                         sum += Math.abs(block[i * jWidth + j]);
+                     }
+-                    colSums[j] += sum;
+                 }
+             }
+             for (int j = 0; j < jWidth; ++j) {
+2019-06-17 04:39:30 [main] [INFO]  KGenProgMain - execution time: 24 minutes 5 seconds
+
+real 1450.562
+user 2085.847
+sys  831.581
