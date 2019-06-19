@@ -121,7 +121,7 @@ def extract_fitness(file):
         if isinstance(m, type(None)):
             continue
         if m.group(1)=='--':
-            maxfitness.append(0)
+            maxfitness.append('NULL')
         else:
             maxfitness.append(float(m.group(1)))
         
