@@ -1,0 +1,106 @@
+Fri Jun 21 13:16:03 UTC 2019
+/opt/apr-data/example/math058
+java -jar /opt/apr-data/bin/kgp.jar --config kgenprog.toml
+2019-06-21 13:16:04 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = 
+executionTests = [org.apache.commons.math.optimization.fitting.GaussianFitterTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 20000
+timeLimit = PT1H
+testTimeLimit = PT10S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 0
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/example/math058
+================================================================
+2019-06-21 13:16:17 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-06-21 13:16:19 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 1, redundant 1
+Fitness: max 0.25(1), min 0.25(1), ave 0.25
+----------------------------------------------------------------
+
+2019-06-21 13:16:19 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-06-21 13:16:21 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 10, build-succeeded 1, build-failed 6, syntax-invalid 0, redundant 3
+Fitness: max 0.875(1), min 0.875(1), ave 0.875
+----------------------------------------------------------------
+
+2019-06-21 13:16:21 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-06-21 13:16:22 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 seconds
+Variants: generated 10, build-succeeded 2, build-failed 6, syntax-invalid 0, redundant 2
+Fitness: max 0.875(2), min 0.875(2), ave 0.875
+----------------------------------------------------------------
+
+2019-06-21 13:16:22 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-06-21 13:16:23 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 seconds
+Variants: generated 10, build-succeeded 4, build-failed 3, syntax-invalid 0, redundant 3
+Fitness: max 0.875(3), min 0.25(1), ave 0.71875
+----------------------------------------------------------------
+
+2019-06-21 13:16:23 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-06-21 13:16:36 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 18 seconds
+Variants: generated 10, build-succeeded 5, build-failed 4, syntax-invalid 0, redundant 1
+Fitness: max 1.0(1), min 0.875(4), ave 0.9
+----------------------------------------------------------------
+
+2019-06-21 13:16:36 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-06-21 13:16:36 [main] [INFO]  KGenProgMain - GA stopped at the era of 5th generation.
+2019-06-21 13:16:36 [main] [INFO]  Patch - 
+--- org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizer
++++ org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizer
+@@ -419,7 +419,7 @@
+                         int pj = permutation[j];
+                         point[pj] = oldX[pj];
+                     }
+-                    tmpVec    = weightedResiduals;
++                    final double deltaOld = delta;
+                     weightedResiduals = oldRes;
+                     oldRes    = tmpVec;
+                     tmpVec    = objective;
+@@ -616,9 +616,6 @@
+                 paru = FastMath.min(paru, lmPar);
+             }
+ 
+-            // compute an improved estimate for lmPar
+-            lmPar = FastMath.max(parl, lmPar + correction);
+-
+         }
+     }
+ 
+@@ -722,9 +719,8 @@
+             if ((lmDiag[j] == 0) && (nSing == solvedCols)) {
+                 nSing = j;
+             }
+-            if (nSing < solvedCols) {
+-                work[j] = 0;
+-            }
++            if (nSing < solvedCols)
++				lmPar = 0;
+         }
+         if (nSing > 0) {
+             for (int j = nSing - 1; j >= 0; --j) {
+2019-06-21 13:16:38 [main] [INFO]  KGenProgMain - execution time: 21 seconds
+
+real 36.061
+user 77.372
+sys  1.698

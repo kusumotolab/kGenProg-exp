@@ -1,0 +1,76 @@
+Thu Jun 20 23:53:58 UTC 2019
+/opt/apr-data/example/math050
+java -jar /opt/apr-data/bin/kgp.jar --config kgenprog.toml
+2019-06-20 23:54:00 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = 
+executionTests = [org.apache.commons.math.analysis.solvers.RegulaFalsiSolverTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 20000
+timeLimit = PT1H
+testTimeLimit = PT10S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 0
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/example/math050
+================================================================
+2019-06-20 23:54:12 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-06-20 23:54:14 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 seconds
+Variants: generated 10, build-succeeded 0, build-failed 8, syntax-invalid 1, redundant 1
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-20 23:54:14 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-06-20 23:54:16 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 10, build-succeeded 3, build-failed 6, syntax-invalid 0, redundant 1
+Fitness: max 1.0(1), min 0.4444444444444444(1), ave 0.7777777777777777
+----------------------------------------------------------------
+
+2019-06-20 23:54:16 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-06-20 23:54:16 [main] [INFO]  KGenProgMain - GA stopped at the era of 2nd generation.
+2019-06-20 23:54:16 [main] [INFO]  Patch - 
+--- org.apache.commons.math.analysis.solvers.BaseSecantSolver
++++ org.apache.commons.math.analysis.solvers.BaseSecantSolver
+@@ -175,24 +175,6 @@
+                 f0 = f1;
+                 inverted = !inverted;
+             } else {
+-                switch (method) {
+-                case ILLINOIS:
+-                    f0 *= 0.5;
+-                    break;
+-                case PEGASUS:
+-                    f0 *= f1 / (f1 + fx);
+-                    break;
+-                case REGULA_FALSI:
+-                    // Nothing.
+-                    if (x == x1) {
+-                        x0 = 0.5 * (x0 + x1 - FastMath.max(rtol * FastMath.abs(x1), atol));
+-                        f0 = computeObjectiveValue(x0);
+-                    }
+-                    break;
+-                default:
+-                    // Should never happen.
+-                    throw new MathInternalError();
+-                }
+             }
+             // Update from [x0, x1] to [x0, x].
+             x1 = x;
+2019-06-20 23:54:17 [main] [INFO]  KGenProgMain - execution time: 4 seconds
+
+real 18.791
+user 59.786
+sys  1.093
