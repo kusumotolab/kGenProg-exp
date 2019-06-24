@@ -1,0 +1,466 @@
+Fri Jun 21 03:23:54 UTC 2019
+/opt/apr-data/t-kuma-example/math085
+java -jar /opt/apr-data/bin/kgp.jar --config kgenprog.toml
+2019-06-21 03:23:55 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = 
+executionTests = [org.apache.commons.math.distribution.NormalDistributionTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 20000
+timeLimit = PT1H
+testTimeLimit = PT10S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 0
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/t-kuma-example/math085
+================================================================
+2019-06-21 03:24:05 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-06-21 03:24:06 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 0 seconds
+Variants: generated 10, build-succeeded 1, build-failed 6, syntax-invalid 1, redundant 2
+Fitness: max 0.9230769230769231(1), min 0.9230769230769231(1), ave 0.9230769230769231
+----------------------------------------------------------------
+
+2019-06-21 03:24:06 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-06-21 03:24:06 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 seconds
+Variants: generated 10, build-succeeded 0, build-failed 8, syntax-invalid 0, redundant 2
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-21 03:24:06 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-06-21 03:24:07 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 seconds
+Variants: generated 10, build-succeeded 2, build-failed 3, syntax-invalid 0, redundant 5
+Fitness: max 0.9230769230769231(1), min 0.8461538461538461(1), ave 0.8846153846153846
+----------------------------------------------------------------
+
+2019-06-21 03:24:07 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-06-21 03:24:07 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 10, build-succeeded 0, build-failed 6, syntax-invalid 0, redundant 4
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-21 03:24:07 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-06-21 03:24:08 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 10, build-succeeded 1, build-failed 5, syntax-invalid 0, redundant 4
+Fitness: max 0.9230769230769231(1), min 0.9230769230769231(1), ave 0.9230769230769231
+----------------------------------------------------------------
+
+2019-06-21 03:24:08 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-06-21 03:24:08 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 10, build-succeeded 0, build-failed 4, syntax-invalid 0, redundant 6
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-21 03:24:08 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:154)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:154)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:154)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:154)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:154)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:154)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:154)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:154)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:154)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:154)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:154)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:154)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testExtremeValues(NormalDistributionTest.java:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.ConvergenceException: 
+	at org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils.bracket(UnivariateRealSolverUtils.java:204)
+	at org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils.bracket(UnivariateRealSolverUtils.java:127)
+	at org.apache.commons.math.distribution.AbstractContinuousDistribution.inverseCumulativeProbability(AbstractContinuousDistribution.java:85)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.inverseCumulativeProbability(NormalDistributionImpl.java:162)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testMath280(NormalDistributionTest.java:169)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+org.apache.commons.math.MaxIterationsExceededException: 
+	at org.apache.commons.math.special.Gamma.regularizedGammaP(Gamma.java:181)
+	at org.apache.commons.math.special.Erf.erf(Erf.java:51)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.cumulativeProbability(NormalDistributionImpl.java:126)
+	at org.apache.commons.math.distribution.AbstractContinuousDistribution$1.value(AbstractContinuousDistribution.java:73)
+	at org.apache.commons.math.distribution.AbstractContinuousDistribution.inverseCumulativeProbability(AbstractContinuousDistribution.java:100)
+	at org.apache.commons.math.distribution.NormalDistributionImpl.inverseCumulativeProbability(NormalDistributionImpl.java:162)
+	at org.apache.commons.math.distribution.NormalDistributionTest.testMath280(NormalDistributionTest.java:169)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:244)
+	at junit.framework.TestCase$CallableStatement.call(TestCase.java:234)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.lang.Thread.run(Thread.java:748)
+2019-06-21 03:24:09 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 10, build-succeeded 2, build-failed 6, syntax-invalid 0, redundant 2
+Fitness: max 0.9230769230769231(2), min 0.9230769230769231(2), ave 0.9230769230769231
+----------------------------------------------------------------
+
+2019-06-21 03:24:09 [main] [INFO]  KGenProgMain - entered the era of 8th generation.
+2019-06-21 03:24:09 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 10, build-succeeded 2, build-failed 6, syntax-invalid 0, redundant 2
+Fitness: max 1.0(1), min 0.9230769230769231(1), ave 0.9615384615384616
+----------------------------------------------------------------
+
+2019-06-21 03:24:09 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-06-21 03:24:09 [main] [INFO]  KGenProgMain - GA stopped at the era of 8th generation.
+2019-06-21 03:24:10 [main] [INFO]  Patch - 
+--- org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils
++++ org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils
+@@ -196,12 +196,7 @@
+                 ((a > lowerBound) || (b < upperBound)));
+    
+         if (fa * fb >= 0.0 ) {
+-            throw new ConvergenceException(
+-                      "number of iterations={0}, maximum iterations={1}, " +
+-                      "initial={2}, lower bound={3}, upper bound={4}, final a value={5}, " +
+-                      "final b value={6}, f(a)={7}, f(b)={8}",
+-                      numIterations, maximumIterations, initial,
+-                      lowerBound, upperBound, a, b, fa, fb);
++            double m;
+         }
+         
+         return new double[]{a, b};
+2019-06-21 03:24:10 [main] [INFO]  Patch - 
+--- org.apache.commons.math.MathException
++++ org.apache.commons.math.MathException
+@@ -116,7 +116,6 @@
+      *                   to be thrown.
+      */
+     public MathException(Throwable rootCause) {
+-        super(rootCause);
+         this.pattern   = getMessage();
+         this.arguments = new Object[0];
+     }
+2019-06-21 03:24:12 [main] [INFO]  KGenProgMain - execution time: 6 seconds
+
+real 17.460
+user 58.613
+sys  1.265

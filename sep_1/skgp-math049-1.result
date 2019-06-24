@@ -1,0 +1,51 @@
+Sat Jun 22 21:17:30 UTC 2019
+/opt/apr-data/t-kuma-example/math049
+java -jar /opt/apr-data/bin/kgp.jar --config kgenprog.toml
+2019-06-22 21:17:31 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = 
+executionTests = [org.apache.commons.math.linear.SparseRealVectorTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 20000
+timeLimit = PT1H
+testTimeLimit = PT10S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 1
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/t-kuma-example/math049
+================================================================
+2019-06-22 21:17:45 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-06-22 21:17:47 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 1, redundant 1
+Fitness: max 1.0(1), min 1.0(1), ave 1.0
+----------------------------------------------------------------
+
+2019-06-22 21:17:47 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-06-22 21:17:47 [main] [INFO]  KGenProgMain - GA stopped at the era of 1st generation.
+2019-06-22 21:17:47 [main] [INFO]  Patch - 
+--- org.apache.commons.math.util.OpenIntToDoubleHashMap
++++ org.apache.commons.math.util.OpenIntToDoubleHashMap
+@@ -396,7 +396,6 @@
+         final double previous = values[index];
+         values[index] = missingEntries;
+         --size;
+-        ++count;
+         return previous;
+     }
+ 
+2019-06-22 21:17:48 [main] [INFO]  KGenProgMain - execution time: 2 seconds
+
+real 18.000
+user 61.495
+sys  0.939

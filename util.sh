@@ -32,11 +32,11 @@ tmp=$base/tmp
 ##########################
 
 # 実験の設定
-timelimit=1800
+timelimit=3600
 mutation_generating_count=10
 crossover_generating_count=0
 headcount=5
-max_generation=10000
+max_generation=20000
 
 # to share repository caches
 export MAVEN_OPTS="-Dmaven.repo.local=$m2_repo"
@@ -198,6 +198,7 @@ run() {
 _run_kgp() {
     _target=$1
     _id=$2
+    _seed=$3
 
     _idz=$(printf %03d $_id)
     _t=$example/$_target$_idz
@@ -211,23 +212,23 @@ _run_kgp() {
     	echo -e "root-dir = \".\"\n\
                 src = [$(_get_d4j_params d4j.dir.src.classes)]\n\
                 test = [$(_get_d4j_params d4j.dir.src.tests)]\n\
-	        	cp = [\"/opt/apr-data/.m2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar\"]\n\
+	        cp = [\"/opt/apr-data/.m2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar\"]\n\
                 exec-test = [$(_get_d4j_params d4j.tests.trigger)]\n\
                 time-limit = $timelimit\n\
-                test-time-limit = 3\n\
+                test-time-limit = 10\n\
                 max-generation = $max_generation\n\
                 headcount = $headcount\n\
                 mutation-generating-count = $mutation_generating_count\n\
                 crossover-generating-count = $crossover_generating_count\n\
-                random-seed = 0\n\
+                random-seed = $_seed\n\
         		log-level = \"INFO\"\n\
                 out-dir = \"$tmp\"" > kgenprog.toml
          cmd=$(echo java -jar $kgp_bin --config kgenprog.toml)
             
          echo $cmd
-         echo $cmd | xargs timeout 2400 
+         echo $cmd | xargs timeout 4000 
 
-     )) 2>&1 | tee $out/kgp-$_target$_idz.result
+     )) 2>&1 | tee $out/kgp-$_target$_idz-$_seed.result
 
     # -v
     # --random-seed 123
@@ -237,6 +238,7 @@ _run_kgp() {
 _run_skgp() {
     _target=$1
     _id=$2
+    _seed=$3
 
     _idz=$(printf %03d $_id)
     _t=$texample/$_target$_idz
@@ -253,20 +255,20 @@ _run_skgp() {
 	        	cp = [\"/opt/apr-data/.m2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar\"]\n\
                 exec-test = [$(_get_d4j_params d4j.tests.trigger)]\n\
                 time-limit = $timelimit\n\
-                test-time-limit = 3\n\
+                test-time-limit = 10\n\
                 max-generation = $max_generation\n\
                 headcount = $headcount\n\
                 mutation-generating-count = $mutation_generating_count\n\
                 crossover-generating-count = $crossover_generating_count\n\
-                random-seed = 0\n\
+                random-seed = $_seed\n\
         		log-level = \"INFO\"\n\
                 out-dir = \"$tmp\"" > kgenprog.toml
          cmd=$(echo java -jar $kgp_bin --config kgenprog.toml)
             
          echo $cmd
-         echo $cmd | xargs timeout 2400 
+         echo $cmd | xargs timeout 4000 
 
-     )) 2>&1 | tee $out/skgp-$_target$_idz.result
+     )) 2>&1 | tee $out/skgp-$_target$_idz-$_seed.result
 
     # -v
     # --random-seed 123
