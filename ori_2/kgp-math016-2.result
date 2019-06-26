@@ -1,0 +1,203 @@
+Mon Jun 24 09:45:40 UTC 2019
+/opt/apr-data/example/math016
+java -jar /opt/apr-data/bin/kgp.jar --config kgenprog.toml
+2019-06-24 09:45:40 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = 
+executionTests = [org.apache.commons.math3.util.FastMathTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 20000
+timeLimit = PT1H
+testTimeLimit = PT10S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 2
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/example/math016
+================================================================
+FastMath does not implement: public static int java.lang.StrictMath.addExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.addExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.multiplyExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.multiplyExact(long,long)
+FastMath does not implement: public static long java.lang.StrictMath.subtractExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.subtractExact(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.toIntExact(long)
+FastMath does not implement: public static long java.lang.StrictMath.floorDiv(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.floorDiv(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.floorMod(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.floorMod(long,long)
+FastMath does not implement: public static float java.lang.StrictMath.nextDown(float)
+FastMath does not implement: public static double java.lang.StrictMath.nextDown(double)
+2019-06-24 09:46:02 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+FastMath does not implement: public static int java.lang.StrictMath.addExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.addExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.multiplyExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.multiplyExact(long,long)
+FastMath does not implement: public static long java.lang.StrictMath.subtractExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.subtractExact(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.toIntExact(long)
+FastMath does not implement: public static long java.lang.StrictMath.floorDiv(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.floorDiv(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.floorMod(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.floorMod(long,long)
+FastMath does not implement: public static float java.lang.StrictMath.nextDown(float)
+FastMath does not implement: public static double java.lang.StrictMath.nextDown(double)
+FastMath does not implement: public static int java.lang.StrictMath.addExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.addExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.multiplyExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.multiplyExact(long,long)
+FastMath does not implement: public static long java.lang.StrictMath.subtractExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.subtractExact(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.toIntExact(long)
+FastMath does not implement: public static long java.lang.StrictMath.floorDiv(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.floorDiv(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.floorMod(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.floorMod(long,long)
+FastMath does not implement: public static float java.lang.StrictMath.nextDown(float)
+FastMath does not implement: public static double java.lang.StrictMath.nextDown(double)
+2019-06-24 09:47:18 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 15 seconds
+Variants: generated 10, build-succeeded 3, build-failed 6, syntax-invalid 1, redundant 0
+Fitness: max 0.9347826086956522(1), min 0.0(1), ave 0.47826086956521746
+----------------------------------------------------------------
+
+2019-06-24 09:47:18 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-06-24 09:47:19 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 minutes 16 seconds
+Variants: generated 10, build-succeeded 0, build-failed 6, syntax-invalid 0, redundant 4
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-24 09:47:19 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+FastMath does not implement: public static int java.lang.StrictMath.addExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.addExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.multiplyExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.multiplyExact(long,long)
+FastMath does not implement: public static long java.lang.StrictMath.subtractExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.subtractExact(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.toIntExact(long)
+FastMath does not implement: public static long java.lang.StrictMath.floorDiv(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.floorDiv(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.floorMod(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.floorMod(long,long)
+FastMath does not implement: public static float java.lang.StrictMath.nextDown(float)
+FastMath does not implement: public static double java.lang.StrictMath.nextDown(double)
+FastMath does not implement: public static int java.lang.StrictMath.addExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.addExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.multiplyExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.multiplyExact(long,long)
+FastMath does not implement: public static long java.lang.StrictMath.subtractExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.subtractExact(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.toIntExact(long)
+FastMath does not implement: public static long java.lang.StrictMath.floorDiv(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.floorDiv(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.floorMod(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.floorMod(long,long)
+FastMath does not implement: public static float java.lang.StrictMath.nextDown(float)
+FastMath does not implement: public static double java.lang.StrictMath.nextDown(double)
+2019-06-24 09:48:41 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 38 seconds
+Variants: generated 10, build-succeeded 2, build-failed 5, syntax-invalid 0, redundant 3
+Fitness: max 0.5434782608695652(1), min 0.5(1), ave 0.5217391304347826
+----------------------------------------------------------------
+
+2019-06-24 09:48:41 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-06-24 09:48:42 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 39 seconds
+Variants: generated 10, build-succeeded 0, build-failed 6, syntax-invalid 0, redundant 4
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-24 09:48:42 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+FastMath does not implement: public static int java.lang.StrictMath.addExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.addExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.multiplyExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.multiplyExact(long,long)
+FastMath does not implement: public static long java.lang.StrictMath.subtractExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.subtractExact(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.toIntExact(long)
+FastMath does not implement: public static long java.lang.StrictMath.floorDiv(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.floorDiv(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.floorMod(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.floorMod(long,long)
+FastMath does not implement: public static float java.lang.StrictMath.nextDown(float)
+FastMath does not implement: public static double java.lang.StrictMath.nextDown(double)
+2019-06-24 09:49:31 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 minutes 28 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 0, redundant 2
+Fitness: max 0.5(1), min 0.5(1), ave 0.5
+----------------------------------------------------------------
+
+2019-06-24 09:49:31 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+FastMath does not implement: public static int java.lang.StrictMath.addExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.addExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.multiplyExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.multiplyExact(long,long)
+FastMath does not implement: public static long java.lang.StrictMath.subtractExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.subtractExact(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.toIntExact(long)
+FastMath does not implement: public static long java.lang.StrictMath.floorDiv(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.floorDiv(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.floorMod(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.floorMod(long,long)
+FastMath does not implement: public static float java.lang.StrictMath.nextDown(float)
+FastMath does not implement: public static double java.lang.StrictMath.nextDown(double)
+FastMath does not implement: public static int java.lang.StrictMath.addExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.addExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.multiplyExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.multiplyExact(long,long)
+FastMath does not implement: public static long java.lang.StrictMath.subtractExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.subtractExact(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.toIntExact(long)
+FastMath does not implement: public static long java.lang.StrictMath.floorDiv(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.floorDiv(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.floorMod(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.floorMod(long,long)
+FastMath does not implement: public static float java.lang.StrictMath.nextDown(float)
+FastMath does not implement: public static double java.lang.StrictMath.nextDown(double)
+2019-06-24 09:50:42 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 minutes 39 seconds
+Variants: generated 10, build-succeeded 2, build-failed 6, syntax-invalid 0, redundant 2
+Fitness: max 0.9347826086956522(1), min 0.5(1), ave 0.7173913043478262
+----------------------------------------------------------------
+
+2019-06-24 09:50:42 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+FastMath does not implement: public static int java.lang.StrictMath.addExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.addExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.multiplyExact(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.multiplyExact(long,long)
+FastMath does not implement: public static long java.lang.StrictMath.subtractExact(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.subtractExact(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.toIntExact(long)
+FastMath does not implement: public static long java.lang.StrictMath.floorDiv(long,long)
+FastMath does not implement: public static int java.lang.StrictMath.floorDiv(int,int)
+FastMath does not implement: public static int java.lang.StrictMath.floorMod(int,int)
+FastMath does not implement: public static long java.lang.StrictMath.floorMod(long,long)
+FastMath does not implement: public static float java.lang.StrictMath.nextDown(float)
+FastMath does not implement: public static double java.lang.StrictMath.nextDown(double)
+2019-06-24 09:51:14 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 minutes 11 seconds
+Variants: generated 10, build-succeeded 1, build-failed 5, syntax-invalid 0, redundant 4
+Fitness: max 0.5434782608695652(1), min 0.5434782608695652(1), ave 0.5434782608695652
+----------------------------------------------------------------
+
+2019-06-24 09:51:14 [main] [INFO]  KGenProgMain - entered the era of 8th generation.
+
+real 4000.240
+user 4081.673
+sys  2.957

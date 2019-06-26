@@ -1,0 +1,50 @@
+Mon Jun 24 14:12:21 UTC 2019
+/opt/apr-data/example/math018
+java -jar /opt/apr-data/bin/kgp.jar --config kgenprog.toml
+2019-06-24 14:12:21 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = 
+executionTests = [org.apache.commons.math3.optimization.direct.CMAESOptimizerTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 20000
+timeLimit = PT1H
+testTimeLimit = PT10S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 2
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/example/math018
+================================================================
+2019-06-24 14:12:31 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-06-24 14:12:37 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 seconds
+Variants: generated 10, build-succeeded 2, build-failed 6, syntax-invalid 1, redundant 1
+Fitness: max 1.0(1), min 0.34615384615384615(1), ave 0.6730769230769231
+----------------------------------------------------------------
+
+2019-06-24 14:12:37 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-06-24 14:12:37 [main] [INFO]  KGenProgMain - GA stopped at the era of 1st generation.
+2019-06-24 14:12:37 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-24 14:12:37 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-24 14:12:37 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-24 14:12:37 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-24 14:12:37 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-24 14:12:37 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-24 14:12:37 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-24 14:12:37 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-24 14:12:37 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-24 14:12:37 [main] [ERROR] PatchGenerator - Input length = 1
+2019-06-24 14:12:37 [main] [INFO]  KGenProgMain - execution time: 6 seconds
+
+real 16.564
+user 66.573
+sys  1.012

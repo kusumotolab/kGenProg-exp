@@ -1,0 +1,46 @@
+Tue Jun 25 01:11:42 UTC 2019
+/opt/apr-data/t-kuma-example/math054
+java -jar /opt/apr-data/bin/kgp.jar --config kgenprog.toml
+2019-06-25 01:11:42 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = 
+executionTests = [org.apache.commons.math.dfp.DfpTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 20000
+timeLimit = PT1H
+testTimeLimit = PT10S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 2
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/t-kuma-example/math054
+================================================================
+2019-06-25 01:11:49 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-06-25 01:11:50 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 seconds
+Variants: generated 10, build-succeeded 2, build-failed 5, syntax-invalid 1, redundant 2
+Fitness: max 0.9512195121951219(1), min 0.9024390243902439(1), ave 0.9268292682926829
+----------------------------------------------------------------
+
+2019-06-25 01:11:50 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-06-25 01:14:16 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 minutes 27 seconds
+Variants: generated 10, build-succeeded 1, build-failed 4, syntax-invalid 0, redundant 5
+Fitness: max 0.8780487804878049(1), min 0.8780487804878049(1), ave 0.8780487804878049
+----------------------------------------------------------------
+
+2019-06-25 01:14:16 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+
+real 4000.095
+user 4045.662
+sys  1.316

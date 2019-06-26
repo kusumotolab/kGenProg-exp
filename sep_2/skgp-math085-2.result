@@ -1,0 +1,94 @@
+Tue Jun 25 13:08:32 UTC 2019
+/opt/apr-data/t-kuma-example/math085
+java -jar /opt/apr-data/bin/kgp.jar --config kgenprog.toml
+2019-06-25 13:08:32 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = 
+executionTests = [org.apache.commons.math.distribution.NormalDistributionTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 20000
+timeLimit = PT1H
+testTimeLimit = PT10S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 2
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/t-kuma-example/math085
+================================================================
+2019-06-25 13:08:37 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-06-25 13:08:38 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 0 seconds
+Variants: generated 10, build-succeeded 2, build-failed 6, syntax-invalid 1, redundant 1
+Fitness: max 0.9230769230769231(2), min 0.9230769230769231(2), ave 0.9230769230769231
+----------------------------------------------------------------
+
+2019-06-25 13:08:38 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-06-25 13:08:38 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 0 seconds
+Variants: generated 10, build-succeeded 0, build-failed 6, syntax-invalid 0, redundant 4
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-25 13:08:38 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-06-25 13:08:38 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 0 seconds
+Variants: generated 10, build-succeeded 0, build-failed 7, syntax-invalid 0, redundant 3
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-25 13:08:38 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-06-25 13:08:38 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 0 seconds
+Variants: generated 10, build-succeeded 2, build-failed 5, syntax-invalid 0, redundant 3
+Fitness: max 1.0(1), min 0.9230769230769231(1), ave 0.9615384615384616
+----------------------------------------------------------------
+
+2019-06-25 13:08:38 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-06-25 13:08:38 [main] [INFO]  KGenProgMain - GA stopped at the era of 4th generation.
+2019-06-25 13:08:38 [main] [INFO]  Patch - 
+--- org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils
++++ org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils
+@@ -196,12 +196,6 @@
+                 ((a > lowerBound) || (b < upperBound)));
+    
+         if (fa * fb >= 0.0 ) {
+-            throw new ConvergenceException(
+-                      "number of iterations={0}, maximum iterations={1}, " +
+-                      "initial={2}, lower bound={3}, upper bound={4}, final a value={5}, " +
+-                      "final b value={6}, f(a)={7}, f(b)={8}",
+-                      numIterations, maximumIterations, initial,
+-                      lowerBound, upperBound, a, b, fa, fb);
+         }
+         
+         return new double[]{a, b};
+2019-06-25 13:08:38 [main] [INFO]  Patch - 
+--- org.apache.commons.math.distribution.AbstractContinuousDistribution
++++ org.apache.commons.math.distribution.AbstractContinuousDistribution
+@@ -99,9 +99,7 @@
+             }
+             if (Math.abs(rootFindingFunction.value(upperBound)) < 1E-6) {
+                 return upperBound;
+-            }     
+-            // Failed bracket convergence was not because of corner solution
+-            throw new MathException(ex);
++            }
+         }
+ 
+         // find root
+2019-06-25 13:08:39 [main] [INFO]  KGenProgMain - execution time: 1 seconds
+
+real 7.506
+user 44.093
+sys  0.817
