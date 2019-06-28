@@ -1,0 +1,112 @@
+Wed Jun 26 12:28:07 UTC 2019
+/opt/apr-data/example/math004
+java -jar /opt/apr-data/bin/kgp.jar --config kgenprog.toml
+2019-06-26 12:28:07 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = 
+executionTests = [org.apache.commons.math3.geometry.euclidean.threed.SubLineTest, org.apache.commons.math3.geometry.euclidean.twod.SubLineTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 20000
+timeLimit = PT1H
+testTimeLimit = PT10S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 3
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/example/math004
+================================================================
+2019-06-26 12:28:15 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-06-26 12:28:16 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 1, redundant 1
+Fitness: max 0.38461538461538464(1), min 0.38461538461538464(1), ave 0.38461538461538464
+----------------------------------------------------------------
+
+2019-06-26 12:28:16 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-06-26 12:28:17 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 10, build-succeeded 2, build-failed 4, syntax-invalid 0, redundant 4
+Fitness: max 0.9615384615384616(1), min 0.8076923076923077(1), ave 0.8846153846153846
+----------------------------------------------------------------
+
+2019-06-26 12:28:17 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-06-26 12:28:18 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 10, build-succeeded 2, build-failed 6, syntax-invalid 0, redundant 2
+Fitness: max 0.38461538461538464(1), min 0.15384615384615385(1), ave 0.2692307692307693
+----------------------------------------------------------------
+
+2019-06-26 12:28:18 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-06-26 12:28:20 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 seconds
+Variants: generated 10, build-succeeded 2, build-failed 8, syntax-invalid 0, redundant 0
+Fitness: max 0.9230769230769231(1), min 0.15384615384615385(1), ave 0.5384615384615385
+----------------------------------------------------------------
+
+2019-06-26 12:28:20 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-06-26 12:28:20 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 seconds
+Variants: generated 10, build-succeeded 1, build-failed 7, syntax-invalid 0, redundant 2
+Fitness: max 0.15384615384615385(1), min 0.15384615384615385(1), ave 0.15384615384615385
+----------------------------------------------------------------
+
+2019-06-26 12:28:20 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-06-26 12:28:21 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 seconds
+Variants: generated 10, build-succeeded 1, build-failed 9, syntax-invalid 0, redundant 0
+Fitness: max 0.15384615384615385(1), min 0.15384615384615385(1), ave 0.15384615384615385
+----------------------------------------------------------------
+
+2019-06-26 12:28:21 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-06-26 12:28:22 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 1.0(1), min 1.0(1), ave 1.0
+----------------------------------------------------------------
+
+2019-06-26 12:28:22 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-06-26 12:28:22 [main] [INFO]  KGenProgMain - GA stopped at the era of 7th generation.
+2019-06-26 12:28:22 [main] [INFO]  Patch - 
+--- org.apache.commons.math3.geometry.euclidean.twod.Line
++++ org.apache.commons.math3.geometry.euclidean.twod.Line
+@@ -197,7 +197,7 @@
+     public Vector2D intersection(final Line other) {
+         final double d = sin * other.cos - other.sin * cos;
+         if (FastMath.abs(d) < 1.0e-10) {
+-            return null;
++            this.originOffset = originOffset;
+         }
+         return new Vector2D((cos * other.originOffset - other.cos * originOffset) / d,
+                             (sin * other.originOffset - other.sin * originOffset) / d);
+2019-06-26 12:28:22 [main] [INFO]  Patch - 
+--- org.apache.commons.math3.geometry.euclidean.threed.Line
++++ org.apache.commons.math3.geometry.euclidean.threed.Line
+@@ -153,7 +153,7 @@
+      * @return true if p belongs to the line
+      */
+     public boolean contains(final Vector3D p) {
+-        return distance(p) < 1.0e-10;
++        return true;
+     }
+ 
+     /** Compute the distance between the instance and a point.
+2019-06-26 12:28:24 [main] [INFO]  KGenProgMain - execution time: 9 seconds
+
+real 17.679
+user 87.621
+sys  2.170
