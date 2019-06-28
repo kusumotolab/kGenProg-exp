@@ -11,12 +11,15 @@ def parse(dir, apr, project):
     n_total_variants           = extract_array(dir, apr, project, extract_n_total_variants, "v")
 #    n_syntax_valid_variants    = extract_array(dir, apr, project, extract_n_syntax_valid_variants, "v-sv")
     n_build_succeeded_variants = extract_array(dir, apr, project, extract_n_build_succeeded_variants, "v-bs")
+    era                        = extract_array(dir, apr, project, extract_max_era, "era")
     fitness                    = extract_array(dir, apr, project, extract_fitness, "fit")
+ 
  
     
     print_arrays([status, \
                   time, n_total_variants, \
                   n_build_succeeded_variants, \
+                  era, \
                   fitness])
 
 
@@ -115,17 +118,33 @@ def extract_fitness(file):
     import re
     
     maxfitness = [];
+    fit=0;
     
     for line in open(file):
         m = re.search('Fitness: max (\d.\d+|--)(\(\d+\))?, .+', line)
         if isinstance(m, type(None)):
             continue
-        if m.group(1)=='--':
-            maxfitness.append('NULL')
-        else:
-            maxfitness.append(float(m.group(1)))
-        
+        if m.group(1)!='--' and float(fit) < float(m.group(1)):
+            fit=float(m.group(1))
+        maxfitness.append(float(fit))
+            
     return maxfitness
+
+
+def extract_max_era(file):
+    ''' fileからの最大世代数の抜き出し '''
+    import re
+    
+    era = 0
+    
+    for line in open(file):
+        m = re.search('KGenProgMain - GA stopped at the era of (\d+).+ generation.', line)
+        if isinstance(m, type(None)):
+            continue
+        else:
+            era = int(m.group(1))
+            
+    return era
 
 
 def extract_status(file):
