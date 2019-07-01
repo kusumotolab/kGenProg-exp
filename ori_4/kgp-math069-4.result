@@ -1,0 +1,92 @@
+Fri Jun 28 22:29:45 UTC 2019
+/opt/apr-data/example/math069
+java -jar /opt/apr-data/bin/kgp.jar --config kgenprog.toml
+2019-06-28 22:29:46 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = 
+executionTests = [org.apache.commons.math.stat.correlation.PearsonsCorrelationTest, org.apache.commons.math.stat.correlation.SpearmansRankCorrelationTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 20000
+timeLimit = PT1H
+testTimeLimit = PT10S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 4
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/example/math069
+================================================================
+2019-06-28 22:29:55 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-06-28 22:29:58 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 10, build-succeeded 3, build-failed 6, syntax-invalid 1, redundant 0
+Fitness: max 0.8823529411764706(3), min 0.8823529411764706(3), ave 0.8823529411764706
+----------------------------------------------------------------
+
+2019-06-28 22:29:58 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-06-28 22:29:58 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 10, build-succeeded 2, build-failed 7, syntax-invalid 0, redundant 1
+Fitness: max 0.8823529411764706(2), min 0.8823529411764706(2), ave 0.8823529411764706
+----------------------------------------------------------------
+
+2019-06-28 22:29:58 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-06-28 22:29:59 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 10, build-succeeded 1, build-failed 5, syntax-invalid 0, redundant 4
+Fitness: max 0.8823529411764706(1), min 0.8823529411764706(1), ave 0.8823529411764706
+----------------------------------------------------------------
+
+2019-06-28 22:29:59 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-06-28 22:29:59 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 seconds
+Variants: generated 10, build-succeeded 0, build-failed 7, syntax-invalid 0, redundant 3
+Fitness: max --, min --, ave NaN
+----------------------------------------------------------------
+
+2019-06-28 22:29:59 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-06-28 22:30:00 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 seconds
+Variants: generated 10, build-succeeded 3, build-failed 5, syntax-invalid 0, redundant 2
+Fitness: max 0.8823529411764706(1), min 0.4117647058823529(1), ave 0.6862745098039215
+----------------------------------------------------------------
+
+2019-06-28 22:30:00 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-06-28 23:02:02 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 32 minutes 6 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 0.5882352941176471(1), min 0.5882352941176471(1), ave 0.5882352941176471
+----------------------------------------------------------------
+
+2019-06-28 23:02:02 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-06-28 23:02:12 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 32 minutes 16 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 0.8823529411764706(1), min 0.8823529411764706(1), ave 0.8823529411764706
+----------------------------------------------------------------
+
+2019-06-28 23:02:12 [main] [INFO]  KGenProgMain - entered the era of 8th generation.
+OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x00000006d8c00000, 335020032, 0) failed; error='Cannot allocate memory' (errno=12)
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 335020032 bytes for committing reserved memory.
+# An error report file with more information is saved as:
+# /opt/apr-data/example/math069/hs_err_pid6584.log
+
+real 1948.418
+user 2682.943
+sys  1110.377
