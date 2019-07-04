@@ -1,0 +1,58 @@
+Wed Jul  3 22:09:56 UTC 2019
+/opt/apr-data/t-kuma-example/math078
+java -jar /opt/apr-data/bin/kgp.jar --config kgenprog.toml
+2019-07-03 22:09:56 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = 
+executionTests = [org.apache.commons.math.ode.events.EventStateTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 20000
+timeLimit = PT1H
+testTimeLimit = PT10S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 0
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/t-kuma-example/math078
+================================================================
+2019-07-03 22:10:06 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-03 22:10:07 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 seconds
+Variants: generated 10, build-succeeded 4, build-failed 6, syntax-invalid 0, redundant 0
+Fitness: max 1.0(1), min 0.4(3), ave 0.55
+----------------------------------------------------------------
+
+2019-07-03 22:10:07 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-07-03 22:10:07 [main] [INFO]  KGenProgMain - GA stopped at the era of 1st generation.
+2019-07-03 22:10:07 [main] [INFO]  Patch - 
+--- org.apache.commons.math.analysis.solvers.BrentSolver
++++ org.apache.commons.math.analysis.solvers.BrentSolver
+@@ -276,10 +276,10 @@
+                 }
+                 if (2.0 * p >= 1.5 * dx * p1 - Math.abs(tolerance * p1) ||
+                         p >= Math.abs(0.5 * oldDelta * p1)) {
+-                    // Inverse quadratic interpolation gives a value
+-                    // in the wrong direction, or progress is slow.
+-                    // Fall back to bisection.
+-                    delta = 0.5 * dx;
++                    if (Math.abs(oldDelta) < Math.max(relativeAccuracy * Math.abs(x1), absoluteAccuracy)) {
++						setResult(x1, i);
++						return result;
++					}
+                     oldDelta = delta;
+                 } else {
+                     oldDelta = delta;
+2019-07-03 22:10:08 [main] [INFO]  KGenProgMain - execution time: 2 seconds
+
+real 12.103
+user 52.466
+sys  0.812

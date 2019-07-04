@@ -1,0 +1,51 @@
+Wed Jul  3 03:33:54 UTC 2019
+/opt/apr-data/t-kuma-example/math040
+java -jar /opt/apr-data/bin/kgp.jar --config kgenprog.toml
+2019-07-03 03:33:55 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = 
+executionTests = [org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest]
+outDir = /opt/apr-data/tmp
+mutationGeneratingCount = 10
+crossoverGeneratingCount = 0
+headcount = 5
+maxGeneration = 20000
+timeLimit = PT1H
+testTimeLimit = PT10S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 0
+scope = PACKAGE
+needNotOutput = false
+faultLocalization = Ochiai
+crossoverType = Random
+firstVariantSelectionStrategy = Random
+secondVariantSelectionStrategy = Random
+currentDirectory = /opt/apr-data/t-kuma-example/math040
+================================================================
+2019-07-03 03:34:12 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-03 03:34:22 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 seconds
+Variants: generated 10, build-succeeded 1, build-failed 8, syntax-invalid 0, redundant 1
+Fitness: max 1.0(1), min 1.0(1), ave 1.0
+----------------------------------------------------------------
+
+2019-07-03 03:34:22 [main] [INFO]  KGenProgMain - enough solutions have been found.
+2019-07-03 03:34:22 [main] [INFO]  KGenProgMain - GA stopped at the era of 1st generation.
+2019-07-03 03:34:22 [main] [INFO]  Patch - 
+--- org.apache.commons.math.util.Incrementor
++++ org.apache.commons.math.util.Incrementor
+@@ -62,7 +62,6 @@
+              new MaxCountExceededCallback() {
+                  /** {@inheritDoc} */
+                  public void trigger(int max) {
+-                     throw new MaxCountExceededException(max);
+                  }
+              });
+     }
+2019-07-03 03:34:23 [main] [INFO]  KGenProgMain - execution time: 10 seconds
+
+real 29.048
+user 68.637
+sys  0.805
