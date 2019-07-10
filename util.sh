@@ -10,13 +10,14 @@ m2_repo=$base/.m2
 kgp_base=$base/kgp
 kgp_bin_from=$kgp_base/build/libs/kGenProg.jar
 kgp_bin=$base/bin/kgp.jar
-kgp_ver=exp-for-journal # 2018/11
+kgp_ver=v1.4.1
 
 # astor
 astor_base=$base/astor
 astor_bin_from=$astor_base/target/astor-0.0.2-SNAPSHOT-jar-with-dependencies.jar
 astor_bin=$base/bin/astor.jar
-astor_ver=61e33ecf2be00a5f03d06e49659ddfde7bcc1431  # 2018/11
+astor_ver=5714f907062594c445eb304ee4568aa7b0190dc1  # prevent rtest
+
 
 # d4j
 d4j_base=$base/d4j
