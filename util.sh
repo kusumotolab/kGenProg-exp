@@ -64,7 +64,7 @@ _build_kgp() {
 
 _build_astor() {
     if [ ! -d $astor_base ]; then
-        git clone 'https://github.com/SpoonLabs/astor.git' $astor_base
+        git clone 'https://github.com/kusumotolab/astor.git' $astor_base
     else
         :
         # git -C $astor_base pull
