@@ -16,7 +16,7 @@ kgp_ver=v1.4.1
 astor_base=$base/astor
 astor_bin_from=$astor_base/target/astor-0.0.2-SNAPSHOT-jar-with-dependencies.jar
 astor_bin=$base/bin/astor.jar
-astor_ver=5714f907062594c445eb304ee4568aa7b0190dc1  # prevent rtest
+astor_ver=ccf255db50187594f69311076d31fc1f4da7cb1e  # prevent rtest
 
 
 # d4j
