@@ -8,7 +8,7 @@ m2_repo=$base/.m2
 
 # kgp
 kgp_base=$base/kgp
-kgp_bin_from=$kgp_base/build/libs/kGenProg.jar
+kgp_bin_from=$kgp_base/build/libs/kGenProg-1.4.1.jar
 kgp_bin=$base/bin/kgp.jar
 kgp_ver=v1.4.1
 
