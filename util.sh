@@ -203,7 +203,6 @@ _run_kgp() {
                     -s $(_get_d4j_param d4j.dir.src.classes) \
                     -t $(_get_d4j_param d4j.dir.src.tests) \
                     $(printf -- '-x %s ' $(_get_d4j_param d4j.tests.trigger)) \
-                    -c /opt/apr-data/junit-4.10.jar \
                     --time-limit 1800 \
                     --test-time-limit 3 \
                     --max-generation 10000 \
